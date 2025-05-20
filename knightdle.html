@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>DLE Hollow Knight Edition</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url("https://static.wikia.nocookie.net/hollowknight/images/3/3b/Hollow_Knight_Voidheart_Edition_%281%29.jpg/revision/latest?cb=20190717093525&path-prefix=it") no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .game-container {
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 40px 0;
+      width: 95%;
+      max-width: 1000px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .autocomplete-wrapper {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #5865f2;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #4753d6;
+    }
+
+    .suggestions-list {
+      background-color: #333;
+      border: 1px solid #666;
+      max-height: 200px;
+      overflow-y: auto;
+      border-radius: 5px;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .suggestion-item {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .suggestion-item:hover {
+      background-color: #444;
+    }
+
+    .suggestion-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+
+    .attempt-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    .cell {
+      padding: 10px;
+      border-radius: 8px;
+      min-width: 110px;
+      text-align: center;
+      font-weight: bold;
+      margin-right: 10px;
+      background-color: #333;
+      border: 2px solid #555;
+      flex-shrink: 0;
+    }
+
+    .match {
+      background-color: #2e7d32;
+      border-color: #1b5e20;
+      color: #fff;
+    }
+
+    .partial {
+      background-color: #f9a825;
+      border-color: #c17900;
+      color: #222;
+    }
+
+    .wrong {
+      background-color: #c62828;
+      border-color: #8e0000;
+      color: #fff;
+    }
+
+    .cell img {
+      max-width: 50px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px black;
+    }
+
+    #feedback {
+      margin-top: 20px;
+    }
+	#win-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  display: none; /* inizialmente nascosto */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  pointer-events: none; /* non blocca input */
+}
+
+#win-screen.active {
+  display: flex;
+  pointer-events: auto; /* riattiva interazione solo quando visibile */
+}
+
+.win-overlay {
+  text-align: center;
+  <div id="solution-details" style="margin-top: 20px; text-align: left;"></div>
+<button onclick="showSolutionDetails()" style="margin-top: 15px;">Mostra dettagli</button>
+
+}
+
+.win-overlay h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.win-overlay button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #5865f2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.win-overlay button:hover {
+  background-color: #4753d6;
+}
+@keyframes celebrate {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.winner-img {
+  max-width: 200px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  animation: celebrate 1s ease-out forwards;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Guess the Character - Hollow Knight</h1>
+
+    <div class="autocomplete-wrapper">
+      <input type="text" id="guess" placeholder="Type a Hollow Knight character..." oninput="showSuggestions()" autocomplete="off" />
+      <div id="suggestions" class="suggestions-list"></div>
+    </div>
+
+    <button onclick="checkGuess()">Submit</button>
+    <div id="feedback"></div>
+  </div>
+
+
+  <script>
+    const characters = [
+	{
+        name: "The knight",
+        region: "The abyss",
+        alignment: "Il bruchi",
+        species: "Vessel",
+        weapon: "Nail, Shadow, Cloak, Crystal",
+        gameplay: "Character",
+        gender: "Unknown",
+        photo: "https://static.wikia.nocookie.net/hollowknight/images/9/94/Knight_godmaster.png/revision/latest?cb=20190620145901&path-prefix=it",
+      },
+{
+  name: "Hornet",
+  region: "Greenpath",
+  alignment: "Neutral",
+  species: "Vessel",
+  weapon: "Nail, String",
+  gameplay: "Boss, NPC",
+  gender: "Female",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/8/89/B_Hornet.png/revision/latest?cb=20190910120637&path-prefix=it",
+},
+{
+  name: "Radiance",
+  region: "Dream realm",
+  alignment: "Hostile",
+  species: "God",
+  weapon: "Light, Mental control, Teleport",
+  gameplay: "Boss",
+  gender: "Female",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/d/d7/The_Radiance_Stagger_2.png/revision/latest?cb=20190314011114",
+},
+{
+  name: "Quirrel",
+  region: "Forgotten crossroads",
+  alignment: "Good",
+  species: "Pill-bug",
+  weapon: "Nail",
+  gameplay: "NPC",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/e/ee/Quirrel-2.png/revision/latest?cb=20180829023414"
+},
+{
+  name: "The Hollow Knight",
+  region: "Forgotten crossroads",
+  alignment: "Hostile",
+  species: "Vessel",
+  weapon: "Nail, infection",
+  gameplay: "Boss",
+  gender: "Unknown",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/1/12/B_Hollow_Knight.png/revision/latest?cb=20170412204859"
+},
+{
+  name: "False Knight",
+  region: "Forgotten crossroads",
+  alignment: "Neutral",
+  species: "Maggot",
+  weapon: "Pure strenght, Hammer",
+  gameplay: "Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/9/98/B_False_Knight.png/revision/latest?cb=20181129012523"
+},
+{
+  name: "Dung Defender",
+  region: "Royal waterways",
+  alignment: "Neutral",
+  species: "Beetle",
+  weapon: "Dung Ball",
+  gameplay: "Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/7/76/Dung_Defender_Idle.png/revision/latest?cb=20181129012118"
+},
+{
+  name: "White Defender",
+  region: "Dream realm",
+  alignment: "Neutral",
+  species: "Beetle",
+  weapon: "Dung ball",
+  gameplay: "Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/a/a7/B_White_Defender.png/revision/latest?cb=20170803164634"
+},
+{
+  name: "Bretta",
+  region: "Fungal wastes",
+  alignment: "Good",
+  species: "Beetle",
+  weapon: "Non combattant",
+  gameplay: "NPC",
+  gender: "Female",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/9/96/Bretta.png/revision/latest?cb=20190119053920"
+},
+{
+  name: "Mato",
+  region: "Howling cliffs",
+  alignment: "Neutral",
+  species: "Beetle",
+  weapon: "Nail, Cyclone slash",
+  gameplay: "NPC, Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/6/61/Mato.png/revision/latest?cb=20180824204812"
+},
+{
+  name: "Oro",
+  region: "Kingdom's edge",
+  alignment: "Neutral",
+  species: "Beetle",
+  weapon: "Nail, Dash slash",
+  gameplay: "NPC, Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/4/4e/Oro.png/revision/latest?cb=20221005124852"
+},
+{
+  name: "Sheo",
+  region: "Greenpath",
+  alignment: "Neutral",
+  species: "Beetle",
+  weapon: "Nail, Great slash",
+  gameplay: "NPC, Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/9/96/B_Paintmaster_Sheo.png/revision/latest?cb=20180921224104"
+},
+{
+  name: "Sly",
+  region: "Forgotten crossroads",
+  alignment: "Neutral",
+  species: "Cicada",
+  weapon: "Nail, Great slash, Dash slash, Cyclone slash",
+  gameplay: "NPC, Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/e/ea/B_Great_Nailsage_Sly.png/revision/latest?cb=20180921224133"
+},
+{
+  name: "Broken Vessel",
+  region: "Ancient Basin",
+  alignment: "Hostile",
+  species: "Vessel",
+  weapon: "Nail, infection",
+  gameplay: "Boss",
+  gender: "None",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/3/30/B_Broken_Vessel-2.png/revision/latest?cb=20180821144714"
+},
+{
+  name: "Grimm",
+  region: "Dirtmouth",
+  alignment: "Neutral",
+  species: "God",
+  weapon: "Bats, spikes, fire",
+  gameplay: "Boss ,NPC",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/b/ba/Grimm_Idle.png/revision/latest?cb=20181201000031"
+},
+{
+  name: "Nightmare King Grimm",
+  region: "Dream realm",
+  alignment: "Hostile",
+  species: "God",
+  weapon: "Bats, spikes, fire",
+  gameplay: "Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/0/09/B_Nightmare_King.png/revision/latest?cb=20180830225152"
+},
+{
+  name: "Sisters of Battle",
+  region: "Godhome",
+  alignment: "Hostile",
+  species: "Mantis",
+  weapon: "Nail",
+  gameplay: "Boss",
+  gender: "Female",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/2/2d/B_Mantis_Lords-2.png/revision/latest?cb=20180821145144"
+},
+{
+  name: "Mantis Lords",
+  region: "Mantis village",
+  alignment: "Hostile",
+  species: "Mantis",
+  weapon: "Nail",
+  gameplay: "Boss",
+  gender: "Female",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/2/2d/B_Mantis_Lords-2.png/revision/latest?cb=20180821145144"
+},
+{
+  name: "Nosk",
+  region: "Deepnest",
+  alignment: "Hostile",
+  species: "Shape-shifter",
+  weapon: "Claws, infection",
+  gameplay: "Boss",
+  gender: "Unknown",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/a/a8/B_Nosk.png/revision/latest?cb=20170412183621"
+},
+{
+  name: "Winged Nosk",
+  region: "Godhome",
+  alignment: "Hostile",
+  species: "Shape-shifter",
+  weapon: "Claws, infection,",
+  gameplay: "Boss",
+  gender: "Unknown",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/1/14/Winged_Nosk.png/revision/latest?cb=20180824042820"
+},
+{
+  name: "Galien",
+  region: "Deepnest",
+  alignment: "Neutral",
+  species: "Bug",
+  weapon: "Scythe",
+  gameplay: "Dream Boss",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/e/ee/HJ_Galien.png/revision/latest?cb=20170409173257"
+},
+{
+  name: "Grey Mourner",
+  region: "Resting Grounds",
+  alignment: "Good",
+  species: "Bug",
+  weapon: "Non combattant",
+  gameplay: "NPC",
+  gender: "Female",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/a/a0/Grey_Mourner2.png/revision/latest?cb=20190129201204"
+},
+{
+  name: "Pale King",
+  region: "Palace Grounds",
+  alignment: "Good",
+  species: "Wyrm",
+  weapon: "Non combattant",
+  gameplay: "NPC",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/3/32/Pale-King.png/revision/latest?cb=20190811115904"
+},
+{
+  name: "Grub",
+  region: "kingdom's edge, city of tears, forgotten crossroads, greenpath, fungal wastes, crystal peak, deepnest, queen's gardens, ancient basin, royal waterways, resting grounds, howling cliffs, fog canyon, the hive",
+  alignment: "Good",
+  species: "Grub",
+  weapon: "Non combattant",
+  gameplay: "NPC",
+  gender: "Unknown",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/0/0c/Grub.png/revision/latest?cb=20170417120822"
+},
+{
+  name: "Grubfather",
+  region: "Forgotten Crossroads",
+  alignment: "Good",
+  species: "Grub",
+  weapon: "Non combattant",
+  gameplay: "NPC",
+  gender: "Male",
+  photo: "https://static.wikia.nocookie.net/hollowknight/images/b/be/Grubfather.png/revision/latest?cb=20170417120638"
+}
+
+    ];
+
+    const target = characters[Math.floor(Math.random() * characters.length)];
+
+    function showSuggestions() {
+  const input = document.getElementById("guess").value.toLowerCase();
+  const suggestionsDiv = document.getElementById("suggestions");
+  suggestionsDiv.innerHTML = "";
+
+  if (input.length === 0) {
+    suggestionsDiv.style.display = "none";
+    return;
+  }
+
+  const filtered = characters
+    .filter(c => !usedCharacters.includes(c.name.toLowerCase()))  // esclude i già usati
+    .filter(c => c.name.toLowerCase().includes(input));
+
+  filtered.slice(0, 5).forEach((char) => {
+    const item = document.createElement("div");
+    item.className = "suggestion-item";
+    item.innerHTML = `<img src="${char.photo}" alt="${char.name}"><span>${char.name}</span>`;
+    item.onclick = () => {
+      document.getElementById("guess").value = char.name;
+      suggestionsDiv.innerHTML = "";
+      suggestionsDiv.style.display = "none";
+    };
+    suggestionsDiv.appendChild(item);
+  });
+
+  suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
+}
+
+
+
+    const usedCharacters = [];
+
+function checkGuess() {
+  const guessInput = document.getElementById("guess").value.toLowerCase();
+  const guessedCharacter = characters.find(
+    (c) => c.name.toLowerCase() === guessInput
+  );
+  const feedback = document.getElementById("feedback");
+
+  if (!guessedCharacter) {
+    alert("Character not found");
+    return;
+  }
+
+  // Check if character was already guessed before
+  if (usedCharacters.includes(guessedCharacter.name.toLowerCase())) {
+    alert("You already tried this character!");
+    return;
+  }
+
+  // Add to used list
+  usedCharacters.push(guessedCharacter.name.toLowerCase());
+
+  function getClass(guessVal, targetVal) {
+  const normalize = str => str.toLowerCase().split(',').map(s => s.trim());
+
+  const guessList = normalize(guessVal);
+  const targetList = normalize(targetVal);
+
+  const intersection = guessList.filter(val => targetList.includes(val));
+
+  if (guessList.length === targetList.length && intersection.length === guessList.length) {
+    return "match"; // tutto combacia
+  } else if (intersection.length > 0) {
+    return "partial"; // almeno un elemento in comune
+  } else {
+    return "wrong";
+  }
+}
+
+
+  const row = document.createElement("div");
+  row.className = "attempt-row";
+  
+row.innerHTML += `<div class="cell" style="font-weight:bold;">Name<br>${guessedCharacter.name}</div>`;
+  row.innerHTML += `<div class="cell ${getClass(guessedCharacter.region, target.region)}">Region<br>${guessedCharacter.region}</div>`;
+row.innerHTML += `<div class="cell ${getClass(guessedCharacter.alignment, target.alignment)}">Alignment<br>${guessedCharacter.alignment}</div>`;
+row.innerHTML += `<div class="cell ${getClass(guessedCharacter.species, target.species)}">Species<br>${guessedCharacter.species}</div>`;
+row.innerHTML += `<div class="cell ${getClass(guessedCharacter.weapon, target.weapon)}">Abilities<br>${guessedCharacter.weapon}</div>`;
+row.innerHTML += `<div class="cell ${getClass(guessedCharacter.gameplay, target.gameplay)}">Gameplay<br>${guessedCharacter.gameplay}</div>`;
+row.innerHTML += `<div class="cell ${getClass(guessedCharacter.gender, target.gender)}">Gender<br>${guessedCharacter.gender}</div>`;
+
+  if (guessedCharacter.name === target.name) {
+    const winScreen = document.getElementById("win-screen");
+    const winnerImg = document.getElementById("winner-img");
+    winnerImg.src = guessedCharacter.photo;
+    winnerImg.alt = guessedCharacter.name;
+    winScreen.classList.add("active");
+
+    confetti({
+      particleCount: 200,
+      spread: 90,
+      origin: { y: 0.6 }
+    });
+  }
+
+  feedback.appendChild(row);
+  document.getElementById("guess").value = "";
+}
+
+  </script>
+
+  <div id="win-screen">
+    <div class="win-overlay">
+      <h2>🎉You won!🎉</h2>
+      <h2>🎉The character was:🎉</h2>
+      <img id="winner-img" src="" alt="Character" class="winner-img" />
+      <button onclick="window.location.reload()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
