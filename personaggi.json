@@ -1,0 +1,413 @@
+[
+  {
+    "name": "The knight",
+    "region": "The abyss",
+    "alignment": "Main character",
+    "species": "Void creature",
+    "weapon": "Nail, Shadow, Cloak, Crystal",
+    "gameplay": "Character",
+    "gender": "Unknown",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/9/94/Knight_godmaster.png/revision/latest?cb=20190620145901&path-prefix=it"
+  },
+  {
+    "name": "Hornet",
+    "region": "Greenpath, City of tears, Kingdom's edge, The abyss, Deepnest, Forgotten crossroads",
+    "alignment": "Neutral",
+    "species": "Void creature",
+    "weapon": "Nail, String",
+    "gameplay": "Boss, NPC",
+    "gender": "Female",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/8/89/B_Hornet.png/revision/latest?cb=20190910120637&path-prefix=it"
+  },
+  {
+    "name": "Radiance",
+    "region": "Dream realm",
+    "alignment": "Hostile",
+    "species": "God",
+    "weapon": "Light, Mental control, Teleport",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/d/d7/The_Radiance_Stagger_2.png/revision/latest?cb=20190314011114"
+  },
+  {
+    "name": "Quirrel",
+    "region": "Forgotten crossroads, Greenpath, Fungal wastes, City of tears, Deepnest, Crystal peak, Fog canyon, Resting grounds",
+    "alignment": "Good",
+    "species": "Pill-bug",
+    "weapon": "Nail",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/e/ee/Quirrel-2.png/revision/latest?cb=20180829023414"
+  },
+  {
+    "name": "The Hollow Knight",
+    "region": "Forgotten crossroads, The abyss",
+    "alignment": "Hostile",
+    "species": "Void creature",
+    "weapon": "Nail, Infection",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/1/12/B_Hollow_Knight.png/revision/latest?cb=20170412204859"
+  },
+  {
+    "name": "Zote the mighty",
+    "region": "Greenpath, Dirthmouth, City of tears, Deepnest, Kingdom's edge",
+    "alignment": "Neutral",
+    "species": "Void creature",
+    "weapon": "Nail, Minions",
+    "gameplay": "Boss, NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/1/17/B_Grey_Prince_Zote.png/revision/latest?cb=20170803164547"
+  },
+  {
+    "name": "False Knight",
+    "region": "Forgotten crossroads",
+    "alignment": "Neutral",
+    "species": "Maggot",
+    "weapon": "Pure strenght, Hammer",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/9/98/B_False_Knight.png/revision/latest?cb=20181129012523"
+  },
+  {
+    "name": "Dung Defender",
+    "region": "Royal waterways",
+    "alignment": "Neutral",
+    "species": "Beetle",
+    "weapon": "Dung Ball",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/7/76/Dung_Defender_Idle.png/revision/latest?cb=20181129012118"
+  },
+  {
+    "name": "White Defender",
+    "region": "Dream realm",
+    "alignment": "Neutral",
+    "species": "Beetle",
+    "weapon": "Dung ball",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/a/a7/B_White_Defender.png/revision/latest?cb=20170803164634"
+  },
+  {
+    "name": "Bretta",
+    "region": "Fungal wastes, Dirthmouth",
+    "alignment": "Good",
+    "species": "Beetle",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/9/96/Bretta.png/revision/latest?cb=20190119053920"
+  },
+  {
+    "name": "Mato",
+    "region": "Howling cliffs, Godhome",
+    "alignment": "Neutral",
+    "species": "Beetle",
+    "weapon": "Nail, Cyclone slash",
+    "gameplay": "Boss, NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/6/61/Mato.png/revision/latest?cb=20180824204812"
+  },
+  {
+    "name": "Oro",
+    "region": "Kingdom's edge, Godhome",
+    "alignment": "Neutral",
+    "species": "Beetle",
+    "weapon": "Nail, Dash slash",
+    "gameplay": "Boss, NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/4/4e/Oro.png/revision/latest?cb=20221005124852"
+  },
+  {
+    "name": "Sheo",
+    "region": "Greenpath, Godhome",
+    "alignment": "Neutral",
+    "species": "Beetle",
+    "weapon": "Brush, Great slash",
+    "gameplay": "Boss, NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/9/96/B_Paintmaster_Sheo.png/revision/latest?cb=20180921224104"
+  },
+  {
+    "name": "Sly",
+    "region": "Forgotten crossroads, Dirthmouth, Godhome",
+    "alignment": "Neutral",
+    "species": "Cicada",
+    "weapon": "Nail, Great slash, Dash slash, Cyclone slash",
+    "gameplay": "Boss, NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/e/ea/B_Great_Nailsage_Sly.png/revision/latest?cb=20180921224133"
+  },
+  {
+    "name": "Broken Vessel",
+    "region": "Ancient Basin",
+    "alignment": "Hostile",
+    "species": "Void creature",
+    "weapon": "Nail, Infection",
+    "gameplay": "Boss",
+    "gender": "None",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/3/30/B_Broken_Vessel-2.png/revision/latest?cb=20180821144714"
+  },
+  {
+    "name": "Grimm",
+    "region": "Dirtmouth",
+    "alignment": "Neutral",
+    "species": "God",
+    "weapon": "Bats, Spikes, Fire",
+    "gameplay": "Boss, NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/b/ba/Grimm_Idle.png/revision/latest?cb=20181201000031"
+  },
+  {
+    "name": "Nightmare King Grimm",
+    "region": "Dream realm",
+    "alignment": "Hostile",
+    "species": "God",
+    "weapon": "Bats, Spikes, Fire",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/0/09/B_Nightmare_King.png/revision/latest?cb=20180830225152"
+  },
+  {
+    "name": "Sisters of Battle",
+    "region": "Godhome",
+    "alignment": "Hostile",
+    "species": "Mantis",
+    "weapon": "Nail",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/2/2d/B_Mantis_Lords-2.png/revision/latest?cb=20180821145144"
+  },
+  {
+    "name": "Mantis Lords",
+    "region": "Fungal wastes",
+    "alignment": "Neutral",
+    "species": "Mantis",
+    "weapon": "Nail",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/2/2d/B_Mantis_Lords-2.png/revision/latest?cb=20180821145144"
+  },
+  {
+    "name": "Nosk",
+    "region": "Deepnest",
+    "alignment": "Hostile",
+    "species": "Shape-shifter",
+    "weapon": "Claws, Infection",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/a/a8/B_Nosk.png/revision/latest?cb=20170412183621"
+  },
+  {
+    "name": "Winged Nosk",
+    "region": "Godhome",
+    "alignment": "Hostile",
+    "species": "Shape-shifter",
+    "weapon": "Claws, Infection, Flight",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/1/14/Winged_Nosk.png/revision/latest?cb=20180824042820"
+  },
+  {
+    "name": "Galien",
+    "region": "Deepnest",
+    "alignment": "Neutral",
+    "species": "Ghost",
+    "weapon": "Scythe",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/e/ee/HJ_Galien.png/revision/latest?cb=20170409173257"
+  },
+  {
+    "name": "Grey Mourner",
+    "region": "Resting Grounds",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/a/a0/Grey_Mourner2.png/revision/latest?cb=20190129201204"
+  },
+  {
+    "name": "Pale King",
+    "region": "Palace Grounds, The abyss",
+    "alignment": "Good",
+    "species": "Wyrm",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/3/32/Pale-King.png/revision/latest?cb=20190811115904"
+  },
+  {
+    "name": "Grub",
+    "region": "kingdom's edge, city of tears, forgotten crossroads, greenpath, fungal wastes, crystal peak, deepnest, queen's gardens, ancient basin, royal waterways, resting grounds, howling cliffs, fog canyon, the hive",
+    "alignment": "Good",
+    "species": "Grub",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Unknown",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/0/0c/Grub.png/revision/latest?cb=20170417120822"
+  },
+  {
+    "name": "Grubfather",
+    "region": "Forgotten Crossroads",
+    "alignment": "Good",
+    "species": "Grub",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "https://static.wikia.nocookie.net/hollowknight/images/b/be/Grubfather.png/revision/latest?cb=20170417120638"
+  },
+  {
+  "name": "Xero",
+  "region": "Resting Grounds",
+  "alignment": "Neutral",
+  "species": "Ghost",
+  "weapon": "Nail",
+  "gameplay": "Boss",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/f/f9/HJ_Xero.png/revision/latest?cb=20170409172918"
+},
+{
+  "name": "No Eyes",
+  "region": "Greenpath",
+  "alignment": "Neutral",
+  "species": "Ghost",
+  "weapon": "Spirits",
+  "gameplay": "Boss",
+  "gender": "Female",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/5/5b/HJ_No_Eyes.png/revision/latest?cb=20170409173635"
+},
+{
+  "name": "Cornifer",
+  "region": "Kingdom's edge, City of tears, Forgotten crossroads, Greenpath, Fungal wastes, Crystal peak, Deepnest, Queen's gardens, Ancient basin, Royal waterways, Resting grounds, Howling cliffs, Fog canyon, The hive, Dirthmouth ",
+  "alignment": "Good",
+  "species": "Snail",
+  "weapon": "Non combattant",
+  "gameplay": "NPC",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/f/ff/Cornifer.png/revision/latest?cb=20170330135557"
+},
+{
+  "name": "Markoth",
+  "region": "Kingdom's Edge",
+  "alignment": "Neutral",
+  "species": "Ghost",
+  "weapon": "Nail, Shield",
+  "gameplay": "Boss",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/4/4a/HJ_Markoth.png/revision/latest?cb=20170409173511"
+},
+{
+  "name": "Traitor Lord",
+  "region": "Queen's Gardens",
+  "alignment": "Hostile",
+  "species": "Mantis",
+  "weapon": "Claws, Shockwaves",
+  "gameplay": "Boss",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/2/2c/B_Traitor_Lord.png/revision/latest?cb=20170412201256"
+},
+{
+  "name": "The Collector",
+  "region": "City of tears",
+  "alignment": "Hostile",
+  "species": "Void creature",
+  "weapon": "Trapped Grubs",
+  "gameplay": "Boss",
+  "gender": "Unknown",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/d/d5/B_Collector.png/revision/latest?cb=20170412130603"
+},
+{
+  "name": "Hive Knight",
+  "region": "The Hive",
+  "alignment": "Neutral",
+  "species": "Bee",
+  "weapon": "Nail, Bees",
+  "gameplay": "Boss",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/f/fe/Hive_Knight_Idle.png/revision/latest?cb=20181201010440"
+},
+{
+  "name": "Crystal Guardian",
+  "region": "Crystal Peak",
+  "alignment": "Hostile",
+  "species": "Construct",
+  "weapon": "Crystal",
+  "gameplay": "Boss",
+  "gender": "Unknown",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/5/5f/Crystal_Guardian.png/revision/latest?cb=20190313152636"
+},
+{
+  "name": "Enraged Guardian",
+  "region": "Crystal Peak",
+  "alignment": "Hostile",
+  "species": "Construct",
+  "weapon": "Pure strenght, Crystal",
+  "gameplay": "Boss",
+  "gender": "Unknown",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/0/02/B_Crystal_Guardian.png/revision/latest?cb=20170412170806"
+},
+{
+  "name": "Oblobbles",
+  "region": "Kingdom's Edge",
+  "alignment": "Hostile",
+  "species": "Bug",
+  "weapon": "Infection",
+  "gameplay": "Boss",
+  "gender": "Unknown",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/0/09/B_Oblobble.png/revision/latest?cb=20170412202039"
+},
+{
+  "name": "Uumuu",
+  "region": "Fog canyon",
+  "alignment": "Hostile",
+  "species": "Jellyfish",
+  "weapon": "Mental control, Minions",
+  "gameplay": "Boss",
+  "gender": "Unknown",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/4/49/B_Uumuu.png/revision/latest?cb=20170412092250"
+},
+{
+  "name": "Gorb",
+  "region": "Howling Cliffs",
+  "alignment": "Neutral",
+  "species": "Ghost",
+  "weapon": "Nail",
+  "gameplay": "Boss",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/3/33/HJ_Gorb.png/revision/latest?cb=20170409172409"
+},
+{
+  "name": "Elder Hu",
+  "region": "Fungal Wastes",
+  "alignment": "Neutral",
+  "species": "Ghost",
+  "weapon": "Magic",
+  "gameplay": "Boss",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/0/01/HJ_Elder_Hu.png/revision/latest?cb=20170409173102"
+},
+{
+  "name": "Marmu",
+  "region": "Queen's Gardens",
+  "alignment": "Neutral",
+  "species": "Ghost",
+  "weapon": "Pure strenght",
+  "gameplay": "Boss",
+  "gender": "Female",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/2/29/HJ_Marmu.png/revision/latest?cb=20170409173602"
+},
+{
+  "name": "Failed Champion",
+  "region": "Dream realm",
+  "alignment": "Hostile",
+  "species": "Maggot",
+  "weapon": "Pure strenght, Hammer, Infection",
+  "gameplay": "Boss",
+  "gender": "Male",
+  "photo": "https://static.wikia.nocookie.net/hollowknight/images/a/ac/Failed-Champion.png/revision/latest?cb=20170422203704"
+}
+
+]
