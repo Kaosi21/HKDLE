@@ -1,0 +1,306 @@
+[
+  {
+    "name": "Wayward compass",
+    "category": "Supportive",
+    "cost": "One",
+    "location": "Dirthmouth",
+    "obtained": "Buyed",
+    "icon": "img/Compass.webp"
+  },
+  {
+    "name": "Gathering swarm",
+    "category": "Supportive",
+    "cost": "One",
+    "location": "Dirthmouth",
+    "obtained": "Buyed",
+    "icon": "img/Swarm.webp"
+  },
+  {
+    "name": "Stalwart shell",
+    "category": "Defensive",
+    "cost": "Two",
+    "location": "Dirthmouth",
+    "obtained": "Buyed",
+    "icon": "img/Shell.webp"
+  },
+  {
+    "name": "Shaman stone",
+    "category": "Offensive",
+    "cost": "Three",
+    "location": "Forgotten crossroads",
+    "obtained": "Buyed",
+    "icon": "img/Stone.webp"
+  },
+  {
+    "name": "Soul eater",
+    "category": "Supportive",
+    "cost": "Four",
+    "location": "Resting grounds",
+    "obtained": "Founded",
+    "icon": "img/Ssoul.webp"
+  },
+  {
+    "name": "Dashmaster",
+    "category": "Supportive",
+    "cost": "Two",
+    "location": "Fungal wastes",
+    "obtained": "Founded",
+    "icon": "img/Dash.webp"
+  },
+  {
+    "name": "Sprintmaster",
+    "category": "Supportive",
+    "cost": "One",
+    "location": "Dirthmouth",
+    "obtained": "Buyed",
+    "icon": "img/Sprint.webp"
+  },
+  {
+    "name": "Grubsong",
+    "category": "Supportive",
+    "cost": "One",
+    "location": "Dirthmouth",
+    "obtained": "Obtained",
+    "icon": "img/Grub1.webp"
+  },
+  {
+    "name": "Grubberfly's elegy",
+    "category": "Offensive",
+    "cost": "Three",
+    "location": "Dirthmouth",
+    "obtained": "Obtained",
+    "icon": "img/Grub2.webp"
+  },
+  {
+    "name": "Unbreakle heart",
+    "category": "Defensive",
+    "cost": "Two",
+    "location": "Fungal wastes",
+    "obtained": "Buyed",
+    "icon": "img/Heart.webp"
+  },
+  {
+    "name": "Unbreakle greed",
+    "category": "Supportive",
+    "cost": "Two",
+    "location": "Fungal wastes",
+    "obtained": "Buyed",
+    "icon": "img/Greed.webp"
+  },
+  {
+    "name": "Unbreakle strenght",
+    "category": "Offensive",
+    "cost": "Three",
+    "location": "Fungal wastes",
+    "obtained": "Buyed",
+    "icon": "img/Strenght.webp"
+  },
+  {
+    "name": "Spell twister",
+    "category": "Supportive",
+    "cost": "Two",
+    "location": "City of tears",
+    "obtained": "Founded",
+    "icon": "img/Spellt.webp"
+  },
+  {
+    "name": "Steady body",
+    "category": "Supportive",
+    "cost": "One",
+    "location": "Forgotten crossroads",
+    "obtained": "Buyed",
+    "icon": "img/Steadyb.webp"
+  },
+  {
+    "name": "Heavy Blow",
+    "category": "Supportive",
+    "cost": "Two",
+    "location": "Dirthmouth",
+    "obtained": "Buyed",
+    "icon": "img/Heavyb.webp"
+  },
+  {
+    "name": "Quick slash",
+    "category": "Offensive",
+    "cost": "Three",
+    "location": "Kingdom's edge",
+    "obtained": "Founded",
+    "icon": "img/Quicks.webp"
+  },
+  {
+    "name": "Longnail",
+    "category": "Offensive",
+    "cost": "Two",
+    "location": "Forgotten crossroads",
+    "obtained": "Buyed",
+    "icon": "img/Longnail.webp"
+  },
+  {
+    "name": "Mark of pride",
+    "category": "Offensive",
+    "cost": "Three",
+    "location": "Fungal wastes",
+    "obtained": "Obtained",
+    "icon": "img/Markp.webp"
+  },
+  {
+    "name": "Fury of the fallen",
+    "category": "Offensive",
+    "cost": "Two",
+    "location": "Dirthmouth",
+    "obtained": "Founded",
+    "icon": "img/Fallen.webp"
+  },
+  {
+    "name": "Thorns of agony",
+    "category": "Defensive",
+    "cost": "One",
+    "location": "Greenpath",
+    "obtained": "Founded",
+    "icon": "img/Thorns.webp"
+  },
+  {
+    "name": "Baldur shell",
+    "category": "Defensive",
+    "cost": "Two",
+    "location": "Howling cliffs",
+    "obtained": "Founded",
+    "icon": "img/Baldur.webp"
+  },
+  {
+    "name": "Flukenest",
+    "category": "Offensive",
+    "cost": "Three",
+    "location": "Royal waterways",
+    "obtained": "Obtained",
+    "icon": "img/Flukenest.webp"
+  },
+  {
+    "name": "Defender's crest",
+    "category": "Offensive",
+    "cost": "One",
+    "location": "Royal waterways",
+    "obtained": "Obtained",
+    "icon": "img/Crest.webp"
+  },
+  {
+    "name": "Glowing womb",
+    "category": "Offensive",
+    "cost": "Two",
+    "location": "Forgotten crossroads",
+    "obtained": "Founded",
+    "icon": "img/Womb.webp"
+  },
+  {
+    "name": "Quick focus",
+    "category": "Supportive",
+    "cost": "Three",
+    "location": "Forgotten crossroads",
+    "obtained": "Buyed",
+    "icon": "img/Quick.webp"
+  },
+  {
+    "name": "Deep focus",
+    "category": "Supportive",
+    "cost": "Four",
+    "location": "Crystal peak",
+    "obtained": "Founded",
+    "icon": "img/Focus.webp"
+  },
+  {
+    "name": "Lifeblood heart",
+    "category": "Defensive",
+    "cost": "Two",
+    "location": "Forgotten crossroads",
+    "obtained": "Buyed",
+    "icon": "img/Blood.webp"
+  },
+  {
+    "name": "Lifeblood core",
+    "category": "Defensive",
+    "cost": "Three",
+    "location": "The abyss",
+    "obtained": "Founded",
+    "icon": "img/Blood1.webp"
+  },
+   {
+    "name": "Joni's blessing",
+    "category": "Defensive",
+    "cost": "Four",
+    "location": "Howling cliffs",
+    "obtained": "Founded",
+    "icon": "img/Blood2.webp"
+  },
+   {
+    "name": "Hiveblood",
+    "category": "Defensive",
+    "cost": "Four",
+    "location": "The hive",
+    "obtained": "Founded",
+    "icon": "img/Hiveblood.webp"
+  },
+   {
+    "name": "Spore Shroom",
+    "category": "Offensive",
+    "cost": "One",
+    "location": "Fungal wastes",
+    "obtained": "Founded",
+    "icon": "img/Spore Shroom.webp"
+  },
+   {
+    "name": "Sharp Shadow",
+    "category": "Offensive",
+    "cost": "Two",
+    "location": "Deepnest",
+    "obtained": "Founded",
+    "icon": "img/Sharp Shadow.webp"
+  },
+  {
+    "name": "Shape of Unn",
+    "category": "Defensive",
+    "cost": "Two",
+    "location": "Greenpath",
+    "obtained": "Founded",
+    "icon": "img/Shape of Unn.webp"
+  },
+  {
+    "name": "Nailmaster's Glory",
+    "category": "Offensive",
+    "cost": "One",
+    "location": "Dirthmouth",
+    "obtained": "Obtained",
+    "icon": "img/Nailmaster's Glory.webp"
+  },
+  {
+    "name": "Weaversong",
+    "category": "Offensive",
+    "cost": "Two",
+    "location": "Deepnest",
+    "obtained": "Founded",
+    "icon": "img/Weaversong.webp"
+  },
+  {
+    "name": "Dream Wielder",
+    "category": "Supportive",
+    "cost": "One",
+    "location": "Resting grounds",
+    "obtained": "Founded",
+    "icon": "img/Dream Wielder.webp"
+  },
+  {
+    "name": "Dreamshield",
+    "category": "Defensive, Offensive",
+    "cost": "Three",
+    "location": "Resting grounds",
+    "obtained": "Founded",
+    "icon": "img/Dreamshield.webp"
+  },
+  {
+    "name": "Grimmchild",
+    "category": "Offensive",
+    "cost": "Two",
+    "location": "Dirthmouth",
+    "obtained": "Obtained",
+    "icon": "img/Grimmchild.webp"
+  }
+]

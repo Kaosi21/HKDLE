@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guess the Character - Hollow Knight</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Guess the Character - Hollow Knight</h1>
+
+<div class="autocomplete-wrapper">
+  <input
+    type="text"
+    id="guess"
+    placeholder="Type a Hollow Knight character..."
+    oninput="showSuggestions()"
+    autocomplete="off"
+  />
+  <div id="suggestions" class="suggestions-list"></div>
+</div>
+
+<div style="text-align:center;">
+  <button onclick="checkGuess()">Submit</button>
+</div>
+<div style="text-align:center; margin-top: 10px;">
+  <button id="btn-regione" onclick="usaRegione()" class="bloccato">Show region (<span id="contatore-regione">4</span>)</button>
+  <button id="btn-blur" onclick="usaBlur()" class="bloccato">Blurred image (<span id="contatore-blur">8</span>)</button>
+</div>
+
+<div id="blurred-image-container" style="display:none; text-align:center; margin: 20px auto;">
+  <img id="blurred-image" src="" style="filter: blur(8px); width: 150px; margin: 10px auto; display: block;">
+</div>
+<div id="help-message" style="text-align: center; margin-top: 20px; font-weight: bold; color: #f1c40f;"></div>
+<table id="feedback">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Region</th>
+      <th>Alignment</th>
+      <th>Species</th>
+      <th>Weapon</th>
+      <th>Gameplay</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<div id="win-screen">
+  <h2>You guessed it!</h2>
+  <h2>The character was:</h2>
+  <img id="win-image" class="winner-img" src="" alt="Winner" />
+  <button onclick="location.reload()">Gioca di nuovo</button>
+</div>
+
+<script>
+  let characters = [];
+  let target = null;
+  let tentativi = 0;
+  const usedCharacters = [];
+  let aiutoRegioneUsato = false;
+  let aiutoBlurUsato = false;
+
+
+  // Carica i personaggi da file JSON esterno
+  async function caricaPersonaggi() {
+    try {
+      const response = await fetch("personaggi.json");
+      characters = await response.json();
+
+      // Scegli un target casuale dopo caricamento
+      target = characters[Math.floor(Math.random() * characters.length)];
+      console.log("Target scelto:", target.name);
+    } catch (error) {
+      console.error("Errore caricamento personaggi:", error);
+      alert("Errore nel caricamento dei personaggi. Ricarica la pagina.");
+    }
+  }
+
+  function getClass(guessVal, targetVal) {
+    const normalize = (str) =>
+      str.toLowerCase().split(",").map((s) => s.trim());
+    const guessList = normalize(guessVal);
+    const targetList = normalize(targetVal);
+    const intersection = guessList.filter((val) => targetList.includes(val));
+    if (
+      guessList.length === targetList.length &&
+      intersection.length === guessList.length
+    ) {
+      return "match";
+    } else if (intersection.length > 0) {
+      return "partial";
+    } else {
+      return "wrong";
+    }
+  }
+
+  function showSuggestions() {
+    const input = document.getElementById("guess").value.toLowerCase();
+    const suggestionsDiv = document.getElementById("suggestions");
+    suggestionsDiv.innerHTML = "";
+
+    if (input.length === 0) {
+      suggestionsDiv.style.display = "none";
+      return;
+    }
+
+    const filtered = characters
+      .filter((c) => !usedCharacters.includes(c.name.toLowerCase()))
+      .filter((c) => c.name.toLowerCase().startsWith(input));
+
+    filtered.slice(0, 5).forEach((char) => {
+    console.log("Link immagine:", char.photo);
+    console.log("Link immagine:", char.photo);
+    const item = document.createElement("div");
+    item.className = "suggestion-item";
+    item.innerHTML = `
+    <img src="${char.photo}" alt="${char.name}" onerror="this.src='img/default.png'">
+    <span>${char.name}</span>`;
+    item.onclick = () => {
+    document.getElementById("guess").value = char.name;
+    suggestionsDiv.innerHTML = "";
+    suggestionsDiv.style.display = "none";
+  };
+    suggestionsDiv.appendChild(item);
+});
+
+
+    suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
+  }
+
+  function checkGuess() {
+  const guessInput = document.getElementById("guess").value.toLowerCase();
+  const guessedCharacter = characters.find(
+    (c) => c.name.toLowerCase() === guessInput
+  );
+  if (!guessedCharacter) {
+    alert("Personaggio non trovato");
+    return;
+  }
+
+  if (usedCharacters.includes(guessedCharacter.name.toLowerCase())) {
+    alert("Hai già provato questo personaggio!");
+    return;
+  }
+
+  usedCharacters.push(guessedCharacter.name.toLowerCase());
+  tentativi++;
+
+  // Aggiorna contatori aiuto
+  aggiornaStatoAiuti();
+
+  // --- resto del codice per il feedback come prima ---
+  const feedbackBody = document.querySelector("#feedback tbody");
+  const row = document.createElement("tr");
+  row.classList.add("fade-slide-row");
+
+  const imgCell = document.createElement("td");
+  imgCell.innerHTML = `<img class="character-img" src="${guessedCharacter.photo}" alt="${guessedCharacter.name}" onerror="this.src='img/default.png'">`;
+  row.appendChild(imgCell);
+
+  const fields = ["name", "region", "alignment", "species", "weapon", "gameplay", "gender"];
+  fields.forEach((attr) => {
+    const cell = document.createElement("td");
+    const className = getClass(guessedCharacter[attr], target[attr]);
+    cell.className = className;
+    cell.textContent = guessedCharacter[attr];
+    row.appendChild(cell);
+  });
+
+  feedbackBody.appendChild(row);
+
+  if (guessedCharacter.name.toLowerCase() === target.name.toLowerCase()) {
+    document.getElementById("win-screen").classList.add("active");
+    document.getElementById("win-image").src = guessedCharacter.photo;
+    createParticles();
+  }
+
+  document.getElementById("guess").value = "";
+}
+
+function aggiornaStatoAiuti() {
+  // Regione
+  const btnRegione = document.getElementById("btn-regione");
+  const contatoreRegione = document.getElementById("contatore-regione");
+  if (!aiutoRegioneUsato) {
+    const rimanenti = Math.max(0, 4 - tentativi);
+    contatoreRegione.textContent = rimanenti;
+    if (tentativi >= 4) {
+      btnRegione.classList.remove("bloccato");
+      btnRegione.classList.add("attivo");
+    }
+  }
+
+  // Blur
+  const btnBlur = document.getElementById("btn-blur");
+  const contatoreBlur = document.getElementById("contatore-blur");
+  if (!aiutoBlurUsato) {
+    const rimanenti = Math.max(0, 8 - tentativi);
+    contatoreBlur.textContent = rimanenti;
+    if (tentativi >= 8) {
+      btnBlur.classList.remove("bloccato");
+      btnBlur.classList.add("attivo");
+    }
+  }
+}
+
+function usaRegione() {
+  if (tentativi < 4 || aiutoRegioneUsato) return;
+  mostraRegione(); // tua funzione esistente
+  aiutoRegioneUsato = true;
+  const btn = document.getElementById("btn-regione");
+  btn.classList.remove("attivo");
+  btn.classList.add("usato");
+  btn.disabled = true;
+}
+
+function usaBlur() {
+  if (tentativi < 8 || aiutoBlurUsato) return;
+  mostraImmagineSfocata(); // tua funzione esistente
+  aiutoBlurUsato = true;
+  const btn = document.getElementById("btn-blur");
+  btn.classList.remove("attivo");
+  btn.classList.add("usato");
+  btn.disabled = true;
+}
+
+  function createParticles() {
+    const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
+    const numParticles = 80;
+
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      particle.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+
+      const x = (Math.random() - 0.5) * 300 + "px";
+      const y = (Math.random() - 0.5) * 300 + "px";
+      particle.style.setProperty("--x", x);
+      particle.style.setProperty("--y", y);
+
+      particle.style.left = "50%";
+      particle.style.top = "50%";
+
+      document.body.appendChild(particle);
+
+      setTimeout(() => {
+        particle.remove();
+      }, 1000);
+    }
+  }
+     function mostraRegione() {
+  const helpDiv = document.getElementById("help-message");
+  helpDiv.textContent = "The region is: " + target.region;
+}
+
+    function mostraImmagineSfocata() {
+  const container = document.getElementById("blurred-image-container");
+  const img = document.getElementById("blurred-image");
+  img.src = target.photo;
+  container.style.display = "block";
+}
+
+
+
+  // Quando la pagina è pronta, carica i personaggi
+  window.addEventListener("DOMContentLoaded", caricaPersonaggi);
+</script>
+
+</body>
+</html>
