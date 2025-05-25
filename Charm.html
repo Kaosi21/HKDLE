@@ -221,7 +221,7 @@
         .filter(c => !usedCharms.includes(c.name.toLowerCase()))
         .filter(c => c.name.toLowerCase().startsWith(input));
 
-      filtered.slice(0, 5).forEach(char => {
+      filtered.forEach(char => {
         const item = document.createElement("div");
         item.className = "suggestion-item";
         item.innerHTML = `<img src="${char.icon}" alt="${char.name}" onerror="this.src='img/default.png'"> <span>${char.name}</span>`;

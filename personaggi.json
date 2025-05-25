@@ -4,17 +4,17 @@
     "region": "The abyss",
     "alignment": "Good",
     "species": "Void creature, Vessel",
-    "weapon": "Nail, Shadow, Cloak, Crystal",
+    "weapon": "Nail, Shadow, Cloak, Crystal, Great slash, Dash slash, Cyclone slash",
     "gameplay": "Main character",
     "gender": "Unknown",
     "photo": "img/Knight.webp"
   },
   {
     "name": "Hornet",
-    "region": "Greenpath, City of tears, Kingdom's edge, The abyss, Deepnest, Forgotten crossroads",
+    "region": "Greenpath, City of Tears, Kingdom's edge, The abyss, Deepnest, Forgotten crossroads",
     "alignment": "Neutral",
     "species": "Void creature, Spider",
-    "weapon": "Nail, String",
+    "weapon": "Nail, String, Spikes",
     "gameplay": "Boss, NPC",
     "gender": "Female",
     "photo": "img/Hornet.webp"
@@ -31,7 +31,7 @@
   },
   {
     "name": "Quirrel",
-    "region": "Forgotten crossroads, Greenpath, Fungal wastes, City of tears, Deepnest, Crystal peak, Fog canyon, Resting grounds",
+    "region": "Forgotten Crossroads, Greenpath, Fungal Wastes, City of Tears, Deepnest, Crystal Peak, Fog Canyon, Resting Grounds",
     "alignment": "Good",
     "species": "Bug",
     "weapon": "Nail",
@@ -51,7 +51,7 @@
   },
   {
     "name": "Zote the mighty",
-    "region": "Greenpath, Dirthmouth, City of tears, Deepnest, Kingdom's edge",
+    "region": "Greenpath, Dirthmouth, City of Tears, Deepnest, Kingdom's Edge",
     "alignment": "Neutral",
     "species": "Bug",
     "weapon": "Nail, Minions",
@@ -66,7 +66,7 @@
     "species": "Maggot",
     "weapon": "Pure strenght, Hammer",
     "gameplay": "Boss",
-    "gender": "Male",
+    "gender": "Unknown",
     "photo": "img/Falseknight.webp"
   },
   {
@@ -177,7 +177,7 @@
     "weapon": "Nail",
     "gameplay": "Boss",
     "gender": "Female",
-    "photo": "img/Sisters.webp"
+    "photo": "img/Battle.webp"
   },
   {
     "name": "Mantis Lords",
@@ -241,7 +241,7 @@
   },
   {
     "name": "Grub",
-    "region": "kingdom's edge, city of tears, forgotten crossroads, greenpath, fungal wastes, crystal peak, deepnest, queen's gardens, ancient basin, royal waterways, resting grounds, howling cliffs, fog canyon, the hive",
+    "region": "kingdom's Edge, city of Tears, forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive",
     "alignment": "Good",
     "species": "Grub",
     "weapon": "Non combattant",
@@ -281,7 +281,7 @@
   },
   {
     "name": "Cornifer",
-    "region": "Kingdom's edge, City of tears, Forgotten crossroads, Greenpath, Fungal wastes, Crystal peak, Deepnest, Queen's gardens, Ancient basin, Royal waterways, Resting grounds, Howling cliffs, Fog canyon, The hive, Dirthmouth ",
+    "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive, Dirthmouth ",
     "alignment": "Good",
     "species": "Snail",
     "weapon": "Non combattant",
@@ -510,28 +510,28 @@
     "photo": "img/Gruzmother.webp"
   },
   {
-    "name": "Gruzzer",
-    "region": "Forgotten Crossroads",
+    "name": "God Tamer",
+    "region": "Kingdom's Edge",
     "alignment": "Hostile",
     "species": "Bug",
-    "weapon": "Flight",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/gruzzer.webp"
+    "weapon": "Infection, Pure strenght",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "img/Tamer.webp"
   },
   {
-    "name": "Vengefly",
-    "region": "Forgotten Crossroads, Greenpath, Howling cliffs, Resting grounds, City of tears",
+    "name": "Massive Moss Charger",
+    "region": "Greenpath",
     "alignment": "Hostile",
     "species": "Bug",
-    "weapon": "Flight",
+    "weapon": "Pure strenght",
     "gameplay": "Normal enemy",
     "gender": "Unknown",
-    "photo": "img/Vengefly.webp"
+    "photo": "img/Moss.webp"
   },
   {
-    "name": "Vengefly king",
-    "region": "Greenpath, Godhome, Kindom's edge",
+    "name": "Vengefly King",
+    "region": "Greenpath, Kindom's edge",
     "alignment": "Hostile",
     "species": "Bug",
     "weapon": "Flight",
@@ -540,54 +540,54 @@
     "photo": "img/Vengking.webp"
   },
   {
-    "name": "Goam",
-    "region": "Forgotten Crossroads, Deepnest",
-    "alignment": "Hostile",
-    "species": "Worm",
-    "weapon": "Pure strenght",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/Goam.webp"
-  },
-  {
-    "name": "Aspid Hunter",
-    "region": "Ancient Basin, Forgotten crossroads",
+    "name": "Soul Master",
+    "region": "City of Tears",
     "alignment": "Hostile",
     "species": "Bug",
-    "weapon": "Infection, Flight",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/AspidHunter.webp"
+    "weapon": "Infection, Teleport, Spirits",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Soulmaster.webp"
   },
   {
-    "name": "Primal Aspid",
-    "region": "Kingdom's Edge",
+    "name": "Soul Warrior",
+    "region": "City of tears, Kingdom's edge",
     "alignment": "Hostile",
     "species": "Bug",
-    "weapon": "Infection, Flight",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/Paspid.webp"
+    "weapon": "Teleport, Spirits, Nail, Minions",
+    "gameplay": "Bug",
+    "gender": "Male",
+    "photo": "img/Soul1.webp"
   },
   {
-    "name": "Husk Hornhead",
-    "region": "Forgotten Crossroads, City of tears, Fungal wastes, Greenpath, Howling cliffs, Deepnest",
+    "name": "Watcher Knight",
+    "region": "City of Tears",
     "alignment": "Hostile",
     "species": "Bug",
-    "weapon": "Horn",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/HuskHornhead.webp"
+    "weapon": "Nail",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Watcher.webp"
   },
   {
-    "name": "Leaping Husk",
-    "region": "Forgotten Crossroads, Greenpath, City of tears, Howling cliffs",
+    "name": "Absolute Radiance",
+    "region": "Godhome",
     "alignment": "Hostile",
-    "species": "Bug",
-    "weapon": "Pure strenght",
-    "gameplay": "Normal enemy",
+    "species": "Higher being",
+    "weapon": "Light, Mental control, Teleport",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "img/Radiance1.webp"
+  },
+  {
+    "name": "Lost Kin",
+    "region": "Dream realm",
+    "alignment": "Hostile",
+    "species": "Void creature, Vessel",
+    "weapon": "Nail, Infection, Minions",
+    "gameplay": "Boss",
     "gender": "Unknown",
-    "photo": "img/LeapingHusk.webp"
+    "photo": "img/LostKin.webp"
   },
   {
     "name": "Mawlek",
@@ -595,68 +595,128 @@
     "alignment": "Hostile",
     "species": "Construct",
     "weapon": "Claws, Infection",
-    "gameplay": "Boss, Normal enemy",
+    "gameplay": "Boss",
     "gender": "Unknown",
     "photo": "img/Mawlek.webp"
   },
   {
-    "name": "Mosscreep",
+    "name": "Pure Vessel",
+    "region": "Godhome",
+    "alignment": "Hostile",
+    "species": "Void creature, Vessel",
+    "weapon": "Nail, Light, Shadow, Cloak",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Pure.webp"
+  },
+  {
+    "name": "Soul Tyrant",
+    "region": "Dream realm",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Infection, Teleport, Spirits",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "img/Soul2.webp"
+  },
+  {
+    "name": "The hunter",
     "region": "Greenpath",
-    "alignment": "Hostile",
+    "alignment": "Good",
     "species": "Bug",
-    "weapon": "Pure strenght",
-    "gameplay": "Normal enemy",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
     "gender": "Unknown",
-    "photo": "img/Mosscreep.webp"
+    "photo": "img/Hunter.webp"
   },
   {
-    "name": "Mantis Warrior",
-    "region": "Fungal Wastes",
-    "alignment": "Hostile",
-    "species": "Mantis",
-    "weapon": "Nail",
-    "gameplay": "Normal enemy",
+    "name": "Leg Eater",
+    "region": "Greenpath",
+    "alignment": "Good",
+    "species": "Cicada",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
     "gender": "Unknown",
-    "photo": "img/Mantiswarrior.webp"
+    "photo": "img/Leg1.webp"
   },
   {
-    "name": "Mantis Youth",
-    "region": "Fungal Wastes",
-    "alignment": "Hostile",
-    "species": "Mantis",
-    "weapon": "Nail, Flight",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/MantisYouth.webp"
-  },
-  {
-    "name": "Mantis Petra",
+    "name": "Iselda",
     "region": "Queen's Gardens",
-    "alignment": "Hostile",
-    "species": "Mantis",
-    "weapon": "Boomerang, Flight",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/MantisPetra.webp"
+    "alignment": "Good",
+    "species": "Snail",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Iselda.webp"
   },
   {
-    "name": "Mantis Traitor",
-    "region": "Queen's Gardens",
-    "alignment": "Hostile",
-    "species": "Mantis",
-    "weapon": "Nail",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/MantisTraitor.webp"
+    "name": "Jiji",
+    "region": "Dirtmouth",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Jiji.webp"
   },
   {
-    "name": "Gluttonous Husk",
+    "name": "Iselda",
+    "region": "Dirtmouth",
+    "alignment": "Good",
+    "species": "Snail",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Iselda.webp"
+  },
+  {
+    "name": "Little Fool",
+    "region": "Kingdom's Edge",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Fool.webp"
+  },
+  {
+    "name": "Lemm",
     "region": "City of Tears",
-    "alignment": "Hostile",
+    "alignment": "Good",
     "species": "Bug",
-    "weapon": "Pure strenght",
-    "gameplay": "Normal enemy",
-    "gender": "Unknown",
-    "photo": "img/GluttonousHusk.webp"
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Lemm.webp"
+  },
+  {
+    "name": "Iselda",
+    "region": "Queen's Gardens",
+    "alignment": "Good",
+    "species": "Snail",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Iselda.webp"
+  },
+  {
+    "name": "Iselda",
+    "region": "Queen's Gardens",
+    "alignment": "Good",
+    "species": "Snail",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Iselda.webp"
+  },
+  {
+    "name": "Iselda",
+    "region": "Queen's Gardens",
+    "alignment": "Good",
+    "species": "Snail",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Iselda.webp"
   }
 ]
