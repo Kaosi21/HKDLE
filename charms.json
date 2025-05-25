@@ -93,7 +93,7 @@
     "cost": "Three",
     "location": "Fungal wastes",
     "obtained": "Buyed",
-    "icon": "img/Strenght.webp"
+    "icon": "img/S1.webp"
   },
   {
     "name": "Spell twister",
@@ -165,7 +165,7 @@
     "cost": "Two",
     "location": "Howling cliffs",
     "obtained": "Founded",
-    "icon": "img/Baldur.webp"
+    "icon": "img/B1.webp"
   },
   {
     "name": "Flukenest",

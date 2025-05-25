@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guess the Charm - Hollow Knight</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .suggestions-list {
+      position: absolute;
+      width: 60%;
+      margin: 0 auto;
+      background-color: #333;
+      border-radius: 5px;
+      text-align: left;
+      display: none;
+    }
+
+    .suggestion-item {
+      padding: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .suggestion-item:hover {
+      background-color: #555;
+    }
+
+    .suggestion-item img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .match {
+      background-color: #2ecc71; /* green */
+      color: black;
+    }
+
+    .partial {
+      background-color: #f1c40f; /* yellow */
+      color: black;
+    }
+
+    .wrong {
+      background-color: #e74c3c; /* red */
+      color: white;
+    }
+
+    table, th, td {
+      border: 1px solid white;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+
+    .autocomplete-wrapper input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      width: 60%;
+    }
+
+    #win-screen {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* semitrasparente */
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+#win-screen.active {
+  display: flex;
+}
+
+
+    #win-image {
+      width: 120px;
+      margin: 10px;
+    }
+
+    #attempts-counter {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Guess the Charm - Hollow Knight</h1>
+  <p id="attempts-counter">Attempts: 0</p>
+
+  <div class="autocomplete-wrapper">
+    <input type="text" id="guess" placeholder="Type a charm..." oninput="showSuggestions()" autocomplete="off" />
+    <div id="suggestions" class="suggestions-list"></div>
+  </div>
+  <button onclick="checkGuess()">Submit</button>
+
+  <table id="feedback">
+    <thead>
+      <tr>
+        <th>Icon</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Cost</th>
+        <th>Location</th>
+        <th>Obtained</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div id="win-screen" class="win-screen">
+    <h2>You guessed it!</h2>
+    <h2>The charm was:</h2>
+    <img id="win-image" src="" alt="Winner" />
+    <button onclick="location.reload()">Play Again</button>
+  </div>
+
+  <script>
+    let charms = [];
+    let target = null;
+    let usedCharms = [];
+    let attemptCount = 0;
+
+    async function loadCharms() {
+      const response = await fetch("charms.json");
+      charms = await response.json();
+      target = charms[Math.floor(Math.random() * charms.length)];
+    }
+
+    function normalize(str) {
+      return str.toLowerCase().split(",").map(s => s.trim());
+    }
+
+    function getClass(guessVal, targetVal) {
+      const guessList = normalize(guessVal);
+      const targetList = normalize(targetVal);
+      const intersection = guessList.filter(val => targetList.includes(val));
+      if (guessList.length === targetList.length && intersection.length === guessList.length) return "match";
+      if (intersection.length > 0) return "partial";
+      return "wrong";
+    }
+
+    function compareCost(guessCost, targetCost) {
+      const costMap = {
+        "one": 1,
+        "two": 2,
+        "three": 3,
+        "four": 4,
+        "five": 5
+      };
+
+      const guessNum = costMap[guessCost.toLowerCase()] || 0;
+      const targetNum = costMap[targetCost.toLowerCase()] || 0;
+
+      if (guessNum === targetNum) {
+        return { className: "match", label: guessCost };
+      } else if (guessNum > targetNum) {
+        return { className: "wrong", label: `${guessCost} 🔽` };
+      } else {
+        return { className: "wrong", label: `${guessCost} 🔼` };
+      }
+    }
+    function createParticles() {
+  const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
+  const numParticles = 80;
+
+  for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement("div");
+        particle.style.position = "fixed";
+        particle.style.width = "10px";
+        particle.style.height = "10px";
+        particle.style.borderRadius = "50%";
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.left = "50%";
+        particle.style.top = "50%";
+        particle.style.pointerEvents = "none";
+        particle.style.zIndex = "9999";
+
+        const x = (Math.random() - 0.5) * 300;
+        const y = (Math.random() - 0.5) * 300;
+         const animation = particle.animate([
+          { transform: "translate(0, 0)", opacity: 1 },
+          { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+         ], {
+        duration: 1000,
+        easing: "ease-out"
+        });
+
+        animation.onfinish = () => particle.remove();
+        document.body.appendChild(particle);
+    }
+    }
+
+    function showSuggestions() {
+      const input = document.getElementById("guess").value.toLowerCase();
+      const suggestionsDiv = document.getElementById("suggestions");
+      suggestionsDiv.innerHTML = "";
+
+      if (input.length === 0) {
+        suggestionsDiv.style.display = "none";
+        return;
+      }
+
+      const filtered = charms
+        .filter(c => !usedCharms.includes(c.name.toLowerCase()))
+        .filter(c => c.name.toLowerCase().startsWith(input));
+
+      filtered.slice(0, 5).forEach(char => {
+        const item = document.createElement("div");
+        item.className = "suggestion-item";
+        item.innerHTML = `<img src="${char.icon}" alt="${char.name}" onerror="this.src='img/default.png'"> <span>${char.name}</span>`;
+        item.onclick = () => {
+          document.getElementById("guess").value = char.name;
+          suggestionsDiv.innerHTML = "";
+          suggestionsDiv.style.display = "none";
+        };
+        suggestionsDiv.appendChild(item);
+      });
+
+      suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
+    }
+
+    function checkGuess() {
+      const input = document.getElementById("guess").value.toLowerCase();
+      const guessedCharm = charms.find(c => c.name.toLowerCase() === input);
+      const feedbackBody = document.querySelector("#feedback tbody");
+
+      if (!guessedCharm) {
+        alert("Charm not found.");
+        return;
+      }
+
+      if (usedCharms.includes(guessedCharm.name.toLowerCase())) {
+        alert("You already guessed that!");
+        return;
+      }
+
+      usedCharms.push(guessedCharm.name.toLowerCase());
+      attemptCount++;
+      document.getElementById("attempts-counter").textContent = `Attempts: ${attemptCount}`;
+
+      const costCompare = compareCost(guessedCharm.cost, target.cost);
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td><img src="${guessedCharm.icon}" width="40" /></td>
+        <td class="${getClass(guessedCharm.name, target.name)}">${guessedCharm.name}</td>
+        <td class="${getClass(guessedCharm.category, target.category)}">${guessedCharm.category}</td>
+        <td class="${costCompare.className}">${costCompare.label}</td>
+        <td class="${getClass(guessedCharm.location, target.location)}">${guessedCharm.location}</td>
+        <td class="${getClass(guessedCharm.obtained, target.obtained)}">${guessedCharm.obtained}</td>
+      `;
+      feedbackBody.appendChild(row);
+
+      if (guessedCharm.name.toLowerCase() === target.name.toLowerCase()) {
+  document.getElementById("win-screen").classList.add("active");
+  document.getElementById("win-image").src = target.icon;
+  createParticles();
+}
+
+
+      document.getElementById("guess").value = "";
+    }
+
+    window.addEventListener("DOMContentLoaded", loadCharms);
+  </script>
+</body>
+</html>

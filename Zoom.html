@@ -163,12 +163,10 @@
 </div>
 
   </div>
-
-
   <script>
     let characters = [];
     let target = null;
-    let zoomLevel = 12;
+    let zoomLevel = 10;
     let usedCharacters = [];
     let attemptCount = 0;
 
@@ -178,7 +176,6 @@
         characters = await response.json();
         target = characters[Math.floor(Math.random() * characters.length)];
         document.getElementById("zoom-img").src = target.photo;
-        console.log("Target character:", target.name);
       } catch (error) {
         console.error("Error loading characters:", error);
         alert("Failed to load characters.");
@@ -199,7 +196,7 @@
         .filter(c => !usedCharacters.includes(c.name.toLowerCase()))
         .filter(c => c.name.toLowerCase().startsWith(input));
 
-      filtered.slice(0, 5).forEach(char => {
+      filtered.forEach(char => {
         const item = document.createElement("div");
         item.className = "suggestion-item";
         item.innerHTML = `<img src="${char.photo}" alt="${char.name}" onerror="this.src='img/default.png'"> <span>${char.name}</span>`;
@@ -239,7 +236,7 @@
 
       } else {
         if (zoomLevel > 1.5) {
-          zoomLevel -= 0.5;
+          zoomLevel -= 0.8;
           document.getElementById("zoom-img").style.transform = `scale(${zoomLevel})`;
           message.textContent = "Wrong! Zooming out a bit...";
         } else {

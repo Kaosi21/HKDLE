@@ -5,89 +5,101 @@
   <title>Hollowdle Main Page</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: url('img/Sfondo.webp') no-repeat center center fixed;
       background-size: cover;
-      color: white;
-      margin: 0;
-      padding: 20px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       min-height: 100vh;
+      color: white;
     }
-    main {
-      flex: 1;
-      max-width: 600px;
-      margin: auto;
+
+    .container {
       background: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      padding: 20px;
-      height: 400px;       /* altezza fissa di 500px */
-      overflow-y: auto;
-    }
-    h1 {
+      backdrop-filter: blur(8px);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      max-width: 400px;
+      width: 90%;
       text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .game-btn {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 16px 24px;
+      margin: 20px 0 8px 0;
+      font-size: 18px;
+      border-radius: 10px;
+      width: 100%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-btn:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+    }
+
+    .description {
+      font-size: 0.9em;
+      color: #ccc;
       margin-bottom: 20px;
     }
-    ul {
-      line-height: 1.6;
-    }
+
     footer {
       text-align: center;
-      font-size: 0.8em;
-      margin-top: 20px;
+      font-size: 0.75em;
       color: #ccc;
+      margin-top: 20px;
+      max-width: 600px;
+      padding: 10px;
     }
-    button {
-      display: block;
-      margin: 30px auto 0 auto;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #45a049;
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 24px;
+      }
+      .game-btn {
+        font-size: 16px;
+        padding: 14px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Hollowdle Main Page</h1>
-    <h2>Character challenge</h2>
-    <p>This game challenges you to guess a Hollow Knight character based on this attributes:</p>
-    <ul>
-      <li><strong>Name:</strong> The character's name.</li>
-      <li><strong>Region:</strong> The area or kingdom where the character is found.</li>
-      <li><strong>Alignment:</strong> Good = You can only talk with him , Neutral = You can both talk and fight, Hostile = You can only fight him.</li>
-      <li><strong>Species:</strong> The species or race of the character.</li>
-      <li><strong>Weapon:</strong> The weapon/abilities the character uses.</li>
-      <li><strong>Gameplay:</strong> NPC , Boss , Normal enemy.</li>
-      <li><strong>Gender:</strong> The character's gender.</li>
-    </ul>
-    <button onclick="location.href='Game.html'">Start the Guess Game</button>
-    <h2>Charms challenge</h2>
-    <p>This game challenges you to guess a Hollow Knight charm based on this attributes:</p>
-    <ul>
-      <li><strong>Name:</strong> The charm's name.</li>
-      <li><strong>Category:</strong> Offensive = do some damage, Defensive = defend/heal you, Supportive = makes more efficient something.</li>
-      <li><strong>Location:</strong> The area or kingdom where the charm is found.</li>
-      <li><strong>Cost:</strong> The cost of the charm.</li>
-      <li><strong>Obtained:</strong> If the charm is buyed, gifted or obtained.</li>
-    </ul>
-    <button onclick="location.href='Charm.html'">Start the Charm Game</button>
-    <h2>Zoomed challenge</h2>
-    <p>You have to recognize the character based on his zoomed image, every error makes the image less zoomed</p>
-    <button onclick="location.href='Zoom.html'">Start the Zoom Game</button>
-    <h3>If you notice any mistakes or inaccuracies in the attribute descriptions, please feel free to suggest corrections.</h3>
-  </main>
+
+  <div class="container">
+    <h1>HOLLOWDLE MAIN PAGE</h1>
+
+    <button class="game-btn" onclick="location.href='Game.html'">🎯 Character Challenge</button>
+    <div class="description">Guess the character by comparing attributes.</div>
+
+    <button class="game-btn" onclick="location.href='Charm.html'">🔮 Charm Challenge</button>
+    <div class="description">Guess the charm by cost, category, and location.</div>
+
+    <button class="game-btn" onclick="location.href='Zoom.html'">🔍 Zoomed Challenge</button>
+    <div class="description">Identify characters from zoomed-in images.</div>
+
+    <button class="game-btn" onclick="location.href='Help.html'">❓ Need help?</button>
+    <div class="description">Mean of the attributes and to contact me.</div>
+  </div>
 
   <footer>
-    <p><strong>Disclaimer:</strong> This game is a fan project not affiliated with Team Cherry or Hollow Knight. Images and character data are used for entertainment purpose only.</p>
+    <p><strong>Disclaimer:</strong> This fan-made game is not affiliated with Team Cherry or Hollow Knight. All content is used for entertainment purposes only.</p>
   </footer>
 </body>
 </html>

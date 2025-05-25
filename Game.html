@@ -63,21 +63,19 @@
   let aiutoRegioneUsato = false;
   let aiutoBlurUsato = false;
 
-
-  // Carica i personaggi da file JSON esterno
   async function caricaPersonaggi() {
-    try {
-      const response = await fetch("personaggi.json");
-      characters = await response.json();
+  try {
+    const response = await fetch("personaggi.json");
+    characters = await response.json();
 
-      // Scegli un target casuale dopo caricamento
-      target = characters[Math.floor(Math.random() * characters.length)];
-      console.log("Target scelto:", target.name);
-    } catch (error) {
-      console.error("Errore caricamento personaggi:", error);
-      alert("Errore nel caricamento dei personaggi. Ricarica la pagina.");
-    }
+    target = characters[Math.floor(Math.random() * characters.length)];
+    console.log("Target selezionato:", target); // 👈 ECCO IL LOG
+
+  } catch (error) {
+    console.error("Errore caricamento personaggi:", error);
+    alert("Errore nel caricamento dei personaggi. Ricarica la pagina.");
   }
+}
 
   function getClass(guessVal, targetVal) {
     const normalize = (str) =>
@@ -111,9 +109,7 @@
       .filter((c) => !usedCharacters.includes(c.name.toLowerCase()))
       .filter((c) => c.name.toLowerCase().startsWith(input));
 
-    filtered.slice(0, 5).forEach((char) => {
-    console.log("Link immagine:", char.photo);
-    console.log("Link immagine:", char.photo);
+    filtered.forEach((char) => {
     const item = document.createElement("div");
     item.className = "suggestion-item";
     item.innerHTML = `
@@ -162,13 +158,25 @@
   row.appendChild(imgCell);
 
   const fields = ["name", "region", "alignment", "species", "weapon", "gameplay", "gender"];
-  fields.forEach((attr) => {
-    const cell = document.createElement("td");
-    const className = getClass(guessedCharacter[attr], target[attr]);
-    cell.className = className;
+fields.forEach((attr) => {
+  const cell = document.createElement("td");
+  const className = getClass(guessedCharacter[attr], target[attr]);
+  cell.className = className;
+
+  if (attr === "region") {
+    const guessRegions = guessedCharacter.region.toLowerCase().split(",").map(r => r.trim());
+    const targetRegions = target.region.toLowerCase().split(",").map(r => r.trim());
+    const comuni = guessRegions.filter(r => targetRegions.includes(r));
+    const count = comuni.length;
+
+    cell.textContent = `${guessedCharacter[attr]} (${count})`;
+  } else {
     cell.textContent = guessedCharacter[attr];
-    row.appendChild(cell);
-  });
+  }
+
+  row.appendChild(cell);
+});
+
 
   feedbackBody.appendChild(row);
 
@@ -263,12 +271,7 @@ function usaBlur() {
   img.src = target.photo;
   container.style.display = "block";
 }
-
-
-
-  // Quando la pagina è pronta, carica i personaggi
-  window.addEventListener("DOMContentLoaded", caricaPersonaggi);
+window.addEventListener("DOMContentLoaded", caricaPersonaggi);
 </script>
-
 </body>
 </html>

@@ -260,154 +260,403 @@
     "photo": "img/Grubfather.webp"
   },
   {
-  "name": "Xero",
-  "region": "Resting Grounds",
-  "alignment": "Neutral",
-  "species": "Ghost",
-  "weapon": "Nail, Mental control",
-  "gameplay": "Boss",
-  "gender": "Male",
-  "photo": "img/Xero.webp"
-},
-{
-  "name": "No Eyes",
-  "region": "Greenpath",
-  "alignment": "Neutral",
-  "species": "Ghost",
-  "weapon": "Spirits",
-  "gameplay": "Boss",
-  "gender": "Female",
-  "photo": "img/Eyes.webp"
-},
-{
-  "name": "Cornifer",
-  "region": "Kingdom's edge, City of tears, Forgotten crossroads, Greenpath, Fungal wastes, Crystal peak, Deepnest, Queen's gardens, Ancient basin, Royal waterways, Resting grounds, Howling cliffs, Fog canyon, The hive, Dirthmouth ",
-  "alignment": "Good",
-  "species": "Snail",
-  "weapon": "Non combattant",
-  "gameplay": "NPC",
-  "gender": "Male",
-  "photo": "img/Cornifer.webp"
-},
-{
-  "name": "Markoth",
-  "region": "Kingdom's Edge",
-  "alignment": "Neutral",
-  "species": "Ghost",
-  "weapon": "Nail, Shield, Mental control",
-  "gameplay": "Boss",
-  "gender": "Male",
-  "photo": "img/Markoth.webp"
-},
-{
-  "name": "Traitor Lord",
-  "region": "Queen's Gardens",
-  "alignment": "Hostile",
-  "species": "Mantis",
-  "weapon": "Claws, Shockwaves",
-  "gameplay": "Boss",
-  "gender": "Male",
-  "photo": "img/Lord.webp"
-},
-{
-  "name": "The Collector",
-  "region": "City of tears",
-  "alignment": "Hostile",
-  "species": "Void creature",
-  "weapon": "Claws",
-  "gameplay": "Boss",
-  "gender": "Unknown",
-  "photo": "img/Moreno.webp"
-},
-{
-  "name": "Hive Knight",
-  "region": "The Hive",
-  "alignment": "Hostile",
-  "species": "Bee",
-  "weapon": "Nail, Bees",
-  "gameplay": "Boss",
-  "gender": "Male",
-  "photo": "img/Simp.webp"
-},
-{
-  "name": "Crystal Guardian",
-  "region": "Crystal Peak",
-  "alignment": "Hostile",
-  "species": "Construct",
-  "weapon": "Crystal",
-  "gameplay": "Boss",
-  "gender": "Unknown",
-  "photo": "img/Guardiano.webp"
-},
-{
-  "name": "Enraged Guardian",
-  "region": "Crystal Peak",
-  "alignment": "Hostile",
-  "species": "Construct",
-  "weapon": "Pure strenght, Crystal",
-  "gameplay": "Boss",
-  "gender": "Unknown",
-  "photo": "img/Guardiano2.webp"
-},
-{
-  "name": "Oblobbles",
-  "region": "Kingdom's Edge",
-  "alignment": "Hostile",
-  "species": "Bug",
-  "weapon": "Infection",
-  "gameplay": "Boss",
-  "gender": "Unknown",
-  "photo": "img/Loredana.webp"
-},
-{
-  "name": "Uumuu",
-  "region": "Fog canyon",
-  "alignment": "Hostile",
-  "species": "Jellyfish",
-  "weapon": "Mental control, Minions",
-  "gameplay": "Boss",
-  "gender": "Unknown",
-  "photo": "img/Uumuu.webp"
-},
-{
-  "name": "Gorb",
-  "region": "Howling Cliffs",
-  "alignment": "Neutral",
-  "species": "Ghost",
-  "weapon": "Nail, Mental control",
-  "gameplay": "Boss",
-  "gender": "Male",
-  "photo": "img/Gorb.webp"
-},
-{
-  "name": "Elder Hu",
-  "region": "Fungal Wastes",
-  "alignment": "Neutral",
-  "species": "Ghost",
-  "weapon": "Mental control",
-  "gameplay": "Boss",
-  "gender": "Male",
-  "photo": "img/Hu.webp"
-},
-{
-  "name": "Marmu",
-  "region": "Queen's Gardens",
-  "alignment": "Neutral",
-  "species": "Ghost",
-  "weapon": "Pure strenght",
-  "gameplay": "Boss",
-  "gender": "Female",
-  "photo": "img/Marmu.webp"
-},
-{
-  "name": "Failed Champion",
-  "region": "Dream realm",
-  "alignment": "Hostile",
-  "species": "Maggot",
-  "weapon": "Pure strenght, Hammer, Infection",
-  "gameplay": "Boss",
-  "gender": "Male",
-  "photo": "img/Fchampion.webp"
-}
-
+    "name": "Xero",
+    "region": "Resting Grounds",
+    "alignment": "Neutral",
+    "species": "Ghost",
+    "weapon": "Nail, Mental control",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Xero.webp"
+  },
+  {
+    "name": "No Eyes",
+    "region": "Greenpath",
+    "alignment": "Neutral",
+    "species": "Ghost",
+    "weapon": "Spirits",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "img/Eyes.webp"
+  },
+  {
+    "name": "Cornifer",
+    "region": "Kingdom's edge, City of tears, Forgotten crossroads, Greenpath, Fungal wastes, Crystal peak, Deepnest, Queen's gardens, Ancient basin, Royal waterways, Resting grounds, Howling cliffs, Fog canyon, The hive, Dirthmouth ",
+    "alignment": "Good",
+    "species": "Snail",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Cornifer.webp"
+  },
+  {
+    "name": "Markoth",
+    "region": "Kingdom's Edge",
+    "alignment": "Neutral",
+    "species": "Ghost",
+    "weapon": "Nail, Shield, Mental control",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Markoth.webp"
+  },
+  {
+    "name": "Traitor Lord",
+    "region": "Queen's Gardens",
+    "alignment": "Hostile",
+    "species": "Mantis",
+    "weapon": "Claws, Shockwaves",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Lord.webp"
+  },
+  {
+    "name": "The Collector",
+    "region": "City of tears",
+    "alignment": "Hostile",
+    "species": "Void creature",
+    "weapon": "Claws",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "img/Moreno.webp"
+  },
+  {
+    "name": "Hive Knight",
+    "region": "The Hive",
+    "alignment": "Hostile",
+    "species": "Bee",
+    "weapon": "Nail, Bees",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Simp.webp"
+  },
+  {
+    "name": "Crystal Guardian",
+    "region": "Crystal Peak",
+    "alignment": "Hostile",
+    "species": "Construct",
+    "weapon": "Crystal",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "img/Guardiano.webp"
+  },
+  {
+    "name": "Enraged Guardian",
+    "region": "Crystal Peak",
+    "alignment": "Hostile",
+    "species": "Construct",
+    "weapon": "Pure strenght, Crystal",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "img/Guardiano2.webp"
+  },
+  {
+    "name": "Oblobbles",
+    "region": "Kingdom's Edge",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Infection",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "img/Loredana.webp"
+  },
+  {
+    "name": "Uumuu",
+    "region": "Fog canyon",
+    "alignment": "Hostile",
+    "species": "Jellyfish",
+    "weapon": "Mental control, Minions",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "img/Uumuu.webp"
+  },
+  {
+    "name": "Gorb",
+    "region": "Howling Cliffs",
+    "alignment": "Neutral",
+    "species": "Ghost",
+    "weapon": "Nail, Mental control",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Gorb.webp"
+  },
+  {
+    "name": "Elder Hu",
+    "region": "Fungal Wastes",
+    "alignment": "Neutral",
+    "species": "Ghost",
+    "weapon": "Mental control",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Hu.webp"
+  },
+  {
+    "name": "Marmu",
+    "region": "Queen's Gardens",
+    "alignment": "Neutral",
+    "species": "Ghost",
+    "weapon": "Pure strenght",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "img/Marmu.webp"
+  },
+  {
+    "name": "Failed Champion",
+    "region": "Dream realm",
+    "alignment": "Hostile",
+    "species": "Maggot",
+    "weapon": "Pure strenght, Hammer, Infection",
+    "gameplay": "Boss",
+    "gender": "Male",
+    "photo": "img/Fchampion.webp"
+  },
+  {
+    "name": "Elderbug",
+    "region": "Dirtmouth",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Elderbug.webp"
+  },
+  {
+    "name": "Cloth",
+    "region": "Fungal Wastes, Queen's Gardens, Deepnest",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Hammer",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Cloth.webp"
+  },
+  {
+    "name": "Tiso",
+    "region": "Forgotten Crossroads, Resting Grounds, Dirthmouth, Kingdom's edge",
+    "alignment": "Neutral",
+    "species": "Bug",
+    "weapon": "Shield",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Tiso.webp"
+  },
+  {
+    "name": "Nailsmith",
+    "region": "City of Tears",
+    "alignment": "Good",
+    "species": "Beetle",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Nailsmith.webp"
+  },
+  {
+    "name": "Salubra",
+    "region": "Forgotten Crossroads",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Salubra.webp"
+  },
+  {
+    "name": "Divine",
+    "region": "Dirtmouth",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Divine.webp"
+  },
+  {
+    "name": "Millibelle the Banker",
+    "region": "Fog Canyon, City of tears",
+    "alignment": "Neutral",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Millibelle.webp"
+  },
+  {
+    "name": "Godseeker",
+    "region": "City of Tears, Godhome",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Unknown",
+    "photo": "img/Godseeker.webp"
+  },
+  {
+    "name": "Flukemarm",
+    "region": "Royal Waterways",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Minions",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "img/Flukemarm.webp"
+  },
+  {
+    "name": "Gruz Mother",
+    "region": "Forgotten Crossroads, Kindom's edge",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Pure strenght",
+    "gameplay": "Boss",
+    "gender": "Female",
+    "photo": "img/Gruzmother.webp"
+  },
+  {
+    "name": "Gruzzer",
+    "region": "Forgotten Crossroads",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Flight",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/gruzzer.webp"
+  },
+  {
+    "name": "Vengefly",
+    "region": "Forgotten Crossroads, Greenpath, Howling cliffs, Resting grounds, City of tears",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Flight",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/Vengefly.webp"
+  },
+  {
+    "name": "Vengefly king",
+    "region": "Greenpath, Godhome, Kindom's edge",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Flight",
+    "gameplay": "Boss",
+    "gender": "Unknown",
+    "photo": "img/Vengking.webp"
+  },
+  {
+    "name": "Goam",
+    "region": "Forgotten Crossroads, Deepnest",
+    "alignment": "Hostile",
+    "species": "Worm",
+    "weapon": "Pure strenght",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/Goam.webp"
+  },
+  {
+    "name": "Aspid Hunter",
+    "region": "Ancient Basin, Forgotten crossroads",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Infection, Flight",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/AspidHunter.webp"
+  },
+  {
+    "name": "Primal Aspid",
+    "region": "Kingdom's Edge",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Infection, Flight",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/Paspid.webp"
+  },
+  {
+    "name": "Husk Hornhead",
+    "region": "Forgotten Crossroads, City of tears, Fungal wastes, Greenpath, Howling cliffs, Deepnest",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Horn",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/HuskHornhead.webp"
+  },
+  {
+    "name": "Leaping Husk",
+    "region": "Forgotten Crossroads, Greenpath, City of tears, Howling cliffs",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Pure strenght",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/LeapingHusk.webp"
+  },
+  {
+    "name": "Mawlek",
+    "region": "Forgotten Crossroads, Kindom's edge",
+    "alignment": "Hostile",
+    "species": "Construct",
+    "weapon": "Claws, Infection",
+    "gameplay": "Boss, Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/Mawlek.webp"
+  },
+  {
+    "name": "Mosscreep",
+    "region": "Greenpath",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Pure strenght",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/Mosscreep.webp"
+  },
+  {
+    "name": "Mantis Warrior",
+    "region": "Fungal Wastes",
+    "alignment": "Hostile",
+    "species": "Mantis",
+    "weapon": "Nail",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/Mantiswarrior.webp"
+  },
+  {
+    "name": "Mantis Youth",
+    "region": "Fungal Wastes",
+    "alignment": "Hostile",
+    "species": "Mantis",
+    "weapon": "Nail, Flight",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/MantisYouth.webp"
+  },
+  {
+    "name": "Mantis Petra",
+    "region": "Queen's Gardens",
+    "alignment": "Hostile",
+    "species": "Mantis",
+    "weapon": "Boomerang, Flight",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/MantisPetra.webp"
+  },
+  {
+    "name": "Mantis Traitor",
+    "region": "Queen's Gardens",
+    "alignment": "Hostile",
+    "species": "Mantis",
+    "weapon": "Nail",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/MantisTraitor.webp"
+  },
+  {
+    "name": "Gluttonous Husk",
+    "region": "City of Tears",
+    "alignment": "Hostile",
+    "species": "Bug",
+    "weapon": "Pure strenght",
+    "gameplay": "Normal enemy",
+    "gender": "Unknown",
+    "photo": "img/GluttonousHusk.webp"
+  }
 ]
