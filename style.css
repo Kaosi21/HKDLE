@@ -8,6 +8,10 @@ body {
   color: white;
   padding: 20px;
   align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {
