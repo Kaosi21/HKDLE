@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sound Guess - Hollow Knight</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .audio-wrapper {
+      margin-top: 20px;
+    }
+    .choice-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .choice-buttons button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .choice-buttons button:hover {
+      background-color: #45a049;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #f1c40f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sound Guess - Hollow Knight</h1>
+  <p>Listen to the sound and guess whether it comes from an <strong>Area</strong> or a <strong>Character</strong>.</p>
+
+  <div class="audio-wrapper">
+    <audio id="audio" controls></audio>
+  </div>
+
+  <div class="choice-buttons">
+    <button onclick="submitGuess('character')">🧍 Character</button>
+    <button onclick="submitGuess('area')">🗺️ Area</button>
+  </div>
+
+  <div id="feedback"></div>
+
+  <script>
+    let sounds = [];
+    let currentSound = null;
+
+    async function loadSounds() {
+      try {
+        const res = await fetch('sound.json');
+        sounds = await res.json();
+        nextSound();
+      } catch (error) {
+        console.error("Failed to load sounds:", error);
+        document.getElementById('feedback').textContent = "Error loading sounds.";
+      }
+    }
+
+    function nextSound() {
+      currentSound = sounds[Math.floor(Math.random() * sounds.length)];
+      document.getElementById('audio').src = currentSound.file;
+      document.getElementById('feedback').textContent = "";
+    }
+
+    function submitGuess(guess) {
+      const correct = currentSound.answer === guess;
+      const feedback = document.getElementById('feedback');
+      feedback.textContent = correct ? `✅ Correct! It was: ${currentSound.label}` : `❌ Wrong! It was: ${currentSound.label}`;
+      feedback.style.color = correct ? '#2ecc71' : '#e74c3c';
+      setTimeout(nextSound, 3000);
+    }
+
+    window.addEventListener('DOMContentLoaded', loadSounds);
+  </script>
+</body>
+</html>
