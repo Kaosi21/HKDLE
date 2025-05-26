@@ -1,7 +1,8 @@
 [
   {
-    "file": "snd/Start.mp3",
-    "answer": "Area",
-    "label": "Howling Cliffs"
+    "File": "snd/Start.mp3",
+    "Name": "Howling Cliffs",
+    "Type": "Area",
+    "Photo": "img/How.webp"
   }
 ]
