@@ -27,7 +27,7 @@
     "name": "Shaman stone",
     "category": "Offensive",
     "cost": "Three",
-    "location": "Forgotten crossroads",
+    "location": "Forgotten Crossroads",
     "obtained": "Buyed",
     "icon": "img/Stone.webp"
   },
@@ -59,7 +59,7 @@
     "name": "Grubsong",
     "category": "Supportive",
     "cost": "One",
-    "location": "Dirthmouth",
+    "location": "Forgotten Crossroads",
     "obtained": "Obtained",
     "icon": "img/Grub1.webp"
   },
@@ -107,7 +107,7 @@
     "name": "Steady body",
     "category": "Supportive",
     "cost": "One",
-    "location": "Forgotten crossroads",
+    "location": "Forgotten Crossroads",
     "obtained": "Buyed",
     "icon": "img/Steadyb.webp"
   },
@@ -131,7 +131,7 @@
     "name": "Longnail",
     "category": "Offensive",
     "cost": "Two",
-    "location": "Forgotten crossroads",
+    "location": "Forgotten Crossroads",
     "obtained": "Buyed",
     "icon": "img/Longnail.webp"
   },
@@ -187,7 +187,7 @@
     "name": "Glowing womb",
     "category": "Offensive",
     "cost": "Two",
-    "location": "Forgotten crossroads",
+    "location": "Forgotten Crossroads",
     "obtained": "Founded",
     "icon": "img/Womb.webp"
   },
@@ -195,7 +195,7 @@
     "name": "Quick focus",
     "category": "Supportive",
     "cost": "Three",
-    "location": "Forgotten crossroads",
+    "location": "Forgotten Crossroads",
     "obtained": "Buyed",
     "icon": "img/Quick.webp"
   },
@@ -211,7 +211,7 @@
     "name": "Lifeblood heart",
     "category": "Defensive",
     "cost": "Two",
-    "location": "Forgotten crossroads",
+    "location": "Forgotten Crossroads",
     "obtained": "Buyed",
     "icon": "img/Blood.webp"
   },
@@ -299,7 +299,7 @@
     "name": "Grimmchild",
     "category": "Offensive",
     "cost": "Two",
-    "location": "Dirthmouth",
+    "location": "Howling Cliffs",
     "obtained": "Obtained",
     "icon": "img/Grimmchild.webp"
   }

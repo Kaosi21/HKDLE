@@ -11,7 +11,7 @@
   },
   {
     "name": "Hornet",
-    "region": "Greenpath, City of Tears, Kingdom's edge, The abyss, Deepnest, Forgotten crossroads",
+    "region": "Greenpath, City of Tears, Kingdom's edge, The abyss, Deepnest, Forgotten Crossroads",
     "alignment": "Neutral",
     "species": "Void creature, Spider",
     "weapon": "Nail, String, Spikes",
@@ -41,7 +41,7 @@
   },
   {
     "name": "The Hollow Knight",
-    "region": "Forgotten crossroads, The abyss",
+    "region": "Forgotten Crossroads, The abyss",
     "alignment": "Hostile",
     "species": "Void creature, Vessel",
     "weapon": "Nail, Infection",
@@ -61,7 +61,7 @@
   },
   {
     "name": "False Knight",
-    "region": "Forgotten crossroads",
+    "region": "Forgotten Crossroads",
     "alignment": "Hostile",
     "species": "Maggot",
     "weapon": "Pure strenght, Hammer",
@@ -131,7 +131,7 @@
   },
   {
     "name": "Sly",
-    "region": "Forgotten crossroads, Dirthmouth, Godhome",
+    "region": "Forgotten Crossroads, Dirthmouth, Godhome",
     "alignment": "Neutral",
     "species": "Cicada",
     "weapon": "Nail, Great slash, Dash slash, Cyclone slash",
@@ -638,16 +638,6 @@
     "gameplay": "NPC",
     "gender": "Unknown",
     "photo": "img/Leg1.webp"
-  },
-  {
-    "name": "Iselda",
-    "region": "Queen's Gardens",
-    "alignment": "Good",
-    "species": "Snail",
-    "weapon": "Non combattant",
-    "gameplay": "NPC",
-    "gender": "Female",
-    "photo": "img/Iselda.webp"
   },
   {
     "name": "Jiji",
