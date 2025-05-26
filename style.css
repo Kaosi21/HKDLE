@@ -7,6 +7,10 @@ body {
   background-position: center;
   color: white;
   padding: 20px;
+  text-align: center;
+}
+
+.menu {
   align-items: center;
   text-align: center;
   display: flex;
@@ -36,6 +40,9 @@ button {
   color: white;
   cursor: pointer;
   margin-top: 10px;
+}
+div {
+  text-align: center;
 }
 .suggestions-list {
   background-color: #333;
@@ -313,6 +320,7 @@ img.character-img {
       font-size: 0.9em;
       color: #ccc;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     footer {
