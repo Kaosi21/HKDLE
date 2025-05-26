@@ -209,23 +209,23 @@ img.character-img {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
-  button.bloccato {
-    background-color: #888;
-    color: white;
-    cursor: not-allowed;
-  }
+button.bloccato {
+  background-color: #888;
+  color: white;
+  cursor: not-allowed;
+}
 
-  button.attivo {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-  }
+button.attivo {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
 
-  button.usato {
-    background-color: #ccc;
-    color: #555;
-    cursor: default;
-  }
+button.usato {
+  background-color: #ccc;
+  color: #555;
+  cursor: default;
+}
   
 .zoom-container {
   width: 300px;
@@ -244,90 +244,89 @@ img.character-img {
   transition: transform 0.5s ease;
 }
 
-    .container {
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-      padding: 40px 30px;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      max-width: 800px;
-      width: 90%;
-      text-align: left;
-    }
+.container {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  width: 90%;
+  text-align: left;
+}
 
-    h2 {
-      font-size: 22px;
-      margin-top: 30px;
-    }
+h2 {
+  font-size: 22px;
+  margin-top: 30px;
+}
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-    li {
-      margin-bottom: 12px;
-    }
+li {
+  margin-bottom: 12px;
+}
 
-    strong {
-      color: #f1c40f;
-    }
+strong {
+  color: #f1c40f;
+}
 
-    a.back-link {
-      display: block;
-      margin-top: 30px;
-      text-align: center;
-      color: #4CAF50;
-      text-decoration: none;
-      font-weight: bold;
-    }
+a.back-link {
+  display: block;
+  margin-top: 30px;
+  text-align: center;
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    a.back-link:hover {
-      text-decoration: underline;
-    }
+a.back-link:hover {
+  text-decoration: underline;
+}
 
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-      h1 {
-        font-size: 22px;
-      }
-    }
-    
-        .game-btn {
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
 
-      background-color: #4CAF50;
+.game-btn {
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+  padding: 16px 24px;
+  margin: 20px 0 8px 0;
+  font-size: 18px;
+  border-radius: 10px;
+  width: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-      border: none;
-      color: white;
-      padding: 16px 24px;
-      margin: 20px 0 8px 0;
-      font-size: 18px;
-      border-radius: 10px;
-      width: 100%;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
+.game-btn:hover {
+  background-color: white;
+  color: black;
+  transform: translateY(-2px);  
+}
 
-    .game-btn:hover {
-      background-color: #45a049;
-      transform: translateY(-2px);
-    }
+.description {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-    .description {
-      font-size: 0.9em;
-      color: #ccc;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.75em;
-      color: #ccc;
-      margin-top: 20px;
-      max-width: 600px;
-      padding: 10px;
-    }
+footer {
+  text-align: center;
+  font-size: 0.75em;
+  color: #ccc;
+  margin-top: 20px;
+  max-width: 600px;
+  padding: 10px;
+}
