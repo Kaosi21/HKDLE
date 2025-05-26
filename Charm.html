@@ -8,13 +8,29 @@
 <body>
 
   <h1>Guess the Charm - Hollow Knight</h1>
-  
+
   <p id="attempts-counter">Attempts: 0</p>
+
   <div class="autocomplete-wrapper">
     <input type="text" id="guess" placeholder="Type a charm..." oninput="showSuggestions()" autocomplete="off" />
     <div id="suggestions" class="suggestions-list"></div>
   </div>
   <button onclick="checkGuess()">Submit</button>
+
+  <div style="text-align: center; margin-top: 10px; display: flex; justify-content: center; gap: 12px;">
+    <button id="btn-location" onclick="useLocationHint()" class="bloccato">
+      Show Region (<span id="location-counter">4</span>)
+    </button>
+    <button id="btn-blur" onclick="useBlurHint()" class="bloccato">
+      Blurred Image (<span id="blur-counter">6</span>)
+    </button>
+  </div>
+
+  <div id="hint-message" style="text-align:center; margin-top: 15px; font-weight:bold; color:#f1c40f;"></div>
+
+  <div id="blur-container" style="text-align:center; margin-top:20px;">
+    <img id="blur-img" src="" style="width:100px; filter: blur(10px); display: none; border-radius: 8px; box-shadow: 0 0 8px rgba(255,255,255,0.3);" />
+  </div>
 
   <table id="feedback">
     <thead>
@@ -42,6 +58,8 @@
     let target = null;
     let usedCharms = [];
     let attemptCount = 0;
+    let locationHintUsed = false;
+    let blurHintUsed = false;
 
     async function loadCharms() {
       const response = await fetch("charms.json");
@@ -82,35 +100,32 @@
         return { className: "wrong", label: `${guessCost} 🔼` };
       }
     }
+
     function createParticles() {
-  const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
-  const numParticles = 80;
-
-  for (let i = 0; i < numParticles; i++) {
-        const particle = document.createElement("div");
-        particle.style.position = "fixed";
-        particle.style.width = "10px";
-        particle.style.height = "10px";
-        particle.style.borderRadius = "50%";
-        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.left = "50%";
-        particle.style.top = "50%";
-        particle.style.pointerEvents = "none";
-        particle.style.zIndex = "9999";
-
+      const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
+      for (let i = 0; i < 80; i++) {
+        const p = document.createElement("div");
+        p.style.position = "fixed";
+        p.style.width = "10px";
+        p.style.height = "10px";
+        p.style.borderRadius = "50%";
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        p.style.left = "50%";
+        p.style.top = "50%";
+        p.style.pointerEvents = "none";
+        p.style.zIndex = "9999";
         const x = (Math.random() - 0.5) * 300;
         const y = (Math.random() - 0.5) * 300;
-         const animation = particle.animate([
+        const animation = p.animate([
           { transform: "translate(0, 0)", opacity: 1 },
           { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
-         ], {
-        duration: 1000,
-        easing: "ease-out"
+        ], {
+          duration: 1000,
+          easing: "ease-out"
         });
-
-        animation.onfinish = () => particle.remove();
-        document.body.appendChild(particle);
-    }
+        animation.onfinish = () => p.remove();
+        document.body.appendChild(p);
+      }
     }
 
     function showSuggestions() {
@@ -142,6 +157,52 @@
       suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
     }
 
+    function updateHintStatus() {
+      const locBtn = document.getElementById("btn-location");
+      const locCounter = document.getElementById("location-counter");
+      if (!locationHintUsed) {
+        const remaining = Math.max(0, 4 - attemptCount);
+        locCounter.textContent = remaining;
+        if (attemptCount >= 4) {
+          locBtn.classList.remove("bloccato");
+          locBtn.classList.add("attivo");
+        }
+      }
+
+      const blurBtn = document.getElementById("btn-blur");
+      const blurCounter = document.getElementById("blur-counter");
+      if (!blurHintUsed) {
+        const remaining = Math.max(0, 6 - attemptCount);
+        blurCounter.textContent = remaining;
+        if (attemptCount >= 6) {
+          blurBtn.classList.remove("bloccato");
+          blurBtn.classList.add("attivo");
+        }
+      }
+    }
+
+    function useLocationHint() {
+      if (attemptCount < 4 || locationHintUsed) return;
+      document.getElementById("hint-message").textContent = "📍 The charm is found in: " + target.location;
+      locationHintUsed = true;
+      const btn = document.getElementById("btn-location");
+      btn.classList.remove("attivo");
+      btn.classList.add("usato");
+      btn.disabled = true;
+    }
+
+    function useBlurHint() {
+      if (attemptCount < 6 || blurHintUsed) return;
+      const img = document.getElementById("blur-img");
+      img.src = target.icon;
+      img.style.display = "inline-block";
+      blurHintUsed = true;
+      const blurBtn = document.getElementById("btn-blur");
+      blurBtn.classList.remove("attivo");
+      blurBtn.classList.add("usato");
+      blurBtn.disabled = true;
+    }
+
     function checkGuess() {
       const input = document.getElementById("guess").value.toLowerCase();
       const guessedCharm = charms.find(c => c.name.toLowerCase() === input);
@@ -159,6 +220,7 @@
 
       usedCharms.push(guessedCharm.name.toLowerCase());
       attemptCount++;
+      updateHintStatus();
       document.getElementById("attempts-counter").textContent = `Attempts: ${attemptCount}`;
 
       const costCompare = compareCost(guessedCharm.cost, target.cost);
@@ -175,11 +237,11 @@
       feedbackBody.appendChild(row);
 
       if (guessedCharm.name.toLowerCase() === target.name.toLowerCase()) {
-  document.getElementById("win-screen").classList.add("active");
-  document.getElementById("win-image").src = target.icon;
-  createParticles();
-}
-
+        document.getElementById("win-screen").classList.add("active");
+        document.getElementById("win-image").src = target.icon;
+        createParticles();
+        document.getElementById("blur-img").style.filter = "none";
+      }
 
       document.getElementById("guess").value = "";
     }

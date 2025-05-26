@@ -23,7 +23,7 @@
     "name": "Radiance",
     "region": "Dream realm",
     "alignment": "Hostile",
-    "species": "Higher being",
+    "species": "Higher being, Moth",
     "weapon": "Light, Mental control, Teleport",
     "gameplay": "Boss",
     "gender": "Female",
@@ -233,7 +233,7 @@
     "name": "Pale King",
     "region": "Palace Grounds, The abyss",
     "alignment": "Good",
-    "species": "Wyrm",
+    "species": "Higher being",
     "weapon": "Non combattant",
     "gameplay": "NPC",
     "gender": "Male",
@@ -241,7 +241,7 @@
   },
   {
     "name": "Grub",
-    "region": "kingdom's Edge, city of Tears, forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive",
+    "region": "Kingdom's Edge, city of Tears, forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive",
     "alignment": "Good",
     "species": "Grub",
     "weapon": "Non combattant",
@@ -263,7 +263,7 @@
     "name": "Xero",
     "region": "Resting Grounds",
     "alignment": "Neutral",
-    "species": "Ghost",
+    "species": "Ghost, Moth",
     "weapon": "Nail, Mental control",
     "gameplay": "Boss",
     "gender": "Male",
@@ -293,7 +293,7 @@
     "name": "Markoth",
     "region": "Kingdom's Edge",
     "alignment": "Neutral",
-    "species": "Ghost",
+    "species": "Ghost, Moth",
     "weapon": "Nail, Shield, Mental control",
     "gameplay": "Boss",
     "gender": "Male",
@@ -573,7 +573,7 @@
     "name": "Absolute Radiance",
     "region": "Godhome",
     "alignment": "Hostile",
-    "species": "Higher being",
+    "species": "Higher being, Moth",
     "weapon": "Light, Mental control, Teleport",
     "gameplay": "Boss",
     "gender": "Female",
@@ -637,7 +637,7 @@
     "weapon": "Non combattant",
     "gameplay": "NPC",
     "gender": "Unknown",
-    "photo": "img/Leg1.webp"
+    "photo": "img/Leg.webp"
   },
   {
     "name": "Jiji",
@@ -680,33 +680,124 @@
     "photo": "img/Lemm.webp"
   },
   {
-    "name": "Iselda",
-    "region": "Queen's Gardens",
+    "name": "Jinn",
+    "region": "Dirthmouth",
     "alignment": "Good",
-    "species": "Snail",
+    "species": "Construct",
     "weapon": "Non combattant",
     "gameplay": "NPC",
     "gender": "Female",
-    "photo": "img/Iselda.webp"
+    "photo": "img/Steel.webp"
   },
   {
-    "name": "Iselda",
-    "region": "Queen's Gardens",
+    "name": "The Last Tag",
+    "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirthmouth",
     "alignment": "Good",
-    "species": "Snail",
+    "species": "Beetle",
     "weapon": "Non combattant",
     "gameplay": "NPC",
-    "gender": "Female",
-    "photo": "img/Iselda.webp"
+    "gender": "Male",
+    "photo": "img/Tag.webp"
   },
   {
-    "name": "Iselda",
-    "region": "Queen's Gardens",
+    "name": "Tuk",
+    "region": "Royal Waterways",
     "alignment": "Good",
-    "species": "Snail",
+    "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
     "gender": "Female",
-    "photo": "img/Iselda.webp"
+    "photo": "img/Tuk.webp"
+  },
+  {
+    "name": "Mister Mushroom",
+    "region": "Fungal Wastes, Kingdom's Edge, Deepnest, Howling Cliffs, Ancient Basin, Fog Canyon, Dirthmouth",
+    "alignment": "Good",
+    "species": "Mushroom",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Mush.webp"
+  },
+  {
+    "name": "Seer",
+    "region": "Resting Grounds",
+    "alignment": "Good",
+    "species": "Moth",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Seer.webp"
+  },
+  {
+    "name": "White Lady",
+    "region": "Queen's Gardens",
+    "alignment": "Good",
+    "species": "Higher being",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/WL.webp"
+  },
+  {
+    "name": "Unn",
+    "region": "Greenpath",
+    "alignment": "Good",
+    "species": "Higher being",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Unn.webp"
+  },
+  {
+    "name": "Void Entity",
+    "region": "Godhome",
+    "alignment": "Good",
+    "species": "Higher being",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Unknown",
+    "photo": "img/Void.webp"
+  },
+  {
+    "name": "Brumm",
+    "region": "Dirthmouth, Howling Cliffs",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Brumm.webp"
+  },
+  {
+    "name": "Herrah",
+    "region": "Deepnest",
+    "alignment": "Good",
+    "species": "Dreamer",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Herrah.webp"
+  },
+  {
+    "name": "Lurien",
+    "region": "City of Tears",
+    "alignment": "Good",
+    "species": "Dreamer",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Lurien.webp"
+  },
+  {
+    "name": "Monomon",
+    "region": "Fog canyon",
+    "alignment": "Good",
+    "species": "Dreamer",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Monomon.webp"
   }
+
 ]

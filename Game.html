@@ -69,7 +69,6 @@
     characters = await response.json();
 
     target = characters[Math.floor(Math.random() * characters.length)];
-    console.log("Target selezionato:", target); // 👈 ECCO IL LOG
 
   } catch (error) {
     console.error("Errore caricamento personaggi:", error);

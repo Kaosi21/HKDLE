@@ -18,6 +18,18 @@ body {
   justify-content: center;
 }
 
+ .bloccato {
+      background-color: #777;
+      cursor: not-allowed;
+    }
+    .attivo {
+      background-color: #f39c12;
+    }
+    .usato {
+      background-color: #aaa;
+      text-decoration: line-through;
+    }
+
 h1 {
   text-align: center;
   margin-bottom: 20px;
