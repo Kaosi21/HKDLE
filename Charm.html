@@ -4,42 +4,153 @@
   <meta charset="UTF-8" />
   <title>Guess the Charm - Hollow Knight</title>
   <link rel="stylesheet" href="style.css" />
-<style>
+  <style>
     body {
-    background-image: url("img/Sfondo.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-</style>
+      background-image: url("img/Sfondo.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .fade-slide-row {
+  animation: fadeSlideIn 0.6s ease forwards;
+}
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to  {
+        opacity: 1;
+        transform: translateY(0);
+     }
+    }
+
+    .guess-box, .hint-box {
+      max-width: 500px;
+      margin: 20px auto;
+      background: rgba(25, 25, 35, 0.9);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .guess-box h2, .hint-box h2 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #aadfff;
+    }
+
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    input[type="text"] {
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+
+    .small-btn {
+      padding: 12px 18px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: none;
+      background-color: #3399ff;
+      color: white;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+
+    .small-btn:hover {
+      background-color: #5bb6ff;
+    }
+
+    .hint-box button {
+      margin: 8px;
+      padding: 10px 18px;
+      font-size: 15px;
+      border-radius: 10px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .hint-box button:hover {
+      background-color: #666;
+    }
+
+    .hint-box .bloccato {
+      background-color: #555;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    .autocomplete-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.hint-box {
+  overflow: visible; /* AGGIUNGI QUESTA RIGA */
+  position: relative;
+  z-index: 10;
+}
+
+.suggestions-list {
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(25, 25, 35, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+
+
+  </style>
 </head>
 <body>
-
-  <h1>Guess the Charm - Hollow Knight</h1>
-
-  <p id="attempts-counter">Attempts: 0</p>
-
-  <div class="autocomplete-wrapper">
-    <input type="text" id="guess" placeholder="Type a charm..." oninput="showSuggestions()" autocomplete="off" />
+  <div class="hint-box">
+    <h2>Guess the Charm - Hollow Knight</h2>
+    <button id="btn-location" onclick="useLocationHint()" class="bloccato">🌍 Show Region (<span id="location-counter">4</span>)</button>
+    <button id="btn-blur" onclick="useBlurHint()" class="bloccato">📷 Blurred Image (<span id="blur-counter">6</span>)</button>
+    <div class="autocomplete-wrapper input-row">
+      <input
+        type="text"
+        id="guess"
+        placeholder="Type a Hollow Knight charm..."
+        oninput="showSuggestions()"
+        autocomplete="off"
+      />
+      <button class="small-btn" onclick="checkGuess()">Submit</button>
+    </div>
     <div id="suggestions" class="suggestions-list"></div>
   </div>
-  <button onclick="checkGuess()">Submit</button>
-
-  <div style="text-align: center; margin-top: 10px; display: flex; justify-content: center; gap: 12px;">
-    <button id="btn-location" onclick="useLocationHint()" class="bloccato">
-      Show Region (<span id="location-counter">4</span>)
-    </button>
-    <button id="btn-blur" onclick="useBlurHint()" class="bloccato">
-      Blurred Image (<span id="blur-counter">6</span>)
-    </button>
+  <div id="blur-container" style="display:none; text-align:center; margin: 20px auto;">
+    <img id="blur-img" src="" style="filter: blur(10px); width: 150px; margin: 10px auto; display: block; border-radius: 8px; box-shadow: 0 0 8px rgba(255,255,255,0.3);">
   </div>
 
-  <div id="hint-message" style="text-align:center; margin-top: 15px; font-weight:bold; color:#f1c40f;"></div>
-
-  <div id="blur-container" style="text-align:center; margin-top:20px;">
-    <img id="blur-img" src="" style="width:100px; filter: blur(10px); display: none; border-radius: 8px; box-shadow: 0 0 8px rgba(255,255,255,0.3);" />
-  </div>
+  <div id="hint-message" style="text-align: center; margin: 15px auto; font-weight: bold; color: #f1c40f; max-width: 600px;"></div>
 
   <table id="feedback">
     <thead>
@@ -55,207 +166,203 @@
     <tbody></tbody>
   </table>
 
-  <div id="win-screen" class="win-screen">
+  <div id="win-screen">
     <h2>You guessed it!</h2>
     <h2>The charm was:</h2>
     <img id="win-image" src="" alt="Winner" />
     <button onclick="location.reload()">Play Again</button>
   </div>
 
-  <script>
-    let charms = [];
-    let target = null;
-    let usedCharms = [];
-    let attemptCount = 0;
-    let locationHintUsed = false;
-    let blurHintUsed = false;
+<script>
+let charms = [];
+let target = null;
+let usedCharms = [];
+let attemptCount = 0;
+let locationHintUsed = false;
+let blurHintUsed = false;
 
-    async function loadCharms() {
-      const response = await fetch("charms.json");
-      charms = await response.json();
-      target = charms[Math.floor(Math.random() * charms.length)];
-    }
+async function loadCharms() {
+  const response = await fetch("charms.json");
+  charms = await response.json();
+  target = charms[Math.floor(Math.random() * charms.length)];
+}
 
-    function normalize(str) {
-      return str.toLowerCase().split(",").map(s => s.trim());
-    }
+function showSuggestions() {
+  const input = document.getElementById("guess").value.toLowerCase();
+  const suggestionsDiv = document.getElementById("suggestions");
+  suggestionsDiv.innerHTML = "";
 
-    function getClass(guessVal, targetVal) {
-      const guessList = normalize(guessVal);
-      const targetList = normalize(targetVal);
-      const intersection = guessList.filter(val => targetList.includes(val));
-      if (guessList.length === targetList.length && intersection.length === guessList.length) return "match";
-      if (intersection.length > 0) return "partial";
-      return "wrong";
-    }
+  if (input.length === 0) {
+    suggestionsDiv.style.display = "none";
+    return;
+  }
 
-    function compareCost(guessCost, targetCost) {
-      const costMap = {
-        "one": 1,
-        "two": 2,
-        "three": 3,
-        "four": 4,
-        "five": 5
-      };
+  const filtered = charms
+    .filter((c) => !usedCharms.includes(c.name.toLowerCase()))
+    .filter((c) => c.name.toLowerCase().startsWith(input));
 
-      const guessNum = costMap[guessCost.toLowerCase()] || 0;
-      const targetNum = costMap[targetCost.toLowerCase()] || 0;
-
-      if (guessNum === targetNum) {
-        return { className: "match", label: guessCost };
-      } else if (guessNum > targetNum) {
-        return { className: "wrong", label: `${guessCost} 🔽` };
-      } else {
-        return { className: "wrong", label: `${guessCost} 🔼` };
-      }
-    }
-
-    function createParticles() {
-      const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
-      for (let i = 0; i < 80; i++) {
-        const p = document.createElement("div");
-        p.style.position = "fixed";
-        p.style.width = "10px";
-        p.style.height = "10px";
-        p.style.borderRadius = "50%";
-        p.style.background = colors[Math.floor(Math.random() * colors.length)];
-        p.style.left = "50%";
-        p.style.top = "50%";
-        p.style.pointerEvents = "none";
-        p.style.zIndex = "9999";
-        const x = (Math.random() - 0.5) * 300;
-        const y = (Math.random() - 0.5) * 300;
-        const animation = p.animate([
-          { transform: "translate(0, 0)", opacity: 1 },
-          { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
-        ], {
-          duration: 1000,
-          easing: "ease-out"
-        });
-        animation.onfinish = () => p.remove();
-        document.body.appendChild(p);
-      }
-    }
-
-    function showSuggestions() {
-      const input = document.getElementById("guess").value.toLowerCase();
-      const suggestionsDiv = document.getElementById("suggestions");
+  filtered.forEach((charm) => {
+    const item = document.createElement("div");
+    item.className = "suggestion-item";
+    item.innerHTML = `
+      <img src="${charm.icon}" alt="${charm.name}" onerror="this.src='img/default.png'">
+      <span>${charm.name}</span>`;
+    item.onclick = () => {
+      document.getElementById("guess").value = charm.name;
       suggestionsDiv.innerHTML = "";
+      suggestionsDiv.style.display = "none";
+    };
+    suggestionsDiv.appendChild(item);
+  });
 
-      if (input.length === 0) {
-        suggestionsDiv.style.display = "none";
-        return;
-      }
+  suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
+}
 
-      const filtered = charms
-        .filter(c => !usedCharms.includes(c.name.toLowerCase()))
-        .filter(c => c.name.toLowerCase().startsWith(input));
+function normalize(str) {
+  return str.toLowerCase().split(",").map(s => s.trim());
+}
 
-      filtered.forEach(char => {
-        const item = document.createElement("div");
-        item.className = "suggestion-item";
-        item.innerHTML = `<img src="${char.icon}" alt="${char.name}" onerror="this.src='img/default.png'"> <span>${char.name}</span>`;
-        item.onclick = () => {
-          document.getElementById("guess").value = char.name;
-          suggestionsDiv.innerHTML = "";
-          suggestionsDiv.style.display = "none";
-        };
-        suggestionsDiv.appendChild(item);
-      });
+function getClass(guessVal, targetVal) {
+  const guessList = normalize(guessVal);
+  const targetList = normalize(targetVal);
+  const intersection = guessList.filter(val => targetList.includes(val));
+  if (guessList.length === targetList.length && intersection.length === guessList.length) return "match";
+  if (intersection.length > 0) return "partial";
+  return "wrong";
+}
 
-      suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
+function compareCost(guessCost, targetCost) {
+  const costMap = {
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5
+  };
+  const guessNum = costMap[guessCost.toLowerCase()] || 0;
+  const targetNum = costMap[targetCost.toLowerCase()] || 0;
+  if (guessNum === targetNum) return { className: "match", label: guessCost };
+  if (guessNum > targetNum) return { className: "wrong", label: `${guessCost} 🔽` };
+  return { className: "wrong", label: `${guessCost} 🔼` };
+}
+
+function checkGuess() {
+  const input = document.getElementById("guess").value.trim().toLowerCase();
+  const guessedCharm = charms.find(c => c.name.toLowerCase() === input);
+  const feedbackBody = document.querySelector("#feedback tbody");
+
+  if (!guessedCharm) {
+    alert("Charm not found. Try selecting from the list.");
+    return;
+  }
+
+  if (usedCharms.includes(guessedCharm.name.toLowerCase())) {
+    alert("You already guessed that!");
+    return;
+  }
+
+  usedCharms.push(guessedCharm.name.toLowerCase());
+  attemptCount++;
+  updateHintStatus();
+
+  const costCompare = compareCost(guessedCharm.cost, target.cost);
+
+  const row = document.createElement("tr");
+  row.classList.add("fade-slide-row");
+
+  row.innerHTML = `
+    <td><img src="${guessedCharm.icon}" width="40" /></td>
+    <td class="${getClass(guessedCharm.name, target.name)}">${guessedCharm.name}</td>
+    <td class="${getClass(guessedCharm.category, target.category)}">${guessedCharm.category}</td>
+    <td class="${costCompare.className}">${costCompare.label}</td>
+    <td class="${getClass(guessedCharm.location, target.location)}">${guessedCharm.location}</td>
+    <td class="${getClass(guessedCharm.obtained, target.obtained)}">${guessedCharm.obtained}</td>
+  `;
+  feedbackBody.appendChild(row);
+
+  if (guessedCharm.name.toLowerCase() === target.name.toLowerCase()) {
+    document.getElementById("win-screen").classList.add("active");
+    document.getElementById("win-image").src = target.icon;
+    createParticles();
+    document.getElementById("blur-img").style.filter = "none";
+  }
+
+  document.getElementById("guess").value = "";
+}
+
+function updateHintStatus() {
+  const locBtn = document.getElementById("btn-location");
+  const locCounter = document.getElementById("location-counter");
+  if (!locationHintUsed) {
+    const remaining = Math.max(0, 4 - attemptCount);
+    locCounter.textContent = remaining;
+    if (attemptCount >= 4) {
+      locBtn.classList.remove("bloccato");
+      locBtn.classList.add("attivo");
     }
-
-    function updateHintStatus() {
-      const locBtn = document.getElementById("btn-location");
-      const locCounter = document.getElementById("location-counter");
-      if (!locationHintUsed) {
-        const remaining = Math.max(0, 4 - attemptCount);
-        locCounter.textContent = remaining;
-        if (attemptCount >= 4) {
-          locBtn.classList.remove("bloccato");
-          locBtn.classList.add("attivo");
-        }
-      }
-
-      const blurBtn = document.getElementById("btn-blur");
-      const blurCounter = document.getElementById("blur-counter");
-      if (!blurHintUsed) {
-        const remaining = Math.max(0, 6 - attemptCount);
-        blurCounter.textContent = remaining;
-        if (attemptCount >= 6) {
-          blurBtn.classList.remove("bloccato");
-          blurBtn.classList.add("attivo");
-        }
-      }
+  }
+  const blurBtn = document.getElementById("btn-blur");
+  const blurCounter = document.getElementById("blur-counter");
+  if (!blurHintUsed) {
+    const remaining = Math.max(0, 6 - attemptCount);
+    blurCounter.textContent = remaining;
+    if (attemptCount >= 6) {
+      blurBtn.classList.remove("bloccato");
+      blurBtn.classList.add("attivo");
     }
+  }
+}
 
-    function useLocationHint() {
-      if (attemptCount < 4 || locationHintUsed) return;
-      document.getElementById("hint-message").textContent = "📍 The charm is found in: " + target.location;
-      locationHintUsed = true;
-      const btn = document.getElementById("btn-location");
-      btn.classList.remove("attivo");
-      btn.classList.add("usato");
-      btn.disabled = true;
-    }
+function useLocationHint() {
+  if (attemptCount < 4 || locationHintUsed) return;
+  document.getElementById("hint-message").textContent = "📍 The charm is found in: " + target.location;
+  locationHintUsed = true;
+  const btn = document.getElementById("btn-location");
+  btn.classList.remove("attivo");
+  btn.classList.add("usato");
+  btn.disabled = true;
+}
 
-    function useBlurHint() {
-      if (attemptCount < 6 || blurHintUsed) return;
-      const img = document.getElementById("blur-img");
-      img.src = target.icon;
-      img.style.display = "inline-block";
-      blurHintUsed = true;
-      const blurBtn = document.getElementById("btn-blur");
-      blurBtn.classList.remove("attivo");
-      blurBtn.classList.add("usato");
-      blurBtn.disabled = true;
-    }
+function useBlurHint() {
+  if (attemptCount < 6 || blurHintUsed) return;
+  const img = document.getElementById("blur-img");
+  img.src = target.icon;
+  img.style.display = "inline-block";
+  blurHintUsed = true;
+  const blurBtn = document.getElementById("btn-blur");
+  blurBtn.classList.remove("attivo");
+  blurBtn.classList.add("usato");
+  blurBtn.disabled = true;
+}
 
-    function checkGuess() {
-      const input = document.getElementById("guess").value.toLowerCase();
-      const guessedCharm = charms.find(c => c.name.toLowerCase() === input);
-      const feedbackBody = document.querySelector("#feedback tbody");
+function createParticles() {
+  const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
+  for (let i = 0; i < 80; i++) {
+    const p = document.createElement("div");
+    p.style.position = "fixed";
+    p.style.width = "10px";
+    p.style.height = "10px";
+    p.style.borderRadius = "50%";
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.left = "50%";
+    p.style.top = "50%";
+    p.style.pointerEvents = "none";
+    p.style.zIndex = "9999";
+    const x = (Math.random() - 0.5) * 300;
+    const y = (Math.random() - 0.5) * 300;
+    const animation = p.animate([
+      { transform: "translate(0, 0)", opacity: 1 },
+      { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+    ], {
+      duration: 1000,
+      easing: "ease-out"
+    });
+    animation.onfinish = () => p.remove();
+    document.body.appendChild(p);
+  }
+}
 
-      if (!guessedCharm) {
-        alert("Charm not found.");
-        return;
-      }
-
-      if (usedCharms.includes(guessedCharm.name.toLowerCase())) {
-        alert("You already guessed that!");
-        return;
-      }
-
-      usedCharms.push(guessedCharm.name.toLowerCase());
-      attemptCount++;
-      updateHintStatus();
-      document.getElementById("attempts-counter").textContent = `Attempts: ${attemptCount}`;
-
-      const costCompare = compareCost(guessedCharm.cost, target.cost);
-
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td><img src="${guessedCharm.icon}" width="40" /></td>
-        <td class="${getClass(guessedCharm.name, target.name)}">${guessedCharm.name}</td>
-        <td class="${getClass(guessedCharm.category, target.category)}">${guessedCharm.category}</td>
-        <td class="${costCompare.className}">${costCompare.label}</td>
-        <td class="${getClass(guessedCharm.location, target.location)}">${guessedCharm.location}</td>
-        <td class="${getClass(guessedCharm.obtained, target.obtained)}">${guessedCharm.obtained}</td>
-      `;
-      feedbackBody.appendChild(row);
-
-      if (guessedCharm.name.toLowerCase() === target.name.toLowerCase()) {
-        document.getElementById("win-screen").classList.add("active");
-        document.getElementById("win-image").src = target.icon;
-        createParticles();
-        document.getElementById("blur-img").style.filter = "none";
-      }
-
-      document.getElementById("guess").value = "";
-    }
-
-    window.addEventListener("DOMContentLoaded", loadCharms);
-  </script>
+window.addEventListener("DOMContentLoaded", loadCharms);
+</script>
 </body>
 </html>

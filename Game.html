@@ -5,36 +5,113 @@
   <title>Guess the Character - Hollow Knight</title>
   <link rel="stylesheet" href="style.css">
 <style>
-    body {
-    background-image: url("img/Sfondo.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
+ body {
+  font-family: Arial, sans-serif;
+  background-image: url("img/Sfondo.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
+  padding: 20px;
+  align-items: center;
+}
+
+.guess-box, .hint-box {
+  max-width: 500px;
+  margin: 20px auto;
+  background: rgba(25, 25, 35, 0.9);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.guess-box h2,
+.hint-box h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #aadfff;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.small-btn {
+  padding: 12px 18px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3399ff;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.small-btn:hover {
+  background-color: #5bb6ff;
+}
+
+.hint-box button {
+  margin: 8px;
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.hint-box button:hover {
+  background-color: #666;
+}
+
+.hint-box .bloccato {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 </style>
+
+
 </head>
 <body>
 
-<h1>Guess the Character - Hollow Knight</h1>
-
-<div class="autocomplete-wrapper">
-  <input
-    type="text"
-    id="guess"
-    placeholder="Type a Hollow Knight character..."
-    oninput="showSuggestions()"
-    autocomplete="off"
-  />
+<div class="hint-box">
+  <h2>Guess the Character - Hollow Knight</h2>
+  <button id="btn-regione" onclick="usaRegione()" class="bloccato">🌍 Show region (<span id="contatore-regione">4</span>)</button>
+  <button id="btn-blur" onclick="usaBlur()" class="bloccato">📷 Blurred image (<span id="contatore-blur">8</span>)</button>
+  <div class="autocomplete-wrapper input-row">
+    <input
+      type="text"
+      id="guess"
+      placeholder="Type a Hollow Knight character..."
+      oninput="showSuggestions()"
+      autocomplete="off"
+    />
+    <button class="small-btn" onclick="checkGuess()">Submit</button>
+  </div>
   <div id="suggestions" class="suggestions-list"></div>
-</div>
-
-<div style="text-align:center;">
-  <button onclick="checkGuess()">Submit</button>
-</div>
-<div style="text-align:center; margin-top: 10px;">
-  <button id="btn-regione" onclick="usaRegione()" class="bloccato">Show region (<span id="contatore-regione">4</span>)</button>
-  <button id="btn-blur" onclick="usaBlur()" class="bloccato">Blurred image (<span id="contatore-blur">8</span>)</button>
 </div>
 
 <div id="blurred-image-container" style="display:none; text-align:center; margin: 20px auto;">
