@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: url("img/Sfondo.webp");
+  background-image: url("img/Sfondo.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -341,4 +341,79 @@ footer {
   margin-top: 20px;
   max-width: 600px;
   padding: 10px;
+}
+.hk-home {
+  background-image: url("img/Sfondo.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: 'Cinzel Decorative', cursive;
+  padding: 30px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #fff;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.mode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.mode-card {
+  display: flex;
+  align-items: center;
+  background: rgba(10, 10, 10, 0.8);
+  border: 2px solid #aaa;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.mode-card:hover {
+  transform: translateY(-3px);
+  border-color: white;
+  box-shadow: 0 0 15px white;
+}
+
+.mode-icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  border: 2px solid #888;
+}
+
+.mode-text {
+  text-align: left;
+}
+
+.mode-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.mode-desc {
+  font-size: 14px;
+  color: #ccc;
 }

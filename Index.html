@@ -2,32 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Hollowdle Main Page</title>
+  <title>Hollowdle Menu</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+    body {
+      font-family: 'Cinzel Decorative', cursive;
+      background: radial-gradient(ellipse at center, #1a1f29 0%, #0f1117 100%);
+      color: #f5f5f5;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .title {
+      font-size: 4em;
+      margin-bottom: 40px;
+      text-shadow: 0 0 12px #ccc;
+    }
+
+    body {
+    background-image: url("img/Sfondo.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+
+    .menu-box {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #ddd;
+      border-radius: 20px;
+      padding: 40px 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .menu-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 14px 24px;
+      width: 90%;
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #fff;
+      box-shadow: 0 0 12px #fff;
+      transform: scale(1.05);
+    }
+
+    .description {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      font-size: 0.7em;
+      margin-top: 50px;
+      color: #888;
+    }
+
+     .disclaimer {
+      font-size: 0.7em;
+      margin-top: 40px;
+      color: #ddd;
+      text-align: center;
+    }
+  </style>
 </head>
-<body class="menu">
-
-  <div class="container">
-    <h1>HOLLOWDLE MAIN PAGE</h1>
-
-    <button class="game-btn" onclick="location.href='Game.html'">🎯 Character Challenge</button>
+<body>
+  <div class="title">HOLLOWDLE</div>
+  <div class="menu-box">
+    <a href="Game.html" class="menu-btn">🎯 Character Challenge</a>
     <div class="description">Guess the character by comparing attributes.</div>
 
-    <button class="game-btn" onclick="location.href='Charm.html'">🔮 Charm Challenge</button>
+    <a href="Charm.html" class="menu-btn">🔮 Charm Challenge</a>
     <div class="description">Guess the charm by cost, category, and location.</div>
 
-    <button class="game-btn" onclick="location.href='Zoom.html'">🔍 Zoomed Challenge</button>
+    <a href="Zoom.html" class="menu-btn">🔍 Zoomed Challenge</a>
     <div class="description">Identify characters from zoomed-in images.</div>
 
-    <button class="game-btn" onclick="location.href='Soundguess.html'">🎵 Sound Challenge</button>
-    <div class="description">Identify characters or areas from the ost.</div>
+    <a href="Soundguess.html" class="menu-btn">🎵 Sound Challenge</a>
+    <div class="description">Identify characters or areas from the OST.</div>
 
-    <button class="game-btn" onclick="location.href='Help.html'">❓ Need help?</button>
-    <div class="description">Mean of the attributes and to contact me.</div>
+    <a href="Help.html" class="menu-btn">❓ Need help?</a>
+    <div class="description">Meaning of attributes and how to contact me.</div>
   </div>
 
-  <footer>
+  <div class="disclaimer">
     <p><strong>Disclaimer:</strong> This fan-made game is not affiliated with Team Cherry or Hollow Knight. All content is used for entertainment purposes only.</p>
-  </footer>
+  </div>
 </body>
 </html>
