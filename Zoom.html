@@ -4,41 +4,122 @@
   <meta charset="UTF-8" />
   <title>Zoom Guess - Hollow Knight</title>
   <link rel="stylesheet" href="style.css">
-<style>
+  <style>
     body {
-    background-image: url("img/Sfondo.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-</style>
+      background-image: url("img/Sfondo.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .zoom-container {
+      text-align: center;
+      margin: 20px auto;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+    .zoom-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .autocomplete-wrapper {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .used-list {
+      margin: 20px auto;
+      max-width: 400px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+    .used-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .used-list li {
+      margin: 5px 0;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
+    .small-btn {
+      padding: 12px 18px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: none;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+    .small-btn:hover {
+      background-color: #666;
+    }
+    .guess-box {
+      max-width: 500px;
+      margin: 20px auto;
+      background: rgba(25, 25, 35, 0.9);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+  </style>
 </head>
 <body>
   <h1>Zoom Guess - Hollow Knight</h1>
-  <p id="attempts-counter" style="font-size: 18px; margin-top: 5px;">Attempts: 0</p>
-  <div class="zoom-container">
-    <img id="zoom-img" src="" alt="Zoomed Character">
+
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 40px;">
+    <div class="zoom-container">
+      <img id="zoom-img" src="" alt="Zoomed Character" style="transition: transform 0.4s ease;">
+    </div>
   </div>
 
-  <div class="autocomplete-wrapper">
-    <input type="text" id="guess-input" placeholder="Type a character..." oninput="showSuggestions()" autocomplete="off" />
-    <div id="suggestions" class="suggestions-list"></div>
+  <p id="attempts-counter" style="font-size: 18px; margin-top: 5px; text-align: center;">Attempts: 0</p>
+
+  <div class="guess-box">
+    <h2>Guess the Character</h2>
+    <div class="autocomplete-wrapper input-row">
+      <input
+        type="text"
+        id="guess-input"
+        placeholder="Type a Hollow Knight character..."
+        oninput="showSuggestions()"
+        autocomplete="off"
+      />
+      <button class="small-btn" onclick="checkGuess()">Submit</button>
+      <div id="suggestions" class="suggestions-list"></div>
+    </div>
   </div>
 
-  <button onclick="checkGuess()">Submit</button>
+  <div class="used-list" id="used-list" style="display: none;">
+    <h3>Used Characters</h3>
+    <ul id="used-names"></ul>
+  </div>
+
   <div id="message"></div>
   <div id="win-message"></div>
   <img id="win-img" src="" style="display:none;"/>
-  
-  <div id="win-screen" class="win-screen">
-  <h2>You guessed it!</h2>
-  <h2>The character was:</h2>
-  <img id="final-image" src="" alt="Winner">
-  <button onclick="playAgain()">Play Again</button>
-</div>
 
+  <div id="win-screen" class="win-screen">
+    <h2>You guessed it!</h2>
+    <h2>The character was:</h2>
+    <img id="final-image" src="" alt="Winner">
+    <button onclick="location.reload()">Play Again</button>
   </div>
+
   <script>
     let characters = [];
     let target = null;
@@ -51,7 +132,10 @@
         const response = await fetch('personaggi.json');
         characters = await response.json();
         target = characters[Math.floor(Math.random() * characters.length)];
-        document.getElementById("zoom-img").src = target.photo;
+        zoomLevel = Math.random() * 3 + 8; 
+        const zoomImg = document.getElementById("zoom-img");
+        zoomImg.src = target.photo;
+        zoomImg.style.transform = `scale(${zoomLevel})`;
       } catch (error) {
         console.error("Error loading characters:", error);
         alert("Failed to load characters.");
@@ -92,7 +176,6 @@
       const message = document.getElementById("message");
 
       if (!guess || usedCharacters.includes(guess)) {
-        message.textContent = "Enter a valid or unused character name.";
         return;
       }
 
@@ -100,6 +183,19 @@
       attemptCount++;
       document.getElementById("attempts-counter").textContent = `Attempts: ${attemptCount}`;
 
+      const usedListDiv = document.getElementById("used-list");
+      const usedNames = document.getElementById("used-names");
+      usedListDiv.style.display = "block";
+      const guessedCharacter = characters.find(c => c.name.toLowerCase() === guess);
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+      <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="${guessedCharacter.photo}" alt="${guessedCharacter.name}" width="40" height="40" style="border-radius: 6px;">
+      <span>${guessedCharacter.name}</span>
+      </div>
+      `;
+      usedNames.appendChild(li);
 
       if (guess === target.name.toLowerCase()) {
         message.textContent = "";
@@ -107,65 +203,55 @@
         document.getElementById("final-image").src = target.photo;
         document.getElementById("win-screen").classList.add("active");
         createParticles();
-
-
-
       } else {
         if (zoomLevel > 1.5) {
           zoomLevel -= 0.8;
           document.getElementById("zoom-img").style.transform = `scale(${zoomLevel})`;
-          message.textContent = "Wrong! Zooming out a bit...";
-        } else {
-          message.textContent = "You've reached the maximum zoom-out!";
         }
+
+        document.getElementById("guess-input").value = "";
+        document.getElementById("suggestions").innerHTML = "";
+        document.getElementById("suggestions").style.display = "none";
       }
-
-      document.getElementById("guess-input").value = "";
-      document.getElementById("suggestions").innerHTML = "";
-      document.getElementById("suggestions").style.display = "none";
     }
+
     function createParticles() {
-  const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
-  const numParticles = 80;
+      const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
+      const numParticles = 80;
 
-  for (let i = 0; i < numParticles; i++) {
-    const particle = document.createElement("div");
-    particle.classList.add("particle");
-    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+      for (let i = 0; i < numParticles; i++) {
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-    const x = (Math.random() - 0.5) * 300 + "px";
-    const y = (Math.random() - 0.5) * 300 + "px";
-    particle.style.setProperty("--x", x);
-    particle.style.setProperty("--y", y);
+        const x = (Math.random() - 0.5) * 300 + "px";
+        const y = (Math.random() - 0.5) * 300 + "px";
+        particle.style.setProperty("--x", x);
+        particle.style.setProperty("--y", y);
 
-    particle.style.left = "50%";
-    particle.style.top = "50%";
+        particle.style.left = "50%";
+        particle.style.top = "50%";
+        particle.style.position = "fixed";
+        particle.style.width = "10px";
+        particle.style.height = "10px";
+        particle.style.borderRadius = "50%";
+        particle.style.transition = "transform 1s ease, opacity 1s ease";
 
-    particle.style.position = "fixed";
-    particle.style.width = "10px";
-    particle.style.height = "10px";
-    particle.style.borderRadius = "50%";
-    particle.style.transition = "transform 1s ease, opacity 1s ease";
+        particle.animate([
+          { transform: "translate(0, 0)", opacity: 1 },
+          { transform: `translate(${x}, ${y})`, opacity: 0 }
+        ], {
+          duration: 1000,
+          easing: "ease-out"
+        });
 
-    particle.animate([
-      { transform: "translate(0, 0)", opacity: 1 },
-      { transform: `translate(${x}, ${y})`, opacity: 0 }
-    ], {
-      duration: 1000,
-      easing: "ease-out"
-    });
+        document.body.appendChild(particle);
 
-    document.body.appendChild(particle);
-
-    setTimeout(() => {
-      particle.remove();
-    }, 1000);
-  }
-}
-function playAgain() {
-  window.location.href = window.location.href;
-}
-
+        setTimeout(() => {
+          particle.remove();
+        }, 1000);
+      }
+    }
 
     window.addEventListener("DOMContentLoaded", loadCharacters);
   </script>
