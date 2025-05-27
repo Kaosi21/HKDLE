@@ -5,14 +5,14 @@
   <title>Sound Guess - Hollow Knight</title>
   <link rel="stylesheet" href="style.css">
   <style>
-body {
-    background-image: url("img/Sfondo.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
-.custom-audio-player {
+    body {
+      background-image: url("img/Sfondo.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    .custom-audio-player {
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid #fff;
   border-radius: 16px;
@@ -98,14 +98,12 @@ body {
   height: 6px;
   border-radius: 10px;
 }
-
-</style>
+  </style>
 </head>
 <body>
 
 <h1>Guess the Sound - Hollow Knight</h1>
 
-<!-- Custom Audio Player -->
 <div class="custom-audio-player">
   <div class="audio-box">
     <button id="custom-audio-toggle" onclick="toggleAudio()" class="audio-button">
@@ -116,36 +114,35 @@ body {
   <audio id="audio" preload="auto"></audio>
 </div>
 
-<!-- Input + Suggestions -->
 <div class="autocomplete-wrapper">
   <input
     type="text"
     id="guess"
-    placeholder="Type the name of an area or character..."
+    placeholder="Type the name..."
     oninput="showSuggestions()"
     autocomplete="off"
   />
   <div id="suggestions" class="suggestions-list"></div>
 </div>
 
-<!-- Submit -->
 <div style="text-align:center;">
   <button onclick="checkGuess()">Submit</button>
 </div>
 
-<!-- Table -->
 <table id="feedback">
   <thead>
     <tr>
       <th>Image</th>
       <th>Name</th>
+      <th>Location</th>
       <th>Type</th>
+      <th>Difficulty</th>
+      <th>Theme</th>
     </tr>
   </thead>
   <tbody></tbody>
 </table>
 
-<!-- Win -->
 <div id="win-screen">
   <h2>Hai indovinato!</h2>
   <h2>Il suono era:</h2>
@@ -153,7 +150,6 @@ body {
   <button onclick="location.reload()">Gioca di nuovo</button>
 </div>
 
-<!-- Script -->
 <script>
   let sounds = [];
   let target = null;
@@ -239,8 +235,19 @@ body {
     suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
   }
 
-  function getClass(guess, actual) {
-    return guess.toLowerCase() === actual.toLowerCase() ? "match" : "wrong";
+  function getClass(guessVal, targetVal) {
+    const normalize = str => str.toLowerCase().split(",").map(s => s.trim());
+    const guessList = normalize(guessVal);
+    const targetList = normalize(targetVal);
+    const intersection = guessList.filter(val => targetList.includes(val));
+
+    if (guessList.length === targetList.length && intersection.length === guessList.length) {
+      return "match";
+    } else if (intersection.length > 0) {
+      return "partial";
+    } else {
+      return "wrong";
+    }
   }
 
   function checkGuess() {
@@ -264,19 +271,14 @@ body {
     const row = document.createElement("tr");
     row.classList.add("fade-slide-row");
 
-    const imgCell = document.createElement("td");
-    imgCell.innerHTML = `<img class="character-img" src="${guessed.Photo}" alt="${guessed.Name}" onerror="this.src='img/default.png'">`;
-    row.appendChild(imgCell);
-
-    const nameCell = document.createElement("td");
-    nameCell.className = getClass(guessed.Name, target.Name);
-    nameCell.textContent = guessed.Name;
-    row.appendChild(nameCell);
-
-    const typeCell = document.createElement("td");
-    typeCell.className = getClass(guessed.Type, target.Type);
-    typeCell.textContent = guessed.Type;
-    row.appendChild(typeCell);
+    row.innerHTML = `
+      <td><img class="character-img" src="${guessed.Photo}" alt="${guessed.Name}" onerror="this.src='img/default.png'"></td>
+      <td class="${getClass(guessed.Name, target.Name)}">${guessed.Name}</td>
+      <td class="${getClass(guessed.Location, target.Location)}">${guessed.Location}</td>
+      <td class="${getClass(guessed.Type, target.Type)}">${guessed.Type}</td>
+      <td class="${getClass(guessed.Difficulty, target.Difficulty)}">${guessed.Difficulty}</td>
+      <td class="${getClass(guessed.Themename, target.Themename)}">${guessed.Themename}</td>
+    `;
 
     feedbackBody.appendChild(row);
 
@@ -296,8 +298,7 @@ body {
     for (let i = 0; i < numParticles; i++) {
       const particle = document.createElement("div");
       particle.classList.add("particle");
-      particle.style.background =
-        colors[Math.floor(Math.random() * colors.length)];
+      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
       const x = (Math.random() - 0.5) * 300 + "px";
       const y = (Math.random() - 0.5) * 300 + "px";
@@ -314,6 +315,13 @@ body {
       }, 1000);
     }
   }
+
+  document.getElementById("guess").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      checkGuess();
+    }
+  });
 </script>
 
 </body>

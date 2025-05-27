@@ -1,8 +1,10 @@
 [
   {
     "File": "snd/Start.mp3",
-    "Name": "Howling Cliffs",
+    "Location": "Howling Cliffs",
     "Type": "Area",
-    "Photo": "img/How.webp"
+    "Photo": "img/How.webp",
+    "Name": "Enter Hallownest",
+    "Difficulty": "One"
   }
 ]
