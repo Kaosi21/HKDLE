@@ -798,6 +798,36 @@
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Monomon.webp"
+  },
+  {
+    "name": "Snail Shaman",
+    "region": "Forgotten Crossroads",
+    "alignment": "Good",
+    "species": "Snail",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Snail.webp"
+  },
+  {
+    "name": "Myla",
+    "region": "Forgotten Crossroads",
+    "alignment": "Good",
+    "species": "Bug",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Myla.webp"
+  },
+  {
+    "name": "Vespa",
+    "region": "The Hive",
+    "alignment": "Good",
+    "species": "Ghost, Bee",
+    "weapon": "Non combattant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Vespa.webp"
   }
 
 ]
