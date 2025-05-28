@@ -51,10 +51,10 @@
   },
   {
     "name": "Zote the mighty",
-    "region": "Greenpath, Dirthmouth, City of Tears, Deepnest, Kingdom's Edge",
+    "region": "Greenpath, Dirtmouth, City of Tears, Deepnest, Kingdom's Edge, Dream Realm",
     "alignment": "Neutral",
     "species": "Bug",
-    "weapon": "Nail, Minions",
+    "weapon": "Nail, Minions, Shockwaves",
     "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Zote.webp"
@@ -91,7 +91,7 @@
   },
   {
     "name": "Bretta",
-    "region": "Fungal wastes, Dirthmouth",
+    "region": "Fungal wastes, Dirtmouth",
     "alignment": "Good",
     "species": "Beetle",
     "weapon": "Non combattant",
@@ -131,7 +131,7 @@
   },
   {
     "name": "Sly",
-    "region": "Forgotten Crossroads, Dirthmouth, Godhome",
+    "region": "Forgotten Crossroads, Dirtmouth, Godhome",
     "alignment": "Neutral",
     "species": "Cicada",
     "weapon": "Nail, Great slash, Dash slash, Cyclone slash",
@@ -215,7 +215,7 @@
     "alignment": "Neutral",
     "species": "Ghost",
     "weapon": "Scythe",
-    "gameplay": "Boss",
+    "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Galien.webp"
   },
@@ -275,13 +275,13 @@
     "alignment": "Neutral",
     "species": "Ghost",
     "weapon": "Spirits",
-    "gameplay": "Boss",
+    "gameplay": "Boss, NPC",
     "gender": "Female",
     "photo": "img/Eyes.webp"
   },
   {
     "name": "Cornifer",
-    "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive, Dirthmouth ",
+    "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive, Dirtmouth ",
     "alignment": "Good",
     "species": "Snail",
     "weapon": "Non combattant",
@@ -295,7 +295,7 @@
     "alignment": "Neutral",
     "species": "Ghost, Moth",
     "weapon": "Nail, Shield, Mental control",
-    "gameplay": "Boss",
+    "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Markoth.webp"
   },
@@ -375,7 +375,7 @@
     "alignment": "Neutral",
     "species": "Ghost",
     "weapon": "Nail, Mental control",
-    "gameplay": "Boss",
+    "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Gorb.webp"
   },
@@ -385,7 +385,7 @@
     "alignment": "Neutral",
     "species": "Ghost",
     "weapon": "Mental control",
-    "gameplay": "Boss",
+    "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Hu.webp"
   },
@@ -395,7 +395,7 @@
     "alignment": "Neutral",
     "species": "Ghost",
     "weapon": "Pure strenght",
-    "gameplay": "Boss",
+    "gameplay": "Boss, NPC",
     "gender": "Female",
     "photo": "img/Marmu.webp"
   },
@@ -431,7 +431,7 @@
   },
   {
     "name": "Tiso",
-    "region": "Forgotten Crossroads, Resting Grounds, Dirthmouth, Kingdom's edge",
+    "region": "Forgotten Crossroads, Resting Grounds, Dirtmouth, Kingdom's edge",
     "alignment": "Neutral",
     "species": "Bug",
     "weapon": "Shield",
@@ -461,7 +461,7 @@
   },
   {
     "name": "Divine",
-    "region": "Dirthmouth",
+    "region": "Dirtmouth",
     "alignment": "Good",
     "species": "Bug",
     "weapon": "Non combattant",
@@ -501,7 +501,7 @@
   },
   {
     "name": "Gruz Mother",
-    "region": "Forgotten Crossroads, Kindom's edge",
+    "region": "Forgotten Crossroads, Kingdom's edge",
     "alignment": "Hostile",
     "species": "Bug",
     "weapon": "Pure strenght",
@@ -531,7 +531,7 @@
   },
   {
     "name": "Vengefly King",
-    "region": "Greenpath, Kindom's edge",
+    "region": "Greenpath, Kingdom's edge",
     "alignment": "Hostile",
     "species": "Bug",
     "weapon": "Flight",
@@ -591,7 +591,7 @@
   },
   {
     "name": "Mawlek",
-    "region": "Forgotten Crossroads, Kindom's edge",
+    "region": "Forgotten Crossroads, Kingdom's edge",
     "alignment": "Hostile",
     "species": "Construct",
     "weapon": "Claws, Infection",
@@ -681,7 +681,7 @@
   },
   {
     "name": "Jinn",
-    "region": "Dirthmouth",
+    "region": "Dirtmouth",
     "alignment": "Good",
     "species": "Construct",
     "weapon": "Non combattant",
@@ -691,7 +691,7 @@
   },
   {
     "name": "The Last Tag",
-    "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirthmouth",
+    "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirtmouth",
     "alignment": "Good",
     "species": "Beetle",
     "weapon": "Non combattant",
@@ -711,7 +711,7 @@
   },
   {
     "name": "Mister Mushroom",
-    "region": "Fungal Wastes, Kingdom's Edge, Deepnest, Howling Cliffs, Ancient Basin, Fog Canyon, Dirthmouth",
+    "region": "Fungal Wastes, Kingdom's Edge, Deepnest, Howling Cliffs, Ancient Basin, Fog Canyon, Dirtmouth",
     "alignment": "Good",
     "species": "Mushroom",
     "weapon": "Non combattant",
@@ -761,7 +761,7 @@
   },
   {
     "name": "Brumm",
-    "region": "Dirthmouth, Howling Cliffs",
+    "region": "Dirtmouth, Howling Cliffs",
     "alignment": "Good",
     "species": "Bug",
     "weapon": "Non combattant",

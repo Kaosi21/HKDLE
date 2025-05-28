@@ -1,5 +1,6 @@
-body {
-  font-family: Arial, sans-serif;
+ @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+ body {
+  font-family: 'Cinzel Decorative', cursive;
   background-image: url("img/Sfondo.jpeg");
   background-size: cover;
   background-repeat: no-repeat;

@@ -5,61 +5,107 @@
   <title>Sound Guess - Hollow Knight</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
     body {
+      font-family: 'Cinzel Decorative', cursive;
       background-image: url("img/Sfondo.jpeg");
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
+      color: white;
     }
-    .custom-audio-player {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid #fff;
-  border-radius: 16px;
-  padding: 24px;
-  width: 320px;
-  margin: 0 auto 30px;
-  box-shadow: 0 8px 18px rgba(255,255,255,0.1);
-  transition: transform 0.3s ease;
-}
-
-.custom-audio-player:hover {
-  transform: scale(1.02);
-}
-
-.audio-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.audio-button {
-  background: none;
-  border: 2px solid #fff;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 12px 18px;
-  border-radius: 30px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
-}
-
-.audio-button:hover {
-  background-color: #fff;
-  color: #000;
-  transform: translateY(-2px);
-}
-
-#audio-label {
-  text-decoration: underline;
-}
-
-#volume-slider {
+    .hint-box {
+      max-width: 500px;
+      margin: 20px auto;
+      background: rgba(25, 25, 35, 0.9);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .hint-box button {
+      margin: 8px;
+      padding: 10px 18px;
+      font-size: 15px;
+      border-radius: 10px;
+      background-color: #444;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .hint-box button:hover {
+      background-color: #666;
+    }
+    .hint-box .bloccato {
+      background-color: #555;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+    .input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    input[type="text"] {
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    .small-btn {
+      padding: 12px 18px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: none;
+      background-color: #444;
+      color: white;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+    .small-btn:hover {
+      background-color: #666;
+    }
+    #feedback {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      max-width: 1000px;
+      text-align: center;
+    }
+    #feedback th, #feedback td {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px;
+    }
+    .character-img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .fade-slide-row {
+      animation: fadeInSlide 0.5s ease;
+    }
+    @keyframes fadeInSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    #volume-slider {
   width: 100%;
   height: 6px;
   margin-top: 12px;
@@ -104,7 +150,11 @@
 
 <h1>Guess the Sound - Hollow Knight</h1>
 
-<div class="custom-audio-player">
+<div class="hint-box">
+  <h2>Listen and Guess</h2>
+  <button id="btn-extra-time" onclick="usaTempoExtra()" class="bloccato">⏩ Extra 8s (<span id="contatore-tempo">4</span>)</button>
+  <button id="btn-location" onclick="usaLocation()" class="bloccato">🌍 Reveal Location (<span id="contatore-location">6</span>)</button>
+  <div class="custom-audio-player">
   <div class="audio-box">
     <button id="custom-audio-toggle" onclick="toggleAudio()" class="audio-button">
       ▶️ <span id="audio-label">Play audio</span>
@@ -114,20 +164,20 @@
   <audio id="audio" preload="auto"></audio>
 </div>
 
-<div class="autocomplete-wrapper">
-  <input
-    type="text"
-    id="guess"
-    placeholder="Type the name..."
-    oninput="showSuggestions()"
-    autocomplete="off"
-  />
+  <div class="input-row">
+    <input
+      type="text"
+      id="guess"
+      placeholder="Type the name..."
+      oninput="showSuggestions()"
+      autocomplete="off"
+    />
+    <button class="small-btn" onclick="checkGuess()">Submit</button>
+  </div>
   <div id="suggestions" class="suggestions-list"></div>
 </div>
 
-<div style="text-align:center;">
-  <button onclick="checkGuess()">Submit</button>
-</div>
+<div id="help-message" style="text-align: center; margin-top: 20px; font-weight: bold; color: #f1c40f;"></div>
 
 <table id="feedback">
   <thead>
@@ -137,16 +187,16 @@
       <th>Location</th>
       <th>Type</th>
       <th>Difficulty</th>
-      <th>Theme</th>
     </tr>
   </thead>
   <tbody></tbody>
 </table>
 
-<div id="win-screen">
-  <h2>Hai indovinato!</h2>
-  <h2>Il suono era:</h2>
-  <img id="win-image" class="winner-img" src="" alt="Winner" />
+<div id="win-screen" style="display: none; text-align: center; margin-top: 30px;">
+  <h2>You guessed it!</h2>
+  <h2>The answer was:</h2>
+  <img id="win-image" class="winner-img" src="" alt="Winner" style="width: 150px; border-radius: 12px;">
+  <br>
   <button onclick="location.reload()">Gioca di nuovo</button>
 </div>
 
@@ -154,56 +204,47 @@
   let sounds = [];
   let target = null;
   let tentativi = 0;
+  let tempoExtraUsato = false;
+  let locationUsata = false;
   const usedSounds = [];
 
-  function toggleAudio() {
+  function toggleAudio(seconds = 8) {
     const audio = document.getElementById("audio");
     const label = document.getElementById("audio-label");
     const button = document.getElementById("custom-audio-toggle");
 
-    if (audio.paused) {
-      audio.play();
-      label.textContent = "Pause audio";
-      button.innerHTML = "⏸️ <span id='audio-label'>Pause audio</span>";
-    } else {
+    audio.currentTime = 0;
+    audio.play();
+    label.textContent = "Pause audio";
+    button.innerHTML = "⏸️ <span id='audio-label'>Pause audio</span>";
+
+    setTimeout(() => {
       audio.pause();
       label.textContent = "Play audio";
       button.innerHTML = "▶️ <span id='audio-label'>Play audio</span>";
-    }
-
-    audio.addEventListener("ended", () => {
-      label.textContent = "Play audio";
-      button.innerHTML = "▶️ <span id='audio-label'>Play audio</span>";
-    });
-
-    audio.addEventListener("timeupdate", () => {
-      if (audio.currentTime >= 8) {
-        audio.pause();
-        audio.currentTime = 0;
-        label.textContent = "Play audio";
-        button.innerHTML = "▶️ <span id='audio-label'>Play audio</span>";
-      }
-    });
+    }, seconds * 1000);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("audio");
-    const volumeSlider = document.getElementById("volume-slider");
-
-    fetch("sound.json")
-      .then((res) => res.json())
-      .then((data) => {
-        sounds = data;
-        target = sounds[Math.floor(Math.random() * sounds.length)];
-        audio.src = target.File;
-        audio.currentTime = 0;
-      });
-
-    volumeSlider.addEventListener("input", () => {
-      audio.volume = volumeSlider.value;
-    });
-  });
-
+  function aggiornaStatoAiuti() {
+    if (!tempoExtraUsato) {
+      const rimanenti = Math.max(0, 4 - tentativi);
+      document.getElementById("contatore-tempo").textContent = rimanenti;
+      if (tentativi >= 4) {
+        const btn = document.getElementById("btn-extra-time");
+        btn.classList.remove("bloccato");
+        btn.classList.add("attivo");
+      }
+    }
+    if (!locationUsata) {
+      const rimanenti = Math.max(0, 6 - tentativi);
+      document.getElementById("contatore-location").textContent = rimanenti;
+      if (tentativi >= 6) {
+        const btn = document.getElementById("btn-location");
+        btn.classList.remove("bloccato");
+        btn.classList.add("attivo");
+      }
+    }
+  }
   function showSuggestions() {
     const input = document.getElementById("guess").value.toLowerCase();
     const suggestionsDiv = document.getElementById("suggestions");
@@ -216,7 +257,7 @@
 
     const filtered = sounds
       .filter((s) => !usedSounds.includes(s.Name.toLowerCase()))
-      .filter((s) => s.Name.toLowerCase().startsWith(input));
+      .filter((s) => s.Name.toLowerCase().includes(input));
 
     filtered.forEach((sound) => {
       const item = document.createElement("div");
@@ -234,13 +275,32 @@
 
     suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
   }
+  function usaTempoExtra() {
+    if (tentativi < 4 || tempoExtraUsato) return;
+    toggleAudio(16);
+    tempoExtraUsato = true;
+    const btn = document.getElementById("btn-extra-time");
+    btn.classList.remove("attivo");
+    btn.classList.add("usato");
+    btn.disabled = true;
+  }
+
+  function usaLocation() {
+    if (tentativi < 6 || locationUsata) return;
+    const helpDiv = document.getElementById("help-message");
+    helpDiv.textContent = "The song is heard in: " + target.Location;
+    locationUsata = true;
+    const btn = document.getElementById("btn-location");
+    btn.classList.remove("attivo");
+    btn.classList.add("usato");
+    btn.disabled = true;
+  }
 
   function getClass(guessVal, targetVal) {
     const normalize = str => str.toLowerCase().split(",").map(s => s.trim());
     const guessList = normalize(guessVal);
     const targetList = normalize(targetVal);
     const intersection = guessList.filter(val => targetList.includes(val));
-
     if (guessList.length === targetList.length && intersection.length === guessList.length) {
       return "match";
     } else if (intersection.length > 0) {
@@ -266,6 +326,7 @@
 
     usedSounds.push(guessed.Name.toLowerCase());
     tentativi++;
+    aggiornaStatoAiuti();
 
     const feedbackBody = document.querySelector("#feedback tbody");
     const row = document.createElement("tr");
@@ -277,13 +338,12 @@
       <td class="${getClass(guessed.Location, target.Location)}">${guessed.Location}</td>
       <td class="${getClass(guessed.Type, target.Type)}">${guessed.Type}</td>
       <td class="${getClass(guessed.Difficulty, target.Difficulty)}">${guessed.Difficulty}</td>
-      <td class="${getClass(guessed.Themename, target.Themename)}">${guessed.Themename}</td>
     `;
 
     feedbackBody.appendChild(row);
 
     if (guessed.Name.toLowerCase() === target.Name.toLowerCase()) {
-      document.getElementById("win-screen").classList.add("active");
+      document.getElementById("win-screen").style.display = "block";
       document.getElementById("win-image").src = guessed.Photo;
       createParticles();
     }
@@ -291,36 +351,51 @@
     document.getElementById("guess").value = "";
   }
 
-  function createParticles() {
-    const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
-    const numParticles = 80;
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("audio");
+    const volumeSlider = document.getElementById("volume-slider");
 
-    for (let i = 0; i < numParticles; i++) {
-      const particle = document.createElement("div");
-      particle.classList.add("particle");
-      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    fetch("sound.json")
+      .then((res) => res.json())
+      .then((data) => {
+        sounds = data;
+        target = sounds[Math.floor(Math.random() * sounds.length)];
+        audio.src = target.File;
+      });
 
-      const x = (Math.random() - 0.5) * 300 + "px";
-      const y = (Math.random() - 0.5) * 300 + "px";
-      particle.style.setProperty("--x", x);
-      particle.style.setProperty("--y", y);
+    volumeSlider.addEventListener("input", () => {
+      audio.volume = volumeSlider.value;
+    });
+    function createParticles() {
+  const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
+  const numParticles = 80;
 
-      particle.style.left = "50%";
-      particle.style.top = "50%";
+  for (let i = 0; i < numParticles; i++) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-      document.body.appendChild(particle);
+    const x = (Math.random() - 0.5) * 300 + "px";
+    const y = (Math.random() - 0.5) * 300 + "px";
+    particle.style.setProperty("--x", x);
+    particle.style.setProperty("--y", y);
 
-      setTimeout(() => {
-        particle.remove();
-      }, 1000);
-    }
+    particle.style.left = "50%";
+    particle.style.top = "50%";
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => {
+      particle.remove();
+    }, 1000);
   }
-
-  document.getElementById("guess").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      checkGuess();
-    }
+}
+    document.getElementById("guess").addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        checkGuess();
+      }
+    });
   });
 </script>
 

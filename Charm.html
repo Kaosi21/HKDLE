@@ -5,7 +5,10 @@
   <title>Guess the Charm - Hollow Knight</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
+     @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+ body {
+  font-family: 'Cinzel Decorative', cursive;
       background-image: url("img/Sfondo.jpeg");
       background-size: cover;
       background-repeat: no-repeat;
@@ -199,7 +202,7 @@ function showSuggestions() {
 
   const filtered = charms
     .filter((c) => !usedCharms.includes(c.name.toLowerCase()))
-    .filter((c) => c.name.toLowerCase().startsWith(input));
+    .filter((c) => c.name.toLowerCase().includes(input));
 
   filtered.forEach((charm) => {
     const item = document.createElement("div");

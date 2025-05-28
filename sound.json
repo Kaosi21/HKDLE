@@ -6,5 +6,256 @@
     "Photo": "img/How.webp",
     "Name": "Enter Hallownest",
     "Difficulty": "One"
+  },
+  {
+    "File": "snd/Dirth.mp3",
+    "Location": "Dirtmouth",
+    "Type": "Area",
+    "Photo": "img/Dirth.webp",
+    "Name": "Dirtmouth",
+    "Difficulty": "One"
+  },
+  {
+    "File": "snd/Cross.mp3",
+    "Location": "Forgotten Crossroads",
+    "Type": "Area",
+    "Photo": "img/Cross.webp",
+    "Name": "Crossroads",
+    "Difficulty": "One"
+  },
+  {
+    "File": "snd/False.mp3",
+    "Location": "Forgotten Crossroads",
+    "Type": "Boss",
+    "Photo": "img/Falseknight.webp",
+    "Name": "False Knight",
+    "Difficulty": "One"
+  },
+  {
+    "File": "snd/Green.mp3",
+    "Location": "Greepath",
+    "Type": "Area",
+    "Photo": "img/Green.webp",
+    "Name": "Greenpath",
+    "Difficulty": "One"
+  },
+  {
+    "File": "snd/Hornet.mp3",
+    "Location": "Greepath",
+    "Type": "Boss",
+    "Photo": "img/Hornet.webp",
+    "Name": "Hornet",
+    "Difficulty": "One"
+  },
+  {
+    "File": "snd/Reflection.mp3",
+    "Location": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirtmouth",
+    "Type": "Area",
+    "Photo": "img/Tag.webp",
+    "Name": "Reflection",
+    "Difficulty": "Zero"
+  },
+  {
+    "File": "snd/Lords.mp3",
+    "Location": "Fungal Wastes",
+    "Type": "Boss",
+    "Photo": "img/Sisters.webp",
+    "Name": "Mantis Lords",
+    "Difficulty": "Two"
+  },
+  {
+    "File": "snd/Tears.mp3",
+    "Location": "City of Tears",
+    "Type": "Area",
+    "Photo": "img/Tears.webp",
+    "Name": "City of Tears",
+    "Difficulty": "Three"
+  },
+  {
+    "File": "snd/Dung.mp3",
+    "Location": "Royal Waterways",
+    "Type": "Boss",
+    "Photo": "img/Dungd.webp",
+    "Name": "Dung Defender",
+    "Difficulty": "Three"
+  },
+  {
+    "File": "snd/Battle.mp3",
+    "Location": "Fog Canyon",
+    "Type": "Boss",
+    "Photo": "img/Uumuu.webp",
+    "Name": "Decisive Battle",
+    "Difficulty": "Four"
+  },
+  {
+    "File": "snd/Wastes.mp3",
+    "Location": "Fungal Wastes",
+    "Type": "Area",
+    "Photo": "img/Wastes.webp",
+    "Name": "Fungal Wastes",
+    "Difficulty": "Two"
+  },
+  {
+    "File": "snd/Sanctum.mp3",
+    "Location": "City of Tears",
+    "Type": "Area",
+    "Photo": "img/Sanctum.webp",
+    "Name": "Soul Sanctum",
+    "Difficulty": "Three"
+  },
+  {
+    "File": "snd/Grounds.mp3",
+    "Location": "Resting Grounds",
+    "Type": "Area",
+    "Photo": "img/Grounds.webp",
+    "Name": "Resting Grounds",
+    "Difficulty": "Three"
+  },
+  {
+    "File": "snd/Gardens.mp3",
+    "Location": "Queen's Gardens",
+    "Type": "Area",
+    "Photo": "img/Gardens.webp",
+    "Name": "Queen's Gardens",
+    "Difficulty": "Four"
+  },
+  {
+    "File": "snd/Lady.mp3",
+    "Location": "Queen's Gardens",
+    "Type": "NPC",
+    "Photo": "img/WL.webp",
+    "Name": "White Lady",
+    "Difficulty": "Zero"
+  },
+  {
+    "File": "snd/Vessel.mp3",
+    "Location": "Ancient Basin",
+    "Type": "Boss",
+    "Photo": "img/Bvessel.webp",
+    "Name": "Broken Vessel",
+    "Difficulty": "Three"
+  },
+  {
+    "File": "snd/Edge.mp3",
+    "Location": "Kingdom's Edge",
+    "Type": "Area",
+    "Photo": "img/Edge.webp",
+    "Name": "Kingdom's Edge",
+    "Difficulty": "Three"
+  },
+  {
+    "File": "snd/Nosk.mp3",
+    "Location": "Deepnest",
+    "Type": "Boss",
+    "Photo": "img/Nosk.webp",
+    "Name": "Nosk",
+    "Difficulty": "Four"
+  },
+  {
+    "File": "snd/Dream.mp3",
+    "Location": "Dream Realm",
+    "Type": "Area",
+    "Photo": "img/Realm.webp",
+    "Name": "Dream",
+    "Difficulty": "Zero"
+  },
+  {
+    "File": "snd/Battle1.mp3",
+    "Location": "Dream Realm",
+    "Type": "Boss",
+    "Photo": "img/Realm.webp",
+    "Name": "Dream Battle",
+    "Difficulty": "Three, Four , Five"
+  },
+  {
+    "File": "snd/Palace.mp3",
+    "Location": "White Palace",
+    "Type": "Area",
+    "Photo": "img/Palace.webp",
+    "Name": "White Palace",
+    "Difficulty": "Five"
+  },
+  {
+    "File": "snd/Vessel1.mp3",
+    "Location": "Forgotten Crossroads",
+    "Type": "Boss",
+    "Photo": "img/HK.webp",
+    "Name": "Sealed Vessel",
+    "Difficulty": "Five"
+  },
+  {
+    "File": "snd/Radiance.mp3",
+    "Location": "Dream Realm",
+    "Type": "Boss",
+    "Photo": "img/Radiance.webp",
+    "Name": "Radiance",
+    "Difficulty": "Five"
+  },
+  {
+    "File": "snd/Knight.mp3",
+    "Location": "Main Menu",
+    "Type": "Area",
+    "Photo": "img/Knight.webp",
+    "Name": "Hollow Knight",
+    "Difficulty": "Zero"
+  },
+  {
+    "File": "snd/Zote.mp3",
+    "Location": "Dream Realm",
+    "Type": "Boss",
+    "Photo": "img/Zote.webp",
+    "Name": "Truth, Beauty and Hatred",
+    "Difficulty": "Five"
+  },
+  {
+    "File": "snd/Defender.mp3",
+    "Location": "Dream Realm",
+    "Type": "Boss",
+    "Photo": "img/Whited.webp",
+    "Name": "White Defender",
+    "Difficulty": "Five"
+  },
+  {
+    "File": "snd/Grimm.mp3",
+    "Location": "Dirtmouth",
+    "Type": "Boss",
+    "Photo": "img/Grimm.webp",
+    "Name": "Grimm",
+    "Difficulty": "Five"
+  },
+  {
+    "File": "snd/Ngrimm.mp3",
+    "Location": "Dream Realm",
+    "Type": "Boss",
+    "Photo": "img/Ngrimm.webp",
+    "Name": "Nightmare King Grimm",
+    "Difficulty": "Five"
+  },
+  {
+    "File": "snd/Godhome.mp3",
+    "Location": "Godhome",
+    "Type": "Area",
+    "Photo": "img/Godhome.webp",
+    "Name": "Godhome",
+    "Difficulty": "Five"
+  },
+  
+  {
+    "File": "snd/Battle2.mp3",
+    "Location": "Godhome",
+    "Type": "Boss",
+    "Photo": "img/Battle.webp",
+    "Name": "Sisters of Battle",
+    "Difficulty": "Five"
+  },
+  
+  {
+    "File": "snd/Vessel2.mp3",
+    "Location": "Godhome",
+    "Type": "Boss",
+    "Photo": "img/Pure.webp",
+    "Name": "Pure Vessel",
+    "Difficulty": "Five"
   }
+
 ]

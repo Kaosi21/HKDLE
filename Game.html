@@ -5,8 +5,10 @@
   <title>Guess the Character - Hollow Knight</title>
   <link rel="stylesheet" href="style.css">
 <style>
+ @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
  body {
-  font-family: Arial, sans-serif;
+  font-family: 'Cinzel Decorative', cursive;
   background-image: url("img/Sfondo.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -243,7 +245,7 @@ input[type="text"] {
   row.appendChild(imgCell);
 
   const fields = ["name", "region", "alignment", "species", "weapon", "gameplay", "gender"];
-fields.forEach((attr) => {
+  fields.forEach((attr) => {
   const cell = document.createElement("td");
   const className = getClass(guessedCharacter[attr], target[attr]);
   cell.className = className;
