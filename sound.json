@@ -50,10 +50,10 @@
   {
     "File": "snd/Reflection.mp3",
     "Location": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirtmouth",
-    "Type": "Area",
+    "Type": "NPC",
     "Photo": "img/Tag.webp",
     "Name": "Reflection",
-    "Difficulty": "Zero"
+    "Difficulty": "One"
   },
   {
     "File": "snd/Lords.mp3",
@@ -69,7 +69,7 @@
     "Type": "Area",
     "Photo": "img/Tears.webp",
     "Name": "City of Tears",
-    "Difficulty": "Three"
+    "Difficulty": "Two"
   },
   {
     "File": "snd/Dung.mp3",
@@ -77,7 +77,7 @@
     "Type": "Boss",
     "Photo": "img/Dungd.webp",
     "Name": "Dung Defender",
-    "Difficulty": "Three"
+    "Difficulty": "Two, Three"
   },
   {
     "File": "snd/Battle.mp3",
@@ -101,7 +101,7 @@
     "Type": "Area",
     "Photo": "img/Sanctum.webp",
     "Name": "Soul Sanctum",
-    "Difficulty": "Three"
+    "Difficulty": "Two"
   },
   {
     "File": "snd/Grounds.mp3",
@@ -117,7 +117,7 @@
     "Type": "Area",
     "Photo": "img/Gardens.webp",
     "Name": "Queen's Gardens",
-    "Difficulty": "Four"
+    "Difficulty": "Four, Five"
   },
   {
     "File": "snd/Lady.mp3",
@@ -125,7 +125,7 @@
     "Type": "NPC",
     "Photo": "img/WL.webp",
     "Name": "White Lady",
-    "Difficulty": "Zero"
+    "Difficulty": "Five"
   },
   {
     "File": "snd/Vessel.mp3",
@@ -133,7 +133,7 @@
     "Type": "Boss",
     "Photo": "img/Bvessel.webp",
     "Name": "Broken Vessel",
-    "Difficulty": "Three"
+    "Difficulty": "Three, Four"
   },
   {
     "File": "snd/Edge.mp3",
@@ -141,7 +141,7 @@
     "Type": "Area",
     "Photo": "img/Edge.webp",
     "Name": "Kingdom's Edge",
-    "Difficulty": "Three"
+    "Difficulty": "Three, Four"
   },
   {
     "File": "snd/Nosk.mp3",
@@ -149,7 +149,7 @@
     "Type": "Boss",
     "Photo": "img/Nosk.webp",
     "Name": "Nosk",
-    "Difficulty": "Four"
+    "Difficulty": "Three, Four"
   },
   {
     "File": "snd/Dream.mp3",
@@ -157,7 +157,7 @@
     "Type": "Area",
     "Photo": "img/Realm.webp",
     "Name": "Dream",
-    "Difficulty": "Zero"
+    "Difficulty": "Three, Four , Five"
   },
   {
     "File": "snd/Battle1.mp3",
@@ -213,7 +213,7 @@
     "Type": "Boss",
     "Photo": "img/Whited.webp",
     "Name": "White Defender",
-    "Difficulty": "Five"
+    "Difficulty": "Four, Five"
   },
   {
     "File": "snd/Grimm.mp3",

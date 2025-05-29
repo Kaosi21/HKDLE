@@ -126,7 +126,7 @@ input[type="text"] {
       <th>Image</th>
       <th>Name</th>
       <th>Region</th>
-      <th>Alignment</th>
+      <th>First Appearance</th>
       <th>Species</th>
       <th>Weapon</th>
       <th>Gameplay</th>
@@ -194,7 +194,7 @@ input[type="text"] {
 
     const filtered = characters
       .filter((c) => !usedCharacters.includes(c.name.toLowerCase()))
-      .filter((c) => c.name.toLowerCase().startsWith(input));
+      .filter((c) => c.name.toLowerCase().includes(input));
 
     filtered.forEach((char) => {
     const item = document.createElement("div");

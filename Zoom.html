@@ -13,7 +13,6 @@
       background-attachment: fixed;
       background-position: center;
       color: white;
-      font-family: Arial, sans-serif;
     }
     .zoom-container {
       text-align: center;
@@ -155,7 +154,7 @@
 
       const filtered = characters
         .filter(c => !usedCharacters.includes(c.name.toLowerCase()))
-        .filter(c => c.name.toLowerCase().startsWith(input));
+        .filter(c => c.name.toLowerCase().includes(input));
 
       filtered.forEach(char => {
         const item = document.createElement("div");

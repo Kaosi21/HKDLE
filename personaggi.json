@@ -2,7 +2,7 @@
   {
     "name": "The knight",
     "region": "The abyss",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Void creature, Vessel",
     "weapon": "Nail, Shadow, Cloak, Crystal, Great slash, Dash slash, Cyclone slash",
     "gameplay": "Main character",
@@ -12,7 +12,7 @@
   {
     "name": "Hornet",
     "region": "Greenpath, City of Tears, Kingdom's edge, The abyss, Deepnest, Forgotten Crossroads",
-    "alignment": "Neutral",
+    "alignment": "Early Game",
     "species": "Spider",
     "weapon": "Nail, String, Spikes",
     "gameplay": "Boss, NPC",
@@ -22,7 +22,7 @@
   {
     "name": "Radiance",
     "region": "Dream realm",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Higher being, Moth",
     "weapon": "Light, Mental control, Teleport",
     "gameplay": "Boss",
@@ -32,7 +32,7 @@
   {
     "name": "Quirrel",
     "region": "Forgotten Crossroads, Greenpath, Fungal Wastes, City of Tears, Deepnest, Crystal Peak, Fog Canyon, Resting Grounds",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Pill-Bug",
     "weapon": "Nail",
     "gameplay": "NPC",
@@ -42,7 +42,7 @@
   {
     "name": "The Hollow Knight",
     "region": "Forgotten Crossroads, The abyss",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Void creature, Vessel",
     "weapon": "Nail, Infection",
     "gameplay": "Boss",
@@ -52,7 +52,7 @@
   {
     "name": "Zote the mighty",
     "region": "Greenpath, Dirtmouth, City of Tears, Deepnest, Kingdom's Edge, Dream Realm",
-    "alignment": "Neutral",
+    "alignment": "Early Game",
     "species": "Out of Hallownest",
     "weapon": "Nail, Minions, Shockwaves",
     "gameplay": "Boss, NPC",
@@ -62,7 +62,7 @@
   {
     "name": "False Knight",
     "region": "Forgotten Crossroads",
-    "alignment": "Hostile",
+    "alignment": "Early Game",
     "species": "Maggot",
     "weapon": "Pure strenght, Hammer",
     "gameplay": "Boss",
@@ -72,7 +72,7 @@
   {
     "name": "Dung Defender",
     "region": "Royal waterways",
-    "alignment": "Hostile",
+    "alignment": "Mid Game, Early Game",
     "species": "Beetle",
     "weapon": "Dung Ball",
     "gameplay": "Boss",
@@ -82,7 +82,7 @@
   {
     "name": "White Defender",
     "region": "Dream realm",
-    "alignment": "Hostile",
+    "alignment": "Mid Game, Late Game",
     "species": "Beetle",
     "weapon": "Dung ball",
     "gameplay": "Boss",
@@ -92,7 +92,7 @@
   {
     "name": "Bretta",
     "region": "Fungal wastes, Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Beetle",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -102,7 +102,7 @@
   {
     "name": "Mato",
     "region": "Howling cliffs, Godhome",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Beetle",
     "weapon": "Nail, Cyclone slash",
     "gameplay": "Boss, NPC",
@@ -112,7 +112,7 @@
   {
     "name": "Oro",
     "region": "Kingdom's edge, Godhome",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Beetle",
     "weapon": "Nail, Dash slash",
     "gameplay": "Boss, NPC",
@@ -122,7 +122,7 @@
   {
     "name": "Sheo",
     "region": "Greenpath, Godhome",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Beetle",
     "weapon": "Brush, Great slash",
     "gameplay": "Boss, NPC",
@@ -132,7 +132,7 @@
   {
     "name": "Sly",
     "region": "Forgotten Crossroads, Dirtmouth, Godhome",
-    "alignment": "Neutral",
+    "alignment": "Mid Game, Late Game",
     "species": "Cicada",
     "weapon": "Nail, Great slash, Dash slash, Cyclone slash",
     "gameplay": "Boss, NPC",
@@ -142,7 +142,7 @@
   {
     "name": "Broken Vessel",
     "region": "Ancient Basin",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Void creature, Vessel",
     "weapon": "Nail, Infection",
     "gameplay": "Boss",
@@ -152,7 +152,7 @@
   {
     "name": "Grimm",
     "region": "Dirtmouth",
-    "alignment": "Neutral",
+    "alignment": "Late Game",
     "species": "Higher being",
     "weapon": "Bats, Spikes, Teleport",
     "gameplay": "Boss, NPC",
@@ -162,7 +162,7 @@
   {
     "name": "Nightmare King Grimm",
     "region": "Dream realm",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Higher being",
     "weapon": "Bats, Spikes, Fire, Teleport",
     "gameplay": "Boss",
@@ -172,7 +172,7 @@
   {
     "name": "Sisters of Battle",
     "region": "Godhome",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Mantis",
     "weapon": "Nail",
     "gameplay": "Boss",
@@ -182,7 +182,7 @@
   {
     "name": "Mantis Lords",
     "region": "Fungal wastes",
-    "alignment": "Neutral",
+    "alignment": "Early Game",
     "species": "Mantis",
     "weapon": "Nail",
     "gameplay": "Boss",
@@ -192,7 +192,7 @@
   {
     "name": "Nosk",
     "region": "Deepnest",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Mimic, Spider",
     "weapon": "Claws, Infection",
     "gameplay": "Boss",
@@ -202,7 +202,7 @@
   {
     "name": "Winged Nosk",
     "region": "Godhome",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Mimic, Spider",
     "weapon": "Claws, Infection, Flight",
     "gameplay": "Boss",
@@ -212,7 +212,7 @@
   {
     "name": "Galien",
     "region": "Deepnest",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Ghost",
     "weapon": "Scythe",
     "gameplay": "Boss, NPC",
@@ -222,7 +222,7 @@
   {
     "name": "Grey Mourner",
     "region": "Resting Grounds",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -232,7 +232,7 @@
   {
     "name": "Pale King",
     "region": "Palace Grounds, The abyss",
-    "alignment": "Good",
+    "alignment": "Late Game",
     "species": "Higher being",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -242,7 +242,7 @@
   {
     "name": "Grub",
     "region": "Kingdom's Edge, city of Tears, forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Grub",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -252,7 +252,7 @@
   {
     "name": "Grubfather",
     "region": "Forgotten Crossroads",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Grub",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -262,7 +262,7 @@
   {
     "name": "Xero",
     "region": "Resting Grounds",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Ghost, Moth",
     "weapon": "Nail, Mental control",
     "gameplay": "Boss",
@@ -272,7 +272,7 @@
   {
     "name": "No Eyes",
     "region": "Greenpath",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Ghost",
     "weapon": "Spirits",
     "gameplay": "Boss, NPC",
@@ -282,7 +282,7 @@
   {
     "name": "Cornifer",
     "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive, Dirtmouth ",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Snail",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -292,7 +292,7 @@
   {
     "name": "Markoth",
     "region": "Kingdom's Edge",
-    "alignment": "Neutral",
+    "alignment": "Late Game",
     "species": "Ghost, Moth",
     "weapon": "Nail, Shield, Mental control",
     "gameplay": "Boss, NPC",
@@ -302,7 +302,7 @@
   {
     "name": "Traitor Lord",
     "region": "Queen's Gardens",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Mantis",
     "weapon": "Claws, Shockwaves",
     "gameplay": "Boss",
@@ -312,7 +312,7 @@
   {
     "name": "The Collector",
     "region": "City of tears",
-    "alignment": "Hostile",
+    "alignment": "Mid Game, Late Game",
     "species": "Void creature",
     "weapon": "Claws",
     "gameplay": "Boss",
@@ -322,7 +322,7 @@
   {
     "name": "Hive Knight",
     "region": "The Hive",
-    "alignment": "Hostile",
+    "alignment": "Mid Game, Late Game",
     "species": "Bee",
     "weapon": "Nail, Bees",
     "gameplay": "Boss",
@@ -332,7 +332,7 @@
   {
     "name": "Crystal Guardian",
     "region": "Crystal Peak",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Construct",
     "weapon": "Crystal",
     "gameplay": "Boss",
@@ -342,7 +342,7 @@
   {
     "name": "Enraged Guardian",
     "region": "Crystal Peak",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Construct",
     "weapon": "Pure strenght, Crystal",
     "gameplay": "Boss",
@@ -352,7 +352,7 @@
   {
     "name": "Oblobbles",
     "region": "Kingdom's Edge",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Bug",
     "weapon": "Infection",
     "gameplay": "Boss",
@@ -362,7 +362,7 @@
   {
     "name": "Uumuu",
     "region": "Fog canyon",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Jellyfish",
     "weapon": "Mental control, Minions",
     "gameplay": "Boss",
@@ -372,7 +372,7 @@
   {
     "name": "Gorb",
     "region": "Howling Cliffs",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Ghost",
     "weapon": "Nail, Mental control",
     "gameplay": "Boss, NPC",
@@ -382,7 +382,7 @@
   {
     "name": "Elder Hu",
     "region": "Fungal Wastes",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Ghost",
     "weapon": "Mental control",
     "gameplay": "Boss, NPC",
@@ -392,7 +392,7 @@
   {
     "name": "Marmu",
     "region": "Queen's Gardens",
-    "alignment": "Neutral",
+    "alignment": "Mid Game",
     "species": "Ghost",
     "weapon": "Pure strenght",
     "gameplay": "Boss, NPC",
@@ -402,7 +402,7 @@
   {
     "name": "Failed Champion",
     "region": "Dream realm",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Maggot",
     "weapon": "Pure strenght, Hammer, Infection",
     "gameplay": "Boss",
@@ -412,7 +412,7 @@
   {
     "name": "Elderbug",
     "region": "Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -422,7 +422,7 @@
   {
     "name": "Cloth",
     "region": "Fungal Wastes, Queen's Gardens, Deepnest",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Hammer",
     "gameplay": "NPC",
@@ -432,7 +432,7 @@
   {
     "name": "Tiso",
     "region": "Forgotten Crossroads, Resting Grounds, Dirtmouth, Kingdom's edge",
-    "alignment": "Neutral",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Shield",
     "gameplay": "NPC",
@@ -442,7 +442,7 @@
   {
     "name": "Nailsmith",
     "region": "City of Tears",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Beetle",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -452,7 +452,7 @@
   {
     "name": "Salubra",
     "region": "Forgotten Crossroads",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -462,7 +462,7 @@
   {
     "name": "Divine",
     "region": "Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Late Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -472,7 +472,7 @@
   {
     "name": "Millibelle the Banker",
     "region": "Fog Canyon, City of tears",
-    "alignment": "Neutral",
+    "alignment": "Early Game",
     "species": "Pill-Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -482,7 +482,7 @@
   {
     "name": "Godseeker",
     "region": "City of Tears, Godhome",
-    "alignment": "Good",
+    "alignment": "Late Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -492,7 +492,7 @@
   {
     "name": "Flukemarm",
     "region": "Royal Waterways",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Fluke",
     "weapon": "Minions",
     "gameplay": "Boss",
@@ -502,7 +502,7 @@
   {
     "name": "Gruz Mother",
     "region": "Forgotten Crossroads, Kingdom's edge",
-    "alignment": "Hostile",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Pure strenght",
     "gameplay": "Boss",
@@ -512,7 +512,7 @@
   {
     "name": "God Tamer",
     "region": "Kingdom's Edge",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Bug",
     "weapon": "Infection, Pure strenght",
     "gameplay": "Boss",
@@ -522,7 +522,7 @@
   {
     "name": "Massive Moss Charger",
     "region": "Greenpath",
-    "alignment": "Hostile",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Pure strenght",
     "gameplay": "Normal enemy",
@@ -532,7 +532,7 @@
   {
     "name": "Vengefly King",
     "region": "Greenpath, Kingdom's edge",
-    "alignment": "Hostile",
+    "alignment": "Early Game",
     "species": "Mosquito",
     "weapon": "Flight",
     "gameplay": "Boss",
@@ -542,7 +542,7 @@
   {
     "name": "Soul Master",
     "region": "City of Tears",
-    "alignment": "Hostile",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Infection, Teleport, Spirits",
     "gameplay": "Boss",
@@ -552,7 +552,7 @@
   {
     "name": "Soul Warrior",
     "region": "City of tears, Kingdom's edge",
-    "alignment": "Hostile",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Teleport, Spirits, Nail, Minions",
     "gameplay": "Bug",
@@ -562,7 +562,7 @@
   {
     "name": "Watcher Knight",
     "region": "City of Tears",
-    "alignment": "Hostile",
+    "alignment": "Mid Game",
     "species": "Bug",
     "weapon": "Nail",
     "gameplay": "Boss",
@@ -572,7 +572,7 @@
   {
     "name": "Absolute Radiance",
     "region": "Godhome",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Higher being, Moth",
     "weapon": "Light, Mental control, Teleport",
     "gameplay": "Boss",
@@ -582,7 +582,7 @@
   {
     "name": "Lost Kin",
     "region": "Dream realm",
-    "alignment": "Hostile",
+    "alignment": "Mid Game, Late Game",
     "species": "Void creature, Vessel",
     "weapon": "Nail, Infection, Minions",
     "gameplay": "Boss",
@@ -592,7 +592,7 @@
   {
     "name": "Mawlek",
     "region": "Forgotten Crossroads, Kingdom's edge",
-    "alignment": "Hostile",
+    "alignment": "Early Game",
     "species": "Construct",
     "weapon": "Claws, Infection",
     "gameplay": "Boss",
@@ -602,7 +602,7 @@
   {
     "name": "Pure Vessel",
     "region": "Godhome",
-    "alignment": "Hostile",
+    "alignment": "Late Game",
     "species": "Void creature, Vessel",
     "weapon": "Nail, Light, Shadow, Cloak",
     "gameplay": "Boss",
@@ -612,7 +612,7 @@
   {
     "name": "Soul Tyrant",
     "region": "Dream realm",
-    "alignment": "Hostile",
+    "alignment": "Mid Game, Late Game",
     "species": "Bug",
     "weapon": "Infection, Teleport, Spirits",
     "gameplay": "Boss",
@@ -622,7 +622,7 @@
   {
     "name": "The hunter",
     "region": "Greenpath",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -632,7 +632,7 @@
   {
     "name": "Leg Eater",
     "region": "Greenpath",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Cicada",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -642,7 +642,7 @@
   {
     "name": "Jiji",
     "region": "Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -652,7 +652,7 @@
   {
     "name": "Iselda",
     "region": "Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Snail",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -662,7 +662,7 @@
   {
     "name": "Little Fool",
     "region": "Kingdom's Edge",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -672,7 +672,7 @@
   {
     "name": "Lemm",
     "region": "City of Tears",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -682,7 +682,7 @@
   {
     "name": "Jinn",
     "region": "Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Construct",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -692,7 +692,7 @@
   {
     "name": "The Last Tag",
     "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Beetle",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -702,7 +702,7 @@
   {
     "name": "Tuk",
     "region": "Royal Waterways",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -712,7 +712,7 @@
   {
     "name": "Mister Mushroom",
     "region": "Fungal Wastes, Kingdom's Edge, Deepnest, Howling Cliffs, Ancient Basin, Fog Canyon, Dirtmouth",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Mushroom",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -722,7 +722,7 @@
   {
     "name": "Seer",
     "region": "Resting Grounds",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Moth",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -732,7 +732,7 @@
   {
     "name": "White Lady",
     "region": "Queen's Gardens",
-    "alignment": "Good",
+    "alignment": "Late Game",
     "species": "Higher being",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -742,7 +742,7 @@
   {
     "name": "Unn",
     "region": "Greenpath",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Higher being",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -752,7 +752,7 @@
   {
     "name": "Void Entity",
     "region": "Godhome",
-    "alignment": "Good",
+    "alignment": "Late Game",
     "species": "Higher being",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -762,7 +762,7 @@
   {
     "name": "Brumm",
     "region": "Dirtmouth, Howling Cliffs",
-    "alignment": "Good",
+    "alignment": "Late Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -772,7 +772,7 @@
   {
     "name": "Herrah",
     "region": "Deepnest",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Dreamer",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -782,7 +782,7 @@
   {
     "name": "Lurien",
     "region": "City of Tears",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Dreamer",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -792,7 +792,7 @@
   {
     "name": "Monomon",
     "region": "Fog canyon",
-    "alignment": "Good",
+    "alignment": "Mid Game",
     "species": "Dreamer",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -802,7 +802,7 @@
   {
     "name": "Snail Shaman",
     "region": "Forgotten Crossroads",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Snail",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -812,7 +812,7 @@
   {
     "name": "Myla",
     "region": "Forgotten Crossroads",
-    "alignment": "Good",
+    "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
@@ -822,7 +822,7 @@
   {
     "name": "Vespa",
     "region": "The Hive",
-    "alignment": "Good",
+    "alignment": "Mid Game, Late Game",
     "species": "Ghost, Bee",
     "weapon": "Non combattant",
     "gameplay": "NPC",

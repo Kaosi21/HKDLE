@@ -15,10 +15,22 @@
       background-attachment: fixed;
       background-position: center;
       color: white;
-      font-family: Arial, sans-serif;
       padding: 20px;
     }
+ #blurred-image-container {
+      display: none;
+      text-align: center;
+      margin: 20px auto;
+    }
 
+    #blurred-image {
+      filter: blur(10px);
+      width: 150px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
     .fade-slide-row {
   animation: fadeSlideIn 0.6s ease forwards;
 }
@@ -149,8 +161,9 @@
     </div>
     <div id="suggestions" class="suggestions-list"></div>
   </div>
-  <div id="blur-container" style="display:none; text-align:center; margin: 20px auto;">
-    <img id="blur-img" src="" style="filter: blur(10px); width: 150px; margin: 10px auto; display: block; border-radius: 8px; box-shadow: 0 0 8px rgba(255,255,255,0.3);">
+
+  <div id="blurred-image-container">
+    <img id="blurred-image" src="" alt="Blurred Charm">
   </div>
 
   <div id="hint-message" style="text-align: center; margin: 15px auto; font-weight: bold; color: #f1c40f; max-width: 600px;"></div>
@@ -163,7 +176,7 @@
         <th>Category</th>
         <th>Cost</th>
         <th>Location</th>
-        <th>Obtained</th>
+        <th>How to get</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -318,7 +331,7 @@ function updateHintStatus() {
 
 function useLocationHint() {
   if (attemptCount < 4 || locationHintUsed) return;
-  document.getElementById("hint-message").textContent = "📍 The charm is found in: " + target.location;
+  document.getElementById("hint-message").textContent = "The charm is found in: " + target.location;
   locationHintUsed = true;
   const btn = document.getElementById("btn-location");
   btn.classList.remove("attivo");
@@ -326,17 +339,19 @@ function useLocationHint() {
   btn.disabled = true;
 }
 
-function useBlurHint() {
-  if (attemptCount < 6 || blurHintUsed) return;
-  const img = document.getElementById("blur-img");
-  img.src = target.icon;
-  img.style.display = "inline-block";
-  blurHintUsed = true;
-  const blurBtn = document.getElementById("btn-blur");
-  blurBtn.classList.remove("attivo");
-  blurBtn.classList.add("usato");
-  blurBtn.disabled = true;
-}
+    function useBlurHint() {
+      if (attemptCount < 6 || blurHintUsed) return;
+      const container = document.getElementById("blurred-image-container");
+      const img = document.getElementById("blurred-image");
+      img.src = target.icon;
+      container.style.display = "block";
+      blurHintUsed = true;
+
+      const blurBtn = document.getElementById("btn-blur");
+      blurBtn.classList.remove("attivo");
+      blurBtn.classList.add("usato");
+      blurBtn.disabled = true;
+    }
 
 function createParticles() {
   const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
