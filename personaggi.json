@@ -64,7 +64,7 @@
     "region": "Forgotten Crossroads",
     "alignment": "Early Game",
     "species": "Maggot",
-    "weapon": "Pure strenght, Hammer",
+    "weapon": "Pure Strenght, Hammer, Metheors",
     "gameplay": "Boss",
     "gender": "Unknown",
     "photo": "img/Falseknight.webp"
@@ -74,7 +74,7 @@
     "region": "Royal waterways",
     "alignment": "Mid Game, Early Game",
     "species": "Beetle",
-    "weapon": "Dung Ball",
+    "weapon": "Dung Ball, Pure Strenght",
     "gameplay": "Boss",
     "gender": "Male",
     "photo": "img/Dungd.webp"
@@ -84,7 +84,7 @@
     "region": "Dream realm",
     "alignment": "Mid Game, Late Game",
     "species": "Beetle",
-    "weapon": "Dung ball",
+    "weapon": "Dung Ball, Pure Strenght, Shockwaves",
     "gameplay": "Boss",
     "gender": "Male",
     "photo": "img/Whited.webp"
@@ -154,7 +154,7 @@
     "region": "Dirtmouth",
     "alignment": "Late Game",
     "species": "Higher being",
-    "weapon": "Bats, Spikes, Teleport",
+    "weapon": "Bats, Spikes, Teleport, Fire",
     "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Grimm.webp"
@@ -174,7 +174,7 @@
     "region": "Godhome",
     "alignment": "Late Game",
     "species": "Mantis",
-    "weapon": "Nail",
+    "weapon": "Nail, Teleport",
     "gameplay": "Boss",
     "gender": "Female",
     "photo": "img/Battle.webp"
@@ -184,7 +184,7 @@
     "region": "Fungal wastes",
     "alignment": "Early Game",
     "species": "Mantis",
-    "weapon": "Nail",
+    "weapon": "Nail, Teleport",
     "gameplay": "Boss",
     "gender": "Female",
     "photo": "img/Sisters.webp"
@@ -265,7 +265,7 @@
     "alignment": "Mid Game",
     "species": "Ghost, Moth",
     "weapon": "Nail, Mental control",
-    "gameplay": "Boss",
+    "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Xero.webp"
   },
@@ -274,7 +274,7 @@
     "region": "Greenpath",
     "alignment": "Mid Game",
     "species": "Ghost",
-    "weapon": "Spirits",
+    "weapon": "Spirits, Teleport",
     "gameplay": "Boss, NPC",
     "gender": "Female",
     "photo": "img/Eyes.webp"
@@ -294,7 +294,7 @@
     "region": "Kingdom's Edge",
     "alignment": "Late Game",
     "species": "Ghost, Moth",
-    "weapon": "Nail, Shield, Mental control",
+    "weapon": "Nail, Shield, Mental control, Teleport",
     "gameplay": "Boss, NPC",
     "gender": "Male",
     "photo": "img/Markoth.webp"
@@ -314,7 +314,7 @@
     "region": "City of tears",
     "alignment": "Mid Game, Late Game",
     "species": "Void creature",
-    "weapon": "Claws",
+    "weapon": "Claws, Minions",
     "gameplay": "Boss",
     "gender": "Unknown",
     "photo": "img/Moreno.webp"
@@ -324,7 +324,7 @@
     "region": "The Hive",
     "alignment": "Mid Game, Late Game",
     "species": "Bee",
-    "weapon": "Nail, Bees",
+    "weapon": "Nail, Minions, Spikes",
     "gameplay": "Boss",
     "gender": "Male",
     "photo": "img/Simp.webp"
@@ -534,7 +534,7 @@
     "region": "Greenpath, Kingdom's edge",
     "alignment": "Early Game",
     "species": "Mosquito",
-    "weapon": "Flight",
+    "weapon": "Flight, Minions",
     "gameplay": "Boss",
     "gender": "Unknown",
     "photo": "img/Vengking.webp"
