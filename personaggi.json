@@ -91,7 +91,7 @@
   },
   {
     "name": "Bretta",
-    "region": "Fungal wastes, Dirtmouth",
+    "region": "Fungal Wastes, Dirtmouth",
     "alignment": "Early Game",
     "species": "Beetle",
     "weapon": "Non combattant",
@@ -181,7 +181,7 @@
   },
   {
     "name": "Mantis Lords",
-    "region": "Fungal wastes",
+    "region": "Fungal Wastes",
     "alignment": "Early Game",
     "species": "Mantis",
     "weapon": "Nail, Teleport",
@@ -631,7 +631,7 @@
   },
   {
     "name": "Leg Eater",
-    "region": "Greenpath",
+    "region": "Fungal Wastes",
     "alignment": "Early Game",
     "species": "Cicada",
     "weapon": "Non combattant",
