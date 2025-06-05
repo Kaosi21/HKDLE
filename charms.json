@@ -36,7 +36,7 @@
     "category": "Supportive",
     "cost": "Four",
     "location": "Resting grounds",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Ssoul.webp"
   },
   {
@@ -44,7 +44,7 @@
     "category": "Supportive",
     "cost": "Two",
     "location": "Fungal wastes",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Dash.webp"
   },
   {
@@ -100,7 +100,7 @@
     "category": "Supportive",
     "cost": "Two",
     "location": "City of tears",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Spellt.webp"
   },
   {
@@ -124,7 +124,7 @@
     "category": "Offensive",
     "cost": "Three",
     "location": "Kingdom's edge",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Quicks.webp"
   },
   {
@@ -148,7 +148,7 @@
     "category": "Offensive",
     "cost": "Two",
     "location": "Dirthmouth",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Fallen.webp"
   },
   {
@@ -156,7 +156,7 @@
     "category": "Offensive",
     "cost": "One",
     "location": "Greenpath",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Thorns.webp"
   },
   {
@@ -164,7 +164,7 @@
     "category": "Defensive",
     "cost": "Two",
     "location": "Howling cliffs",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/B1.webp"
   },
   {
@@ -188,7 +188,7 @@
     "category": "Offensive",
     "cost": "Two",
     "location": "Forgotten Crossroads",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Womb.webp"
   },
   {
@@ -204,7 +204,7 @@
     "category": "Supportive",
     "cost": "Four",
     "location": "Crystal peak",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Focus.webp"
   },
   {
@@ -220,7 +220,7 @@
     "category": "Defensive",
     "cost": "Three",
     "location": "The abyss",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Blood1.webp"
   },
    {
@@ -228,7 +228,7 @@
     "category": "Defensive",
     "cost": "Four",
     "location": "Howling cliffs",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Blood2.webp"
   },
    {
@@ -236,7 +236,7 @@
     "category": "Defensive",
     "cost": "Four",
     "location": "The hive",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Hiveblood.webp"
   },
    {
@@ -244,7 +244,7 @@
     "category": "Offensive",
     "cost": "One",
     "location": "Fungal wastes",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Spore Shroom.webp"
   },
    {
@@ -252,7 +252,7 @@
     "category": "Offensive",
     "cost": "Two",
     "location": "Deepnest",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Sharp Shadow.webp"
   },
   {
@@ -260,7 +260,7 @@
     "category": "Defensive",
     "cost": "Two",
     "location": "Greenpath",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Shape of Unn.webp"
   },
   {
@@ -276,7 +276,7 @@
     "category": "Offensive",
     "cost": "Two",
     "location": "Deepnest",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Weaversong.webp"
   },
   {
@@ -284,7 +284,7 @@
     "category": "Supportive",
     "cost": "One",
     "location": "Resting grounds",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Dream Wielder.webp"
   },
   {
@@ -292,7 +292,7 @@
     "category": "Defensive, Offensive",
     "cost": "Three",
     "location": "Resting grounds",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Dreamshield.webp"
   },
   {
@@ -308,7 +308,7 @@
     "category": "Supportive",
     "cost": "Two",
     "location": "Forgotten Crossroads",
-    "obtained": "Founded",
+    "obtained": "Found",
     "icon": "img/Soul3.webp"
   }
 ]
