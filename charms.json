@@ -302,5 +302,13 @@
     "location": "Howling Cliffs",
     "obtained": "Obtained",
     "icon": "img/Grimmchild.webp"
+  },
+  {
+    "name": "Soul Catcher",
+    "category": "Supportive",
+    "cost": "Two",
+    "location": "Forgotten Crossroads",
+    "obtained": "Founded",
+    "icon": "img/Soul3.webp"
   }
 ]
