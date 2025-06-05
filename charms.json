@@ -4,7 +4,7 @@
     "category": "Supportive",
     "cost": "One",
     "location": "Dirthmouth",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Compass.webp"
   },
   {
@@ -12,7 +12,7 @@
     "category": "Supportive",
     "cost": "One",
     "location": "Dirthmouth",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Swarm.webp"
   },
   {
@@ -20,7 +20,7 @@
     "category": "Defensive",
     "cost": "Two",
     "location": "Dirthmouth",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Shell.webp"
   },
   {
@@ -28,7 +28,7 @@
     "category": "Offensive",
     "cost": "Three",
     "location": "Forgotten Crossroads",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Stone.webp"
   },
   {
@@ -52,7 +52,7 @@
     "category": "Supportive",
     "cost": "One",
     "location": "Dirthmouth",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Sprint.webp"
   },
   {
@@ -76,7 +76,7 @@
     "category": "Defensive",
     "cost": "Two",
     "location": "Fungal wastes",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Heart.webp"
   },
   {
@@ -84,7 +84,7 @@
     "category": "Supportive",
     "cost": "Two",
     "location": "Fungal wastes",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Greed.webp"
   },
   {
@@ -92,7 +92,7 @@
     "category": "Offensive",
     "cost": "Three",
     "location": "Fungal wastes",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/S1.webp"
   },
   {
@@ -108,7 +108,7 @@
     "category": "Supportive",
     "cost": "One",
     "location": "Forgotten Crossroads",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Steadyb.webp"
   },
   {
@@ -116,7 +116,7 @@
     "category": "Supportive",
     "cost": "Two",
     "location": "Dirthmouth",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Heavyb.webp"
   },
   {
@@ -132,7 +132,7 @@
     "category": "Offensive",
     "cost": "Two",
     "location": "Forgotten Crossroads",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Longnail.webp"
   },
   {
@@ -196,7 +196,7 @@
     "category": "Supportive",
     "cost": "Three",
     "location": "Forgotten Crossroads",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Quick.webp"
   },
   {
@@ -212,7 +212,7 @@
     "category": "Defensive",
     "cost": "Two",
     "location": "Forgotten Crossroads",
-    "obtained": "Buyed",
+    "obtained": "Bought",
     "icon": "img/Blood.webp"
   },
   {
