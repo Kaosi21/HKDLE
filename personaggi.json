@@ -283,7 +283,7 @@
     "name": "Cornifer",
     "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive, Dirtmouth ",
     "alignment": "Early Game",
-    "species": "Snail",
+    "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
     "gender": "Male",
@@ -555,7 +555,7 @@
     "alignment": "Early Game",
     "species": "Bug",
     "weapon": "Teleport, Spirits, Nail, Minions",
-    "gameplay": "Bug",
+    "gameplay": "Boss",
     "gender": "Male",
     "photo": "img/Soul1.webp"
   },
@@ -653,7 +653,7 @@
     "name": "Iselda",
     "region": "Dirtmouth",
     "alignment": "Early Game",
-    "species": "Snail",
+    "species": "Bug",
     "weapon": "Non combattant",
     "gameplay": "NPC",
     "gender": "Female",
@@ -690,7 +690,7 @@
     "photo": "img/Steel.webp"
   },
   {
-    "name": "The Last Tag",
+    "name": "The Last Stag",
     "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirtmouth",
     "alignment": "Early Game",
     "species": "Beetle",
