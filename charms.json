@@ -330,7 +330,7 @@
   {
     "name": "Void Heart",
     "category": "Supportive",
-    "cost": "Three",
+    "cost": "Zero",
     "location": "The abyss",
     "obtained": "Gifted",
     "icon": "img/Void1.webp"
