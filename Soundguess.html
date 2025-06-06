@@ -144,16 +144,37 @@
   height: 6px;
   border-radius: 10px;
 }
+    .back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  box-shadow: 0 0 8px #fff;
+}
   </style>
 </head>
 <body>
-
+<a href="Index.html" class="back-button">⬅️ Back to Main Menu</a>
 <h1>Guess the Sound - Hollow Knight</h1>
 
 <div class="hint-box">
   <h2>Listen and Guess</h2>
   <button id="btn-extra-time" onclick="usaTempoExtra()" class="bloccato">⏩ Extra 8s (<span id="contatore-tempo">4</span>)</button>
   <button id="btn-location" onclick="usaLocation()" class="bloccato">🌍 Reveal Location (<span id="contatore-location">6</span>)</button>
+  <button id="btn-risposta" onclick="usaRisposta()" class="bloccato">💡 Reveal Answer (<span id="contatore-risposta">8</span>)</button>
   <div class="custom-audio-player">
   <div class="audio-box">
     <button id="custom-audio-toggle" onclick="toggleAudio()" class="audio-button">
@@ -171,6 +192,7 @@
       placeholder="Type the name..."
       oninput="showSuggestions()"
       autocomplete="off"
+      onkeydown="handleKeyDown(event)"
     />
     <button class="small-btn" onclick="checkGuess()">Submit</button>
   </div>
@@ -206,6 +228,7 @@
   let tentativi = 0;
   let tempoExtraUsato = false;
   let locationUsata = false;
+  let rispostaUsata = false;
   const usedSounds = [];
 
   function toggleAudio(seconds = 8) {
@@ -242,6 +265,16 @@
         btn.classList.add("attivo");
       }
     }
+    if (!rispostaUsata) {
+      const rimanenti = Math.max(0, 8 - tentativi);
+      document.getElementById("contatore-risposta").textContent = rimanenti;
+      if (tentativi >= 8) {
+        const btn = document.getElementById("btn-risposta");
+        btn.classList.remove("bloccato");
+        btn.classList.add("attivo");
+      }
+    }
+
   }
   function showSuggestions() {
     const input = document.getElementById("guess").value.toLowerCase();
@@ -273,6 +306,20 @@
 
     suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
   }
+
+  function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+    const suggestions = document.querySelectorAll("#suggestions .suggestion-item");
+    if (suggestions.length > 0) {
+      suggestions[0].click(); // seleziona automaticamente il primo suggerimento
+    } else {
+      checkGuess(); // altrimenti tenta la risposta direttamente
+    }
+  }
+}
+
   function usaTempoExtra() {
     if (tentativi < 4 || tempoExtraUsato) return;
     toggleAudio(16);
@@ -294,6 +341,25 @@
     btn.disabled = true;
   }
 
+  function usaRisposta() {
+  if (tentativi < 8 || rispostaUsata) return;
+
+  rispostaUsata = true;
+
+  const btn = document.getElementById("btn-risposta");
+  btn.classList.remove("attivo");
+  btn.classList.add("usato");
+  btn.disabled = true;
+
+  const helpDiv = document.getElementById("help-message");
+  helpDiv.innerHTML = `❗ The correct answer was: <strong>${target.Name}</strong>`;
+
+  document.getElementById("win-screen").style.display = "block";
+  document.getElementById("win-image").src = target.Photo;
+  createParticles();
+}
+
+
   function getClass(guessVal, targetVal) {
     const normalize = str => str.toLowerCase().split(",").map(s => s.trim());
     const guessList = normalize(guessVal);
@@ -313,7 +379,7 @@
     const guessed = sounds.find(s => s.Name.toLowerCase() === input);
 
     if (!guessed) {
-      alert("Elemento non trovato!");
+      alert("Song not found. Try selecting from the list.");
       return;
     }
 
@@ -388,13 +454,7 @@
     }, 1000);
   }
 }
-    document.getElementById("guess").addEventListener("keydown", function (event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        checkGuess();
-      }
-    });
-  });
+});
 </script>
 
 </body>

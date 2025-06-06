@@ -67,12 +67,12 @@
     "name": "Grubberfly's elegy",
     "category": "Offensive",
     "cost": "Three",
-    "location": "Dirthmouth",
+    "location": "Forgotten Crossroads",
     "obtained": "Gifted",
     "icon": "img/Grub2.webp"
   },
   {
-    "name": "Unbreakle heart",
+    "name": "Unbreakable Heart",
     "category": "Defensive",
     "cost": "Two",
     "location": "Fungal wastes",
@@ -80,7 +80,7 @@
     "icon": "img/Heart.webp"
   },
   {
-    "name": "Unbreakle greed",
+    "name": "Unbreakable Greed",
     "category": "Supportive",
     "cost": "Two",
     "location": "Fungal wastes",
@@ -88,7 +88,7 @@
     "icon": "img/Greed.webp"
   },
   {
-    "name": "Unbreakle strenght",
+    "name": "Unbreakable Strength",
     "category": "Offensive",
     "cost": "Three",
     "location": "Fungal wastes",
@@ -96,7 +96,7 @@
     "icon": "img/S1.webp"
   },
   {
-    "name": "Spell twister",
+    "name": "Spell Tister",
     "category": "Supportive",
     "cost": "Two",
     "location": "City of tears",
@@ -104,7 +104,7 @@
     "icon": "img/Spellt.webp"
   },
   {
-    "name": "Steady body",
+    "name": "Steady Body",
     "category": "Supportive",
     "cost": "One",
     "location": "Forgotten Crossroads",
@@ -120,7 +120,7 @@
     "icon": "img/Heavyb.webp"
   },
   {
-    "name": "Quick slash",
+    "name": "Quick Slash",
     "category": "Offensive",
     "cost": "Three",
     "location": "Kingdom's edge",
@@ -136,7 +136,7 @@
     "icon": "img/Longnail.webp"
   },
   {
-    "name": "Mark of pride",
+    "name": "Mark of Pride",
     "category": "Offensive",
     "cost": "Three",
     "location": "Fungal wastes",
@@ -144,7 +144,7 @@
     "icon": "img/Markp.webp"
   },
   {
-    "name": "Fury of the fallen",
+    "name": "Fury of the Fallen",
     "category": "Offensive",
     "cost": "Two",
     "location": "Dirthmouth",
@@ -152,7 +152,7 @@
     "icon": "img/Fallen.webp"
   },
   {
-    "name": "Thorns of agony",
+    "name": "Thorns of Agony",
     "category": "Offensive",
     "cost": "One",
     "location": "Greenpath",
@@ -160,7 +160,7 @@
     "icon": "img/Thorns.webp"
   },
   {
-    "name": "Baldur shell",
+    "name": "Baldur Shell",
     "category": "Defensive",
     "cost": "Two",
     "location": "Howling cliffs",
@@ -176,7 +176,7 @@
     "icon": "img/Flukenest.webp"
   },
   {
-    "name": "Defender's crest",
+    "name": "Defender's Crest",
     "category": "Offensive",
     "cost": "One",
     "location": "Royal waterways",
@@ -184,7 +184,7 @@
     "icon": "img/Crest.webp"
   },
   {
-    "name": "Glowing womb",
+    "name": "Glowing Womb",
     "category": "Offensive",
     "cost": "Two",
     "location": "Forgotten Crossroads",
@@ -192,7 +192,7 @@
     "icon": "img/Womb.webp"
   },
   {
-    "name": "Quick focus",
+    "name": "Quick Focus",
     "category": "Supportive",
     "cost": "Three",
     "location": "Forgotten Crossroads",
@@ -200,7 +200,7 @@
     "icon": "img/Quick.webp"
   },
   {
-    "name": "Deep focus",
+    "name": "Deep Focus",
     "category": "Supportive",
     "cost": "Four",
     "location": "Crystal peak",
@@ -208,7 +208,7 @@
     "icon": "img/Focus.webp"
   },
   {
-    "name": "Lifeblood heart",
+    "name": "Lifeblood Heart",
     "category": "Defensive",
     "cost": "Two",
     "location": "Forgotten Crossroads",
@@ -216,7 +216,7 @@
     "icon": "img/Blood.webp"
   },
   {
-    "name": "Lifeblood core",
+    "name": "Lifeblood Core",
     "category": "Defensive",
     "cost": "Three",
     "location": "The abyss",
@@ -224,7 +224,7 @@
     "icon": "img/Blood1.webp"
   },
    {
-    "name": "Joni's blessing",
+    "name": "Joni's Blessing",
     "category": "Defensive",
     "cost": "Four",
     "location": "Howling cliffs",
@@ -284,7 +284,7 @@
     "category": "Supportive",
     "cost": "One",
     "location": "Resting grounds",
-    "obtained": "Found",
+    "obtained": "Gifted",
     "icon": "img/Dream Wielder.webp"
   },
   {
@@ -310,5 +310,29 @@
     "location": "Forgotten Crossroads",
     "obtained": "Found",
     "icon": "img/Soul3.webp"
+  },
+  {
+    "name": "Carefree Melody",
+    "category": "Supportive",
+    "cost": "Three",
+    "location": "Dirthmouth",
+    "obtained": "Gifted",
+    "icon": "img/Melody.webp"
+  },
+  {
+    "name": "Kingsoul",
+    "category": "Supportive",
+    "cost": "Five",
+    "location": "Queen's Gardens, White Palace",
+    "obtained": "Gifted",
+    "icon": "img/Kingsoul.webp"
+  },
+  {
+    "name": "Void Heart",
+    "category": "Supportive",
+    "cost": "Three",
+    "location": "The abyss",
+    "obtained": "Gifted",
+    "icon": "img/Void1.webp"
   }
 ]

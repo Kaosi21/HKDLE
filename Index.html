@@ -81,7 +81,7 @@
       text-align: center;
     }
     .donation-box {
-  margin-top: 30px;
+  margin-top:40px;
   padding: 10px;
   text-align: center;
   font-size: 0.85em;
@@ -97,6 +97,67 @@
 .donation-box a:hover {
   text-decoration: underline;
 }
+.icon-bar {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline; /* ✅ aggiunto per allineamento verticale */
+  gap: 20px;
+}
+
+
+
+.icon-bar a img,
+.icon-bar button img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #1a1f29;
+  padding: 6px;
+  transition: transform 0.2s ease;
+}
+
+.icon-bar a img:hover,
+.icon-bar button img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #fff;
+}
+
+.icon-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.updates-box {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  max-height: 1500px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 0.85em;
+  z-index: 998;
+  box-shadow: 0 0 15px #000;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 997;
+}
+
+
 
   </style>
 </head>
@@ -119,12 +180,59 @@
     <div class="description">Meaning of attributes and how to contact me.</div>
   </div>
 
+  <div class="icon-bar">
+  <a href="https://ko-fi.com/kaosy21" target="_blank" title="Support on Ko-fi">
+    <img src="img/kofi-icon.png" alt="Ko-fi" />
+  </a>
+  <div id="overlay" style="display:none;"></div>
+  <button onclick="toggleUpdates()" title="Website Updates">
+    <img src="img/info-icon.png" alt="Updates" />
+  </button>
+  </div>
+
+  <div id="updates-box" class="updates-box" style="display:none;">
+  <h3>🛠️ Last Updates</h3>
+  <ul>
+    <li>06/06/2025</li>
+    <li>- Updated the home page</li>
+    <li>- Non combattant now is Non combatant</li>
+    <li>- Pure Strength now is Pure Strenght</li>
+    <li>- Buyed now is Bought</li>
+    <li>- Obtained now is Gifted</li>
+    <li>- Fixed varius attributes in charm and characters</li>
+    <li>- Added carefree Melody, Kingsoul, Void Heart, Fluke Hermit, Emilitia, Mask Maker, Midwife</li>
+    <li>- Fixed the message sent when u don't put any character on every game</li>
+    <li>- Fixed the audio called "sealed vessel"</li>
+    <li>- Added a back button on all pages</li>
+    <li>- Now you can press enter to select the first character on the list</li>
+    <li>- Added in all games exept for zoom guessr the third hint "Show answer"</li>
+  </ul>
+  </div>
   <div class="disclaimer">
     <p><strong>Disclaimer:</strong> This fan-made game is not affiliated with Team Cherry or Hollow Knight. All content is used for entertainment purposes only.</p>
   </div>
-    <div class="donation-box">
-    <p>If you're enjoying Hollowdle and want to support it, you can <a href="https://ko-fi.com/kaosy21" target="_blank">buy me a coffee ☕</a> to support future updates!</p>
-  </div>
+
+ <script>
+  function toggleUpdates() {
+    const box = document.getElementById("updates-box");
+    const overlay = document.getElementById("overlay");
+    const isVisible = box.style.display === "block";
+
+    if (isVisible) {
+      box.style.display = "none";
+      overlay.style.display = "none";
+    } else {
+      box.style.display = "block";
+      overlay.style.display = "block";
+    }
+  }
+
+  document.getElementById("overlay").addEventListener("click", () => {
+    document.getElementById("updates-box").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  });
+</script>
+
 
 </body>
 </html>

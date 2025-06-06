@@ -92,17 +92,39 @@ input[type="text"] {
   cursor: not-allowed;
   opacity: 0.5;
 }
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  box-shadow: 0 0 8px #fff;
+}
+
 
 </style>
 
 
 </head>
 <body>
-
+<a href="Index.html" class="back-button">⬅️ Back to Main Menu</a>
 <div class="hint-box">
   <h2>Guess the Character - Hollow Knight</h2>
   <button id="btn-regione" onclick="usaRegione()" class="bloccato">🌍 Show region (<span id="contatore-regione">4</span>)</button>
   <button id="btn-blur" onclick="usaBlur()" class="bloccato">📷 Blurred image (<span id="contatore-blur">8</span>)</button>
+  <button id="btn-risposta" onclick="mostraRisposta()" class="bloccato">💡 Reveal Answer (<span id="contatore-risposta">10</span>)</button>
   <div class="autocomplete-wrapper input-row">
     <input
       type="text"
@@ -110,6 +132,7 @@ input[type="text"] {
       placeholder="Type a Hollow Knight character..."
       oninput="showSuggestions()"
       autocomplete="off"
+      onkeydown="handleKeyDown(event)"
     />
     <button class="small-btn" onclick="checkGuess()">Submit</button>
   </div>
@@ -135,7 +158,6 @@ input[type="text"] {
   </thead>
   <tbody></tbody>
 </table>
-
 <div id="win-screen">
   <h2>You guessed it!</h2>
   <h2>The character was:</h2>
@@ -150,6 +172,7 @@ input[type="text"] {
   const usedCharacters = [];
   let aiutoRegioneUsato = false;
   let aiutoBlurUsato = false;
+  let aiutoRispostaUsato = false;
 
   async function caricaPersonaggi() {
   try {
@@ -214,13 +237,26 @@ input[type="text"] {
     suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
   }
 
+  function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // blocca il submit predefinito
+    const suggestions = document.querySelectorAll("#suggestions .suggestion-item");
+    if (suggestions.length > 0) {
+      suggestions[0].click(); // simula il click sul primo suggerimento
+    } else {
+      checkGuess(); // se non ci sono suggerimenti, prova a verificare normalmente
+    }
+  }
+}
+
+
   function checkGuess() {
   const guessInput = document.getElementById("guess").value.toLowerCase();
   const guessedCharacter = characters.find(
     (c) => c.name.toLowerCase() === guessInput
   );
   if (!guessedCharacter) {
-    alert("Personaggio non trovato");
+    alert("Character not found. Try selecting from the list.");
     return;
   }
 
@@ -300,6 +336,19 @@ function aggiornaStatoAiuti() {
       btnBlur.classList.add("attivo");
     }
   }
+
+    // Give up
+  const btnRisposta = document.getElementById("btn-risposta");
+  const contatoreRisposta = document.getElementById("contatore-risposta");
+  if (!aiutoRispostaUsato) {
+    const rimanenti = Math.max(0, 10 - tentativi);
+    contatoreRisposta.textContent = rimanenti;
+    if (tentativi >= 10) {
+      btnRisposta.classList.remove("bloccato");
+      btnRisposta.classList.add("attivo");
+    }
+  }
+
 }
 
 function usaRegione() {
@@ -320,6 +369,21 @@ function usaBlur() {
   btn.classList.remove("attivo");
   btn.classList.add("usato");
   btn.disabled = true;
+}
+
+function mostraRisposta() {
+  if (tentativi < 10 || aiutoRispostaUsato) return;
+
+  aiutoRispostaUsato = true;
+
+  const btn = document.getElementById("btn-risposta");
+  btn.classList.remove("attivo");
+  btn.classList.add("usato");
+  btn.disabled = true;
+
+  document.getElementById("help-message").innerHTML = `❗ The correct answer was: <strong>${target.name}</strong>`;
+  document.getElementById("win-image").src = target.photo;
+  document.getElementById("win-screen").classList.add("active");
 }
 
   function createParticles() {

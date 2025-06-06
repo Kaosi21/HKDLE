@@ -139,22 +139,45 @@
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
 }
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  box-shadow: 0 0 8px #fff;
+}
 
 
 
   </style>
 </head>
 <body>
+  <a href="Index.html" class="back-button">⬅️ Back to Main Menu</a>
   <div class="hint-box">
     <h2>Guess the Charm - Hollow Knight</h2>
     <button id="btn-location" onclick="useLocationHint()" class="bloccato">🌍 Show Region (<span id="location-counter">4</span>)</button>
     <button id="btn-blur" onclick="useBlurHint()" class="bloccato">📷 Blurred Image (<span id="blur-counter">6</span>)</button>
+    <button id="btn-reveal" onclick="useRevealHint()" class="bloccato">💡 Reveal Answer (<span id="reveal-counter">8</span>)</button>
     <div class="autocomplete-wrapper input-row">
       <input
         type="text"
         id="guess"
         placeholder="Type a Hollow Knight charm..."
         oninput="showSuggestions()"
+        onkeydown="handleKeyDown(event)"
         autocomplete="off"
       />
       <button class="small-btn" onclick="checkGuess()">Submit</button>
@@ -196,6 +219,7 @@ let usedCharms = [];
 let attemptCount = 0;
 let locationHintUsed = false;
 let blurHintUsed = false;
+let revealHintUsed = false;
 
 async function loadCharms() {
   const response = await fetch("charms.json");
@@ -232,6 +256,19 @@ function showSuggestions() {
   });
 
   suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
+}
+
+function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Previene il submit di default
+
+    const suggestions = document.querySelectorAll("#suggestions .suggestion-item");
+    if (suggestions.length > 0) {
+      suggestions[0].click(); // Seleziona il primo suggerimento
+    } else {
+      checkGuess(); // Altrimenti prova a validare normalmente
+    }
+  }
 }
 
 function normalize(str) {
@@ -327,6 +364,17 @@ function updateHintStatus() {
       blurBtn.classList.add("attivo");
     }
   }
+  const revealBtn = document.getElementById("btn-reveal");
+  const revealCounter = document.getElementById("reveal-counter");
+  if (!revealHintUsed) {
+    const remaining = Math.max(0, 8 - attemptCount);
+    revealCounter.textContent = remaining;
+    if (attemptCount >= 8) {
+      revealBtn.classList.remove("bloccato");
+      revealBtn.classList.add("attivo");
+    }
+  }
+
 }
 
 function useLocationHint() {
@@ -352,6 +400,22 @@ function useLocationHint() {
       blurBtn.classList.add("usato");
       blurBtn.disabled = true;
     }
+
+function useRevealHint() {
+  if (attemptCount < 8 || revealHintUsed) return;
+
+  revealHintUsed = true;
+
+  const btn = document.getElementById("btn-reveal");
+  btn.classList.remove("attivo");
+  btn.classList.add("usato");
+  btn.disabled = true;
+
+  document.getElementById("hint-message").innerHTML = `❗ The correct charm was: <strong>${target.name}</strong>`;
+  document.getElementById("win-screen").classList.add("active");
+  document.getElementById("win-image").src = target.icon;
+  createParticles();
+}
 
 function createParticles() {
   const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];

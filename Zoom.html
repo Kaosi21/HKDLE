@@ -76,9 +76,31 @@
       text-align: center;
       backdrop-filter: blur(8px);
     }
+    .back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  box-shadow: 0 0 8px #fff;
+}
+
   </style>
 </head>
 <body>
+  <a href="Index.html" class="back-button">⬅️ Back to Main Menu</a>
   <h1>Zoom Guess - Hollow Knight</h1>
 
   <div style="display: flex; justify-content: center; align-items: center; margin-top: 40px;">
@@ -98,6 +120,7 @@
         placeholder="Type a Hollow Knight character..."
         oninput="showSuggestions()"
         autocomplete="off"
+        onkeydown="handleKeyDown(event)"
       />
       <button class="small-btn" onclick="checkGuess()">Submit</button>
       <div id="suggestions" class="suggestions-list"></div>
@@ -170,6 +193,19 @@
 
       suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
     }
+
+    function handleKeyDown(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+    const suggestions = document.querySelectorAll("#suggestions .suggestion-item");
+    if (suggestions.length > 0) {
+      suggestions[0].click(); // seleziona il primo suggerimento
+    } else {
+      checkGuess(); // nessun suggerimento → controlla il guess
+    }
+  }
+}
 
     function checkGuess() {
       const guess = document.getElementById("guess-input").value.toLowerCase();

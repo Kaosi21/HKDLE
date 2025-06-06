@@ -64,7 +64,7 @@
     "region": "Forgotten Crossroads",
     "alignment": "Early Game",
     "species": "Maggot",
-    "weapon": "Pure Strenght, Hammer, Metheors",
+    "weapon": "Pure Strength, Hammer, Meteors",
     "gameplay": "Boss",
     "gender": "Unknown",
     "photo": "img/Falseknight.webp"
@@ -74,7 +74,7 @@
     "region": "Royal waterways",
     "alignment": "Mid Game, Early Game",
     "species": "Beetle",
-    "weapon": "Dung Ball, Pure Strenght",
+    "weapon": "Dung Ball, Pure Strength",
     "gameplay": "Boss",
     "gender": "Male",
     "photo": "img/Dungd.webp"
@@ -84,7 +84,7 @@
     "region": "Dream realm",
     "alignment": "Mid Game, Late Game",
     "species": "Beetle",
-    "weapon": "Dung Ball, Pure Strenght, Shockwaves",
+    "weapon": "Dung Ball, Pure Strength, Shockwaves",
     "gameplay": "Boss",
     "gender": "Male",
     "photo": "img/Whited.webp"
@@ -94,7 +94,7 @@
     "region": "Fungal Wastes, Dirtmouth",
     "alignment": "Early Game",
     "species": "Beetle",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Bretta.webp"
@@ -132,7 +132,7 @@
   {
     "name": "Sly",
     "region": "Forgotten Crossroads, Dirtmouth, Godhome",
-    "alignment": "Mid Game, Late Game",
+    "alignment": "Early Game",
     "species": "Cicada",
     "weapon": "Nail, Great slash, Dash slash, Cyclone slash",
     "gameplay": "Boss, NPC",
@@ -224,7 +224,7 @@
     "region": "Resting Grounds",
     "alignment": "Mid Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/GM.webp"
@@ -234,7 +234,7 @@
     "region": "Palace Grounds, The abyss",
     "alignment": "Late Game",
     "species": "Higher being",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/King.webp"
@@ -244,7 +244,7 @@
     "region": "Kingdom's Edge, city of Tears, forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive",
     "alignment": "Early Game",
     "species": "Grub",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Unknown",
     "photo": "img/Grub.webp"
@@ -254,7 +254,7 @@
     "region": "Forgotten Crossroads",
     "alignment": "Early Game",
     "species": "Grub",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Grubfather.webp"
@@ -284,7 +284,7 @@
     "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Crystal Peak, Deepnest, Queen's Gardens, Ancient Basin, Royal Waterways, Resting Grounds, Howling Cliffs, Fog Canyon, The Hive, Dirtmouth ",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Cornifer.webp"
@@ -344,7 +344,7 @@
     "region": "Crystal Peak",
     "alignment": "Mid Game",
     "species": "Construct",
-    "weapon": "Pure strenght, Crystal",
+    "weapon": "Pure Strength, Crystal",
     "gameplay": "Boss",
     "gender": "Unknown",
     "photo": "img/Guardiano2.webp"
@@ -394,7 +394,7 @@
     "region": "Queen's Gardens",
     "alignment": "Mid Game",
     "species": "Ghost",
-    "weapon": "Pure strenght",
+    "weapon": "Pure Strength",
     "gameplay": "Boss, NPC",
     "gender": "Female",
     "photo": "img/Marmu.webp"
@@ -404,7 +404,7 @@
     "region": "Dream realm",
     "alignment": "Mid Game, Late Game",
     "species": "Maggot",
-    "weapon": "Pure strenght, Hammer, Infection",
+    "weapon": "Pure Strength, Hammer, Shockwaves, Meteors",
     "gameplay": "Boss",
     "gender": "Male",
     "photo": "img/Fchampion.webp"
@@ -414,7 +414,7 @@
     "region": "Dirtmouth",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Elderbug.webp"
@@ -444,7 +444,7 @@
     "region": "City of Tears",
     "alignment": "Early Game",
     "species": "Beetle",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Nailsmith.webp"
@@ -454,7 +454,7 @@
     "region": "Forgotten Crossroads",
     "alignment": "Mid Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Salubra.webp"
@@ -464,7 +464,7 @@
     "region": "Dirtmouth",
     "alignment": "Late Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Divine.webp"
@@ -474,7 +474,7 @@
     "region": "Fog Canyon, City of tears",
     "alignment": "Early Game",
     "species": "Pill-Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Millibelle.webp"
@@ -484,7 +484,7 @@
     "region": "City of Tears, Godhome",
     "alignment": "Late Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Unknown",
     "photo": "img/Godseeker.webp"
@@ -504,7 +504,7 @@
     "region": "Forgotten Crossroads, Kingdom's edge",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Pure strenght",
+    "weapon": "Pure Strength",
     "gameplay": "Boss",
     "gender": "Female",
     "photo": "img/Gruzmother.webp"
@@ -514,7 +514,7 @@
     "region": "Kingdom's Edge",
     "alignment": "Mid Game",
     "species": "Bug",
-    "weapon": "Infection, Pure strenght",
+    "weapon": "Infection, Pure Strength",
     "gameplay": "Boss",
     "gender": "Female",
     "photo": "img/Tamer.webp"
@@ -524,8 +524,8 @@
     "region": "Greenpath",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Pure strenght",
-    "gameplay": "Normal enemy",
+    "weapon": "Pure Strength",
+    "gameplay": "Boss",
     "gender": "Unknown",
     "photo": "img/Moss.webp"
   },
@@ -606,7 +606,7 @@
     "species": "Void creature, Vessel",
     "weapon": "Nail, Light, Shadow, Cloak",
     "gameplay": "Boss",
-    "gender": "Male",
+    "gender": "Unknown",
     "photo": "img/Pure.webp"
   },
   {
@@ -624,7 +624,7 @@
     "region": "Greenpath",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Unknown",
     "photo": "img/Hunter.webp"
@@ -634,7 +634,7 @@
     "region": "Fungal Wastes",
     "alignment": "Early Game",
     "species": "Cicada",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Unknown",
     "photo": "img/Leg.webp"
@@ -644,7 +644,7 @@
     "region": "Dirtmouth",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Jiji.webp"
@@ -654,7 +654,7 @@
     "region": "Dirtmouth",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Iselda.webp"
@@ -664,7 +664,7 @@
     "region": "Kingdom's Edge",
     "alignment": "Mid Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Fool.webp"
@@ -674,7 +674,7 @@
     "region": "City of Tears",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Lemm.webp"
@@ -684,7 +684,7 @@
     "region": "Dirtmouth",
     "alignment": "Early Game",
     "species": "Construct",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Steel.webp"
@@ -694,7 +694,7 @@
     "region": "Kingdom's Edge, City of Tears, Forgotten Crossroads, Greenpath, Fungal Wastes, Deepnest, Queen's Gardens, Ancient Basin, Resting Grounds, Howling Cliffs, Fog Canyon, Dirtmouth",
     "alignment": "Early Game",
     "species": "Beetle",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Tag.webp"
@@ -704,7 +704,7 @@
     "region": "Royal Waterways",
     "alignment": "Mid Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Tuk.webp"
@@ -714,7 +714,7 @@
     "region": "Fungal Wastes, Kingdom's Edge, Deepnest, Howling Cliffs, Ancient Basin, Fog Canyon, Dirtmouth",
     "alignment": "Early Game",
     "species": "Mushroom",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Mush.webp"
@@ -724,7 +724,7 @@
     "region": "Resting Grounds",
     "alignment": "Mid Game",
     "species": "Moth",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Seer.webp"
@@ -734,7 +734,7 @@
     "region": "Queen's Gardens",
     "alignment": "Late Game",
     "species": "Higher being",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/WL.webp"
@@ -742,9 +742,9 @@
   {
     "name": "Unn",
     "region": "Greenpath",
-    "alignment": "Early Game",
+    "alignment": "Mid Game",
     "species": "Higher being",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Unn.webp"
@@ -754,17 +754,17 @@
     "region": "Godhome",
     "alignment": "Late Game",
     "species": "Higher being",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Unknown",
     "photo": "img/Void.webp"
   },
   {
     "name": "Brumm",
-    "region": "Dirtmouth, Howling Cliffs",
+    "region": "Dirtmouth, Howling Cliffs, Deepnest",
     "alignment": "Late Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Brumm.webp"
@@ -773,8 +773,8 @@
     "name": "Herrah",
     "region": "Deepnest",
     "alignment": "Mid Game",
-    "species": "Dreamer",
-    "weapon": "Non combattant",
+    "species": "Ghost",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Herrah.webp"
@@ -783,8 +783,8 @@
     "name": "Lurien",
     "region": "City of Tears",
     "alignment": "Mid Game",
-    "species": "Dreamer",
-    "weapon": "Non combattant",
+    "species": "Ghost",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Lurien.webp"
@@ -793,8 +793,8 @@
     "name": "Monomon",
     "region": "Fog canyon",
     "alignment": "Mid Game",
-    "species": "Dreamer",
-    "weapon": "Non combattant",
+    "species": "Ghost",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Monomon.webp"
@@ -804,7 +804,7 @@
     "region": "Forgotten Crossroads",
     "alignment": "Early Game",
     "species": "Snail",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Male",
     "photo": "img/Snail.webp"
@@ -814,7 +814,7 @@
     "region": "Forgotten Crossroads",
     "alignment": "Early Game",
     "species": "Bug",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Myla.webp"
@@ -824,10 +824,50 @@
     "region": "The Hive",
     "alignment": "Mid Game, Late Game",
     "species": "Ghost, Bee",
-    "weapon": "Non combattant",
+    "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Vespa.webp"
+  },
+  {
+    "name": "Eternal Emilitia",
+    "region": "City of Tears",
+    "alignment": "Mid Game",
+    "species": "Bug",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Eternal.webp"
+  },
+  {
+    "name": "Fluke Hermit",
+    "region": "Royal Waterways",
+    "alignment": "Mid Game",
+    "species": "Bug",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Hermit.webp"
+  },
+  {
+    "name": "Mask Maker",
+    "region": "Deepnest",
+    "alignment": "Mid Game",
+    "species": "Spider",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Unknown",
+    "photo": "img/Maskmaker.webp"
+  },
+  {
+    "name": "Midwife",
+    "region": "Deepnest",
+    "alignment": "Mid Game",
+    "species": "Spider",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Midwife.webp"
   }
 
 ]

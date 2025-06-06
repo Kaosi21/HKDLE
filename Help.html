@@ -10,9 +10,31 @@
  body {
   font-family: 'Cinzel Decorative', cursive;
  }
+     .back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  box-shadow: 0 0 8px #fff;
+}
   </style>
   </head>
 <body class="menu">
+  
+<a href="Index.html" class="back-button">⬅️ Back to Main Menu</a>
 
   <div class="container">
     <h1>How to Play Hollowdle</h1>
@@ -61,8 +83,6 @@
       <li><strong>Difficulty:</strong> The further away you are in the game the more it increases up to five.</li>
       <li><strong>Type:</strong> Read first appearance in character challenge but now is with number 0 to 5.</li>
     </ul>
-
-    <a class="back-link" href="Index.html">← Back to Main Menu</a>
     <hr style="margin: 40px 0; border: none; border-top: 1px solid #666;">
 
     <hr style="margin: 40px 0; border: none; border-top: 1px solid #666;">
