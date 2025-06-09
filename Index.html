@@ -14,6 +14,10 @@
       text-align: center;
       padding: 60px 20px;
     }
+    html {
+  transform: scale(0.87);
+  transform-origin: top center;
+}
 
     .title {
       font-size: 4em;
@@ -133,21 +137,41 @@
 
 .updates-box {
   position: fixed;
-  bottom: 80px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 400px;
-  max-height: 1500px;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
   overflow-y: auto;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.95);
   color: #fff;
   border: 2px solid #ccc;
   border-radius: 12px;
-  padding: 20px;
-  font-size: 0.85em;
+  padding: 30px;
+  font-size: 0.95em;
   z-index: 998;
-  box-shadow: 0 0 15px #000;
+  box-shadow: 0 0 20px #000;
+  text-align: left; 
 }
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 999;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #f1c40f;
+}
+
+
 #overlay {
   position: fixed;
   top: 0;
@@ -157,9 +181,7 @@
   z-index: 997;
 }
 
-
-
-  </style>
+</style>
 </head>
 <body>
   <div class="title">HOLLOWDLE</div>
@@ -188,11 +210,28 @@
   <button onclick="toggleUpdates()" title="Website Updates">
     <img src="img/info-icon.png" alt="Updates" />
   </button>
+  <button onclick="location.href='Table.html'" title="All Attributes in the Database">
+    <img src="img/Table.png" alt="Table" />
+  </button>
+  <button onclick="location.href='GameDaily.html'" title="Daily Challenge">
+    <img src="img/Calendar.png" alt="Daily" />
+  </button>
   </div>
 
-  <div id="updates-box" class="updates-box" style="display:none;">
+<div id="updates-box" class="updates-box" style="display:none;">
+  <button onclick="toggleUpdates()" class="close-btn">✖</button>
   <h3>🛠️ Last Updates</h3>
   <ul>
+    
+    <li>9/06/2025</li>
+    <li>- Added the daily hollowdle, just press in the calendar icon to start the daily game</li>
+    <li>- Fixed some attributes in character challenge</li>
+    <li>- Fixed the zoom challenge, now every attempt make the image more visible</li>
+    <!-- <li>- Added Bardoon, Willoh, Grimmsteed, Marissa, Moss Prophet, Revek </li> -->
+    <li>- Fixed the sound challenge, now if you press the button play appears "playing" instead of "play"</li>
+    <li>- Fixed the sound challenge, now the audio can't be shorter than 8 seconds, same for the 8 seconds hint</li>
+    <li>- Changed icon of the huner due to a bug on the zoom challenge</li>
+    <li>- Added a new icon to see all the attributes in the game</li>
     <li>06/06/2025</li>
     <li>- Updated the home page</li>
     <li>- Non combattant now is Non combatant</li>

@@ -155,7 +155,7 @@
         const response = await fetch('personaggi.json');
         characters = await response.json();
         target = characters[Math.floor(Math.random() * characters.length)];
-        zoomLevel = Math.random() * 3 + 8; 
+        zoomLevel = Math.random() * 4 + 4; 
         const zoomImg = document.getElementById("zoom-img");
         zoomImg.src = target.photo;
         zoomImg.style.transform = `scale(${zoomLevel})`;
@@ -240,10 +240,9 @@
         document.getElementById("win-screen").classList.add("active");
         createParticles();
       } else {
-        if (zoomLevel > 1.5) {
-          zoomLevel -= 0.8;
-          document.getElementById("zoom-img").style.transform = `scale(${zoomLevel})`;
-        }
+        zoomLevel = Math.max(1, zoomLevel - 0.9); // dezooma, ma non va sotto 1
+        document.getElementById("zoom-img").style.transform = `scale(${zoomLevel})`;
+
 
         document.getElementById("guess-input").value = "";
         document.getElementById("suggestions").innerHTML = "";

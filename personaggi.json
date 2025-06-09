@@ -523,7 +523,7 @@
     "name": "Massive Moss Charger",
     "region": "Greenpath",
     "alignment": "Early Game",
-    "species": "Bug",
+    "species": "Mosskin",
     "weapon": "Pure Strength",
     "gameplay": "Boss",
     "gender": "Unknown",
@@ -843,7 +843,7 @@
     "name": "Fluke Hermit",
     "region": "Royal Waterways",
     "alignment": "Mid Game",
-    "species": "Bug",
+    "species": "Fluke",
     "weapon": "Non combatant",
     "gameplay": "NPC",
     "gender": "Female",
@@ -868,6 +868,66 @@
     "gameplay": "NPC",
     "gender": "Female",
     "photo": "img/Midwife.webp"
+  },
+  {
+    "name": "Bardoon",
+    "region": "Kingdom's Edge",
+    "alignment": "Mid Game",
+    "species": "Grub",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Bardoon.webp"
+  },
+  {
+    "name": "Willoh",
+    "region": "Fungal Wastes",
+    "alignment": "Mid Game",
+    "species": "Giraffe Weevil",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Willoh.webp"
+  },
+  {
+    "name": "Grimmsteed",
+    "region": "Dirtmouth",
+    "alignment": "Late Game",
+    "species": "Giraffe Weevil",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Unknown",
+    "photo": "img/Grimmsteed.webp"
+  },
+  {
+    "name": "Marissa",
+    "region": "City of Tears",
+    "alignment": "Mid Game, Late Game",
+    "species": "Ghost",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Female",
+    "photo": "img/Marissa.webp"
+  },
+  {
+    "name": "Moss Prophet",
+    "region": "Queen's Gardens",
+    "alignment": "Mid Game, Late Game",
+    "species": "Mosskin",
+    "weapon": "Non combatant",
+    "gameplay": "NPC",
+    "gender": "Unknown",
+    "photo": "img/Moss1.webp"
+  },
+  {
+    "name": "Revek",
+    "region": "Resting Grounds",
+    "alignment": "Mid Game",
+    "species": "Ghost",
+    "weapon": "Nail, Teleport",
+    "gameplay": "NPC",
+    "gender": "Male",
+    "photo": "img/Revek.webp"
   }
 
 ]

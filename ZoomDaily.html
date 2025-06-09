@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zoom Guess - Hollow Knight</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+ body {
+  font-family: 'Cinzel Decorative', cursive;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: white;
+    }
+    .zoom-container {
+      text-align: center;
+      margin: 20px auto;
+      width: 300px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+    .zoom-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .autocomplete-wrapper {
+      margin-top: 40px;
+      text-align: center;
+    }
+    .used-list {
+      margin: 20px auto;
+      max-width: 400px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+    .used-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .used-list li {
+      margin: 5px 0;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
+    .small-btn {
+  padding: 12px 18px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3399ff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.small-btn:hover {
+  background-color: #5bb6ff;
+}
+
+    .guess-box {
+      max-width: 500px;
+      margin: 20px auto;
+      background: rgba(25, 25, 35, 0.9);
+      border-radius: 20px;
+      padding: 30px 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+  box-shadow: 0 0 8px #fff;
+}
+
+  </style>
+</head>
+<body>
+  <a href="Index.html" class="back-button">⬅️ Back to Main Menu</a>
+  <h1>Zoom Guess for <span id="daily-date"></span></h1>
+
+  <div style="display: flex; justify-content: center; align-items: center; margin-top: 40px;">
+    <div class="zoom-container">
+      <img id="zoom-img" src="" alt="Zoomed Character" style="transition: transform 0.4s ease;">
+    </div>
+  </div>
+
+  <p id="attempts-counter" style="font-size: 18px; margin-top: 5px; text-align: center;">Attempts: 0</p>
+
+  <div class="guess-box">
+    <h2>Guess the Character</h2>
+    <div class="autocomplete-wrapper input-row">
+      <input
+        type="text"
+        id="guess-input"
+        placeholder="Type a Hollow Knight character..."
+        oninput="showSuggestions()"
+        autocomplete="off"
+        onkeydown="handleKeyDown(event)"
+      />
+      <button class="small-btn" onclick="checkGuess()">Submit</button>
+      <div id="suggestions" class="suggestions-list"></div>
+    </div>
+  </div>
+
+  <div class="used-list" id="used-list" style="display: none;">
+    <h3>Used Characters</h3>
+    <ul id="used-names"></ul>
+  </div>
+
+  <div id="message"></div>
+  <div id="win-message"></div>
+  <img id="win-img" src="" style="display:none;"/>
+
+  <div id="win-screen" class="win-screen">
+  <h2>You guessed it!</h2>
+  <h2>The answer was:</h2>
+  <img id="final-image" src="" alt="Winner" style="width: 150px; border-radius: 12px;" />
+  <br>
+  <a href="SoundDaily.html" class="small-btn">Go for sound daily</a>
+</div>
+
+
+  <script>
+  let characters = [];
+  let target = null;
+  let zoomLevel = 10;
+  let usedCharacters = [];
+  let attemptCount = 0;
+
+  function getDailyId() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    return `zoom_${year}-${month}-${day}`;
+  }
+
+  async function loadCharacters() {
+    try {
+      const response = await fetch('personaggi.json');
+      characters = await response.json();
+
+      const todayId = getDailyId();
+      const storedResult = localStorage.getItem(todayId);
+      const index = hashDateToIndex(todayId, characters.length);
+      target = characters[index];
+
+      function hashDateToIndex(seed, length) {
+      let hash = 0;
+      for (let i = 0; i < seed.length; i++) {
+      hash = (hash * 31 + seed.charCodeAt(i)) % 2147483647;
+      }
+      return hash % length;
+      }
+
+
+      if (storedResult === "won") {
+        // Già giocato oggi → mostra subito la schermata di vittoria
+        document.getElementById("zoom-img").src = target.photo;
+        document.getElementById("zoom-img").style.transform = "scale(1)";
+        document.getElementById("final-image").src = target.photo;
+        document.getElementById("win-screen").classList.add("active");
+        return;
+      }
+
+      zoomLevel = Math.random() * 4 + 4;
+      document.getElementById("zoom-img").src = target.photo;
+      document.getElementById("zoom-img").style.transform = `scale(${zoomLevel})`;
+    } catch (error) {
+      console.error("Error loading characters:", error);
+      alert("Failed to load characters.");
+    }
+  }
+
+  function showSuggestions() {
+    const input = document.getElementById("guess-input").value.toLowerCase();
+    const suggestionsDiv = document.getElementById("suggestions");
+    suggestionsDiv.innerHTML = "";
+
+    if (input.length === 0) {
+      suggestionsDiv.style.display = "none";
+      return;
+    }
+
+    const filtered = characters
+      .filter(c => !usedCharacters.includes(c.name.toLowerCase()))
+      .filter(c => c.name.toLowerCase().includes(input));
+
+    filtered.forEach(char => {
+      const item = document.createElement("div");
+      item.className = "suggestion-item";
+      item.innerHTML = `<img src="${char.photo}" alt="${char.name}" onerror="this.src='img/default.png'"> <span>${char.name}</span>`;
+      item.onclick = () => {
+        document.getElementById("guess-input").value = char.name;
+        suggestionsDiv.innerHTML = "";
+        suggestionsDiv.style.display = "none";
+      };
+      suggestionsDiv.appendChild(item);
+    });
+
+    suggestionsDiv.style.display = filtered.length > 0 ? "block" : "none";
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const suggestions = document.querySelectorAll("#suggestions .suggestion-item");
+      if (suggestions.length > 0) {
+        suggestions[0].click();
+      } else {
+        checkGuess();
+      }
+    }
+  }
+
+  function checkGuess() {
+    const guess = document.getElementById("guess-input").value.toLowerCase();
+    const message = document.getElementById("message");
+
+    if (!guess || usedCharacters.includes(guess)) return;
+
+    usedCharacters.push(guess);
+    attemptCount++;
+    document.getElementById("attempts-counter").textContent = `Attempts: ${attemptCount}`;
+
+    const usedListDiv = document.getElementById("used-list");
+    const usedNames = document.getElementById("used-names");
+    usedListDiv.style.display = "block";
+    const guessedCharacter = characters.find(c => c.name.toLowerCase() === guess);
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="${guessedCharacter.photo}" alt="${guessedCharacter.name}" width="40" height="40" style="border-radius: 6px;">
+        <span>${guessedCharacter.name}</span>
+      </div>`;
+    usedNames.appendChild(li);
+
+    if (guess === target.name.toLowerCase()) {
+      message.textContent = "";
+      document.getElementById("zoom-img").style.transform = "scale(1)";
+      document.getElementById("final-image").src = target.photo;
+      document.getElementById("win-screen").classList.add("active");
+      localStorage.setItem(getDailyId(), "won");
+      createParticles();
+    } else {
+      zoomLevel = Math.max(1, zoomLevel - 0.9);
+      document.getElementById("zoom-img").style.transform = `scale(${zoomLevel})`;
+      document.getElementById("guess-input").value = "";
+      document.getElementById("suggestions").innerHTML = "";
+      document.getElementById("suggestions").style.display = "none";
+    }
+  }
+
+  function createParticles() {
+    const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
+    for (let i = 0; i < 80; i++) {
+      const p = document.createElement("div");
+      p.classList.add("particle");
+      p.style.background = colors[Math.floor(Math.random() * colors.length)];
+      const x = (Math.random() - 0.5) * 300;
+      const y = (Math.random() - 0.5) * 300;
+
+      p.style.position = "fixed";
+      p.style.left = "50%";
+      p.style.top = "50%";
+      p.style.width = "10px";
+      p.style.height = "10px";
+      p.style.borderRadius = "50%";
+      p.style.zIndex = "9999";
+      p.style.pointerEvents = "none";
+
+      p.animate([
+        { transform: "translate(0, 0)", opacity: 1 },
+        { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+      ], {
+        duration: 1000,
+        easing: "ease-out"
+      });
+
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 1000);
+    }
+  }
+
+window.addEventListener("DOMContentLoaded", () => {
+  loadCharacters();
+  document.getElementById("daily-date").textContent =
+    new Date().toISOString().split("T")[0];
+});
+
+</script>
+</body>
+</html>

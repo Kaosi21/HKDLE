@@ -16,6 +16,16 @@
       background-position: center;
       color: white;
     }
+    .particle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 1;
+}
+
     .hint-box {
       max-width: 500px;
       margin: 20px auto;
@@ -31,7 +41,7 @@
       padding: 10px 18px;
       font-size: 15px;
       border-radius: 10px;
-      background-color: #444;
+      background-color: #5bb6ff;
       color: white;
       border: none;
       cursor: pointer;
@@ -62,19 +72,20 @@
       box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
     }
     .small-btn {
-      padding: 12px 18px;
-      font-size: 14px;
-      border-radius: 10px;
-      border: none;
-      background-color: #444;
-      color: white;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s ease;
-    }
-    .small-btn:hover {
-      background-color: #666;
-    }
+  padding: 12px 18px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: none;
+  background-color: #3399ff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.small-btn:hover {
+  background-color: #5bb6ff;
+}
+
     #feedback {
       width: 100%;
       border-collapse: collapse;
@@ -168,7 +179,7 @@
 </head>
 <body>
 <a href="Index.html" class="back-button">⬅️ Back to Main Menu</a>
-<h1>Guess the Sound - Hollow Knight</h1>
+<h1>Daily Sound - <span id="daily-date"></span></h1>
 
 <div class="hint-box">
   <h2>Listen and Guess</h2>
@@ -214,13 +225,14 @@
   <tbody></tbody>
 </table>
 
-<div id="win-screen" style="display: none; text-align: center; margin-top: 30px;">
-  <h2>You guessed it!</h2>
+<div id="win-screen" class="win-screen">
+  <h2>GG you won today</h2>
   <h2>The answer was:</h2>
-  <img id="win-image" class="winner-img" src="" alt="Winner" style="width: 150px; border-radius: 12px;">
+  <img id="win-image" src="" alt="Winner" style="width: 150px; border-radius: 12px;" />
   <br>
-  <button onclick="location.reload()">Play Again </button>
+  <a href="Index.html" class="small-btn">Back to Main Menu</a>
 </div>
+
 
 <script>
   let sounds = [];
@@ -231,6 +243,20 @@
   let rispostaUsata = false;
   let audioInRiproduzione = false;
   const usedSounds = [];
+
+function getTodayKey() {
+  return new Date().toISOString().split("T")[0];
+}
+
+function getDailyIndex(length) {
+  const today = getTodayKey();
+  let hash = 0;
+  for (let i = 0; i < today.length; i++) {
+    hash = today.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return Math.abs(hash) % length;
+}
+
 
 function toggleAudio(seconds = 8) {
   if (audioInRiproduzione) return; // Evita doppia riproduzione
@@ -428,6 +454,7 @@ function toggleAudio(seconds = 8) {
     if (guessed.Name.toLowerCase() === target.Name.toLowerCase()) {
       document.getElementById("win-screen").style.display = "block";
       document.getElementById("win-image").src = guessed.Photo;
+      localStorage.setItem("dailySoundDate", getTodayKey());
       createParticles();
     }
 
@@ -439,40 +466,63 @@ function toggleAudio(seconds = 8) {
     const volumeSlider = document.getElementById("volume-slider");
 
     fetch("sound.json")
-      .then((res) => res.json())
-      .then((data) => {
-        sounds = data;
-        target = sounds[Math.floor(Math.random() * sounds.length)];
-        audio.src = target.File;
-      });
+  .then((res) => res.json())
+  .then((data) => {
+    sounds = data;
+    const today = getTodayKey();
+    const index = getDailyIndex(sounds.length);
+    target = sounds[index];
+    audio.src = target.File;
+
+    // Mostra la data
+    document.getElementById("daily-date").textContent = today;
+
+    // Se già giocato oggi, mostra schermata di vittoria
+    if (localStorage.getItem("dailySoundDate") === today) {
+      document.getElementById("win-screen").style.display = "block";
+      document.getElementById("win-image").src = target.Photo;
+      document.querySelector(".hint-box").style.display = "none";
+      document.getElementById("feedback").style.display = "none";
+    }
+  });
+
 
     volumeSlider.addEventListener("input", () => {
       audio.volume = volumeSlider.value;
     });
-    function createParticles() {
-  const colors = ["#ff4757", "#1e90ff", "#2ed573", "#ffa502", "#eccc68"];
-  const numParticles = 80;
+  function createParticles() {
+  const colors = ["#00c3ff", "#66ff66", "#ffd700", "#ff66cc", "#ffffff"];
+  const numParticles = 100;
 
   for (let i = 0; i < numParticles; i++) {
     const particle = document.createElement("div");
     particle.classList.add("particle");
     particle.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-    const x = (Math.random() - 0.5) * 300 + "px";
-    const y = (Math.random() - 0.5) * 300 + "px";
-    particle.style.setProperty("--x", x);
-    particle.style.setProperty("--y", y);
+    const startX = window.innerWidth / 2;
+    const startY = window.innerHeight / 2;
 
-    particle.style.left = "50%";
-    particle.style.top = "50%";
+    const angle = Math.random() * 2 * Math.PI;
+    const radius = Math.random() * 200 + 50;
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius;
 
+    particle.style.left = `${startX}px`;
+    particle.style.top = `${startY}px`;
+
+    const anim = particle.animate([
+      { transform: "translate(0, 0)", opacity: 1 },
+      { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+    ], {
+      duration: 1200,
+      easing: "ease-out"
+    });
+
+    anim.onfinish = () => particle.remove();
     document.body.appendChild(particle);
-
-    setTimeout(() => {
-      particle.remove();
-    }, 1000);
   }
 }
+
 });
 </script>
 

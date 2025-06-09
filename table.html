@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hollow Knight: Compendium Table</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+    body {
+      font-family: 'Cinzel Decorative', cursive;
+      
+  background-image: url("img/Sfondo.jpeg");
+      color: #f5f5f5;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 4em;
+      margin-bottom: 40px;
+      text-shadow: 0 0 12px #ccc;
+    }
+
+    h2 {
+      margin-top: 60px;
+      color: #f1c40f;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 60px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f1c40f;
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      padding: 10px 16px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      font-size: 14px;
+      text-decoration: none;
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: #fff;
+      box-shadow: 0 0 8px #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-button">⬅️ Back to Main Menu</a>
+  <h1>HollowDle Database</h1>
+
+  <h2>Characters</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Region</th><th>Alignment</th><th>Species</th><th>Weapon</th><th>Gameplay</th><th>Gender</th><th>Photo</th>
+      </tr>
+    </thead>
+    <tbody id="character-table-body"></tbody>
+  </table>
+
+  <h2>Charms</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Category</th><th>Cost</th><th>Location</th><th>Obtained</th><th>Icon</th>
+      </tr>
+    </thead>
+    <tbody id="charm-table-body"></tbody>
+  </table>
+
+  <h2>Sounds</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Location</th><th>Type</th><th>Difficulty</th><th>File</th><th>Photo</th>
+      </tr>
+    </thead>
+    <tbody id="sound-table-body"></tbody>
+  </table>
+
+  <script>
+    async function loadJSON(url) {
+      const res = await fetch(url);
+      return res.json();
+    }
+
+    function createImgCell(src) {
+      const img = document.createElement('img');
+      img.src = src;
+      img.width = 40;
+      const td = document.createElement('td');
+      td.appendChild(img);
+      return td;
+    }
+
+    function appendRow(tableBody, values) {
+      const tr = document.createElement('tr');
+      values.forEach(v => {
+        const td = document.createElement('td');
+        td.innerHTML = v;
+        tr.appendChild(td);
+      });
+      tableBody.appendChild(tr);
+    }
+
+    async function populateCharacters() {
+      const data = await loadJSON('personaggi.json');
+      const tbody = document.getElementById('character-table-body');
+      data.forEach(char => {
+        const row = document.createElement('tr');
+        ['name', 'region', 'alignment', 'species', 'weapon', 'gameplay', 'gender'].forEach(key => {
+          const td = document.createElement('td');
+          td.textContent = char[key];
+          row.appendChild(td);
+        });
+        row.appendChild(createImgCell(char.photo));
+        tbody.appendChild(row);
+      });
+    }
+
+    async function populateCharms() {
+      const data = await loadJSON('charms.json');
+      const tbody = document.getElementById('charm-table-body');
+      data.forEach(charm => {
+        const row = document.createElement('tr');
+        ['name', 'category', 'cost', 'location', 'obtained'].forEach(key => {
+          const td = document.createElement('td');
+          td.textContent = charm[key];
+          row.appendChild(td);
+        });
+        row.appendChild(createImgCell(charm.icon));
+        tbody.appendChild(row);
+      });
+    }
+
+    async function populateSounds() {
+      const data = await loadJSON('sound.json');
+      const tbody = document.getElementById('sound-table-body');
+      data.forEach(sound => {
+        const row = document.createElement('tr');
+        ['Name', 'Location', 'Type', 'Difficulty'].forEach(key => {
+          const td = document.createElement('td');
+          td.textContent = sound[key];
+          row.appendChild(td);
+        });
+        const tdLink = document.createElement('td');
+        tdLink.innerHTML = `<a href=\"${sound.File}\">Listen</a>`;
+        row.appendChild(tdLink);
+        row.appendChild(createImgCell(sound.Photo));
+        tbody.appendChild(row);
+      });
+    }
+
+    populateCharacters();
+    populateCharms();
+    populateSounds();
+  </script>
+
+</body>
+</html>
